@@ -1,0 +1,173 @@
+/*
+  CONVERTFLY · DESIGN SYSTEM
+  Componentes — botões, capsule, cards, tags, inputs, toggles
+  Depende de colors_and_type.css (tokens)
+*/
+
+/* ── BOTÕES ──────────────────────────────────────────────────── */
+.cf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cf-sp-2);
+  font-family: var(--cf-font-body);
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: var(--cf-r-md);
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--cf-dur-fast) var(--cf-ease-out), transform var(--cf-dur-fast) var(--cf-ease-out);
+}
+.cf-btn:focus-visible { outline: none; box-shadow: var(--cf-focus-ring); }
+.cf-btn:active { transform: translateY(1px); }
+
+.cf-btn-primary { background: var(--cf-coral); color: #fff; }
+.cf-btn-primary:hover { background: #e84a3b; }
+
+.cf-btn-secondary {
+  background: transparent;
+  color: var(--cf-ink-900);
+  border: 1px solid rgba(22,14,51,0.16);
+}
+.cf-btn-secondary:hover { background: rgba(22,14,51,0.06); }
+
+.cf-btn-ghost { background: transparent; color: var(--cf-ink-900); }
+.cf-btn-ghost:hover { background: rgba(22,14,51,0.06); }
+
+.cf-surface-dark .cf-btn-secondary { color: #fff; border-color: rgba(255,255,255,0.24); }
+.cf-surface-dark .cf-btn-secondary:hover { background: rgba(255,255,255,0.08); }
+.cf-surface-dark .cf-btn-ghost { color: #fff; }
+.cf-surface-dark .cf-btn-ghost:hover { background: rgba(255,255,255,0.08); }
+
+.cf-btn-sm { padding: 8px 16px; font-size: 14px; }
+.cf-btn-lg { padding: 16px 32px; font-size: 18px; }
+
+/* ── GLASS CAPSULE (componente-assinatura) ──────────────────── */
+.cf-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cf-sp-2);
+  padding: 10px 20px;
+  border-radius: var(--cf-r-pill);
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02) 60%), rgba(22,14,51,0.55);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(16px) saturate(140%);
+  transition: border-color var(--cf-dur-fast) var(--cf-ease-out);
+}
+.cf-capsule:hover { border-color: rgba(255,255,255,0.24); }
+
+.cf-capsule-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cf-capsule-dot--positive { background: var(--cf-positive); }
+.cf-capsule-dot--coral { background: var(--cf-coral); }
+.cf-capsule-dot--violet { background: var(--cf-violet); }
+.cf-capsule-dot--gold { background: var(--cf-gold); }
+
+/* Toggle capsule — trilho largo com dot deslizante à esquerda */
+.cf-capsule-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cf-sp-4);
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: var(--cf-r-pill);
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02) 60%), rgba(22,14,51,0.55);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: #fff;
+}
+.cf-toggle-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  border-radius: var(--cf-r-pill);
+  background: rgba(255,255,255,0.16);
+  flex-shrink: 0;
+}
+.cf-toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--cf-ink-300);
+  transition: transform var(--cf-dur-medium) var(--cf-ease-out), background var(--cf-dur-medium) var(--cf-ease-out);
+}
+.cf-toggle-switch--on { background: rgba(90,158,109,0.28); }
+.cf-toggle-switch--on::after { background: var(--cf-positive); transform: translateX(16px); }
+
+/* ── CARDS ───────────────────────────────────────────────────── */
+.cf-card-light {
+  background: #fff;
+  border: 1px solid rgba(22,14,51,0.08);
+  border-radius: var(--cf-r-xl);
+  box-shadow: var(--cf-shadow-md);
+  padding: var(--cf-sp-8);
+}
+
+.cf-card-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02) 60%), rgba(22,14,51,0.55);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+  border-radius: var(--cf-r-xl);
+  padding: var(--cf-sp-8);
+  color: #fff;
+  backdrop-filter: blur(16px) saturate(140%);
+}
+
+/* ── TAGS & BADGES ───────────────────────────────────────────── */
+.cf-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--cf-r-pill);
+  font-size: 13px;
+  font-weight: 600;
+}
+.cf-tag--category { background: rgba(153,49,255,0.10); color: var(--cf-violet); }
+.cf-tag--novo { background: rgba(244,89,74,0.10); color: var(--cf-coral); }
+.cf-tag--beta { background: rgba(215,151,47,0.14); color: var(--cf-gold); }
+.cf-tag--publicado { background: rgba(90,158,109,0.12); color: var(--cf-positive); }
+.cf-tag--rascunho { background: var(--cf-ink-200); color: var(--cf-ink-500); }
+.cf-tag--neutro { background: var(--cf-ink-100); color: var(--cf-ink-500); }
+
+/* ── INPUTS ──────────────────────────────────────────────────── */
+.cf-field { display: flex; flex-direction: column; gap: var(--cf-sp-2); }
+.cf-field label { font-size: 14px; font-weight: 600; color: var(--cf-ink-900); }
+.cf-field input, .cf-field textarea {
+  font-family: var(--cf-font-body);
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: var(--cf-r-sm);
+  border: 1px solid rgba(22,14,51,0.16);
+  background: #fff;
+  color: var(--cf-ink-900);
+  transition: box-shadow var(--cf-dur-fast) var(--cf-ease-out), border-color var(--cf-dur-fast) var(--cf-ease-out);
+}
+.cf-field input:focus, .cf-field textarea:focus {
+  outline: none;
+  border-color: var(--cf-coral);
+  box-shadow: var(--cf-focus-ring);
+}
+.cf-field--error input { border-color: var(--cf-error); }
+.cf-field--error .cf-field-error { color: var(--cf-error); font-size: 13px; }
+
+.cf-surface-dark .cf-field label { color: rgba(255,255,255,0.7); }
+.cf-surface-dark .cf-field input, .cf-surface-dark .cf-field textarea {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+/* ── HAIRLINE ────────────────────────────────────────────────── */
+.cf-hairline { border: none; border-top: 1px solid rgba(22,14,51,0.08); }
+.cf-surface-dark .cf-hairline { border-top-color: rgba(255,255,255,0.14); }

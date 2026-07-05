@@ -1,0 +1,179 @@
+/*
+  CONVERTFLY · DESIGN SYSTEM
+  Tokens — cor, tipografia, raio, espaçamento, sombra, motion
+  Fonte: spec escrita do Design System Convertfly (Julho 2026)
+*/
+
+/* ── FONTES ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --cf-font-body: 'Mulish', -apple-system, BlinkMacSystemFont, sans-serif;
+  --cf-font-accent: 'Times New Roman', Tinos, 'Liberation Serif', serif;
+
+  /* ── BRAND ANCHORS ──────────────────────────────────────── */
+  --cf-ink: #160e33;
+  --cf-violet: #9931ff;
+  --cf-coral: #f4594a;
+  --cf-gold: #d7972f;
+  --cf-positive: #5a9e6d;
+  --cf-magenta: #c93f8a;
+
+  /* ── NEUTRAL INK SCALE (9 passos, nunca preto puro) ─────── */
+  --cf-ink-900: #160e33;
+  --cf-ink-800: #201842;
+  --cf-ink-700: #2a2152;
+  --cf-ink-600: #3a3068;
+  --cf-ink-500: #555555;
+  --cf-ink-400: #7a7693;
+  --cf-ink-300: #b5b1c4;
+  --cf-ink-200: #e7e5ec;
+  --cf-ink-100: #f4f4f4;
+
+  /* ── SUPERFÍCIES ─────────────────────────────────────────── */
+  --cf-surface-dark: var(--cf-ink-900);
+  --cf-surface-light: #fafaf7;   /* papel quente — nunca #fff puro como fundo de marca */
+  --cf-surface-light-alt: var(--cf-ink-100);
+
+  /* ── GRADIENTE-ASSINATURA (gold → coral → magenta → violet) ── */
+  --cf-gradient-signature: linear-gradient(90deg, var(--cf-gold), var(--cf-coral), var(--cf-magenta), var(--cf-violet));
+
+  /* ── FEEDBACK SEMÂNTICO ──────────────────────────────────── */
+  --cf-positive: #5a9e6d;
+  --cf-error: var(--cf-coral);
+
+  /* ── RAIO (intenso, mas consistente) ─────────────────────── */
+  --cf-r-xs: 6px;
+  --cf-r-sm: 10px;
+  --cf-r-md: 16px;   /* padrão de botão */
+  --cf-r-lg: 22px;
+  --cf-r-xl: 28px;   /* padrão de card */
+  --cf-r-2xl: 36px;  /* hero panels grandes */
+  --cf-r-pill: 999px; /* só capsule bullet, tag, toggle — nunca botão comum */
+
+  /* ── ESPAÇAMENTO (4 → 96+, piso de seção 96px) ───────────── */
+  --cf-sp-1: 4px;
+  --cf-sp-2: 8px;
+  --cf-sp-3: 12px;
+  --cf-sp-4: 16px;
+  --cf-sp-6: 24px;
+  --cf-sp-8: 32px;
+  --cf-sp-12: 48px;
+  --cf-sp-16: 64px;
+  --cf-sp-24: 96px;
+  --cf-sp-section: 96px;
+
+  /* ── SOMBRA (whisper em claro, glass em escuro) ──────────── */
+  --cf-shadow-xs: 0 1px 2px rgba(22, 14, 51, 0.04);
+  --cf-shadow-sm: 0 2px 6px rgba(22, 14, 51, 0.05);
+  --cf-shadow-md: 0 8px 24px rgba(22, 14, 51, 0.06);
+  --cf-shadow-lg: 0 18px 48px rgba(22, 14, 51, 0.10);
+
+  /* ── MOTION ──────────────────────────────────────────────── */
+  --cf-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --cf-ease-sym: cubic-bezier(0.65, 0, 0.35, 1);
+  --cf-dur-fast: 140ms;
+  --cf-dur-medium: 220ms;
+  --cf-dur-slow: 420ms;
+  --cf-dur-gradient: 1000ms;
+
+  /* ── FOCUS RING ──────────────────────────────────────────── */
+  --cf-focus-ring: 0 0 0 4px rgba(244, 89, 74, 0.12);
+}
+
+/* ── RESET MÍNIMO ───────────────────────────────────────────── */
+.cf-scope {
+  font-family: var(--cf-font-body);
+  color: var(--cf-ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+.cf-scope *, .cf-scope *::before, .cf-scope *::after { box-sizing: border-box; }
+
+/* ── SUPERFÍCIES ─────────────────────────────────────────────── */
+.cf-surface-dark {
+  background: var(--cf-surface-dark);
+  color: #fff;
+}
+.cf-surface-light {
+  background: var(--cf-surface-light);
+  color: var(--cf-ink-900);
+}
+
+/* Fundo hero: ink + blobs off-canvas, nunca centrado/simétrico */
+.cf-hero-bg {
+  position: relative;
+  background: var(--cf-ink-900);
+  overflow: hidden;
+}
+.cf-hero-bg::before,
+.cf-hero-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+.cf-hero-bg::before {
+  width: 46%;
+  height: 60%;
+  top: -12%;
+  right: -8%;
+  background: radial-gradient(circle, var(--cf-violet) 0%, transparent 70%);
+  opacity: 0.5;
+}
+.cf-hero-bg::after {
+  width: 40%;
+  height: 50%;
+  bottom: -14%;
+  left: -6%;
+  background: radial-gradient(circle, var(--cf-coral) 0%, transparent 70%);
+  opacity: 0.4;
+}
+
+/* ── TIPOGRAFIA ──────────────────────────────────────────────── */
+.cf-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cf-ink-400);
+}
+.cf-surface-dark .cf-eyebrow { color: rgba(255,255,255,0.6); }
+
+.cf-display-1, .cf-display-l {
+  font-family: var(--cf-font-body);
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.cf-display-m {
+  font-family: var(--cf-font-body);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.cf-h1 { font-weight: 700; font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+.cf-h2 { font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+.cf-h3 { font-weight: 700; font-size: 20px; line-height: 1.2; margin: 0; }
+.cf-body-1 { font-size: 18px; line-height: 1.5; font-weight: 400; }
+.cf-body { font-size: 16px; line-height: 1.5; font-weight: 400; }
+.cf-body-s { font-size: 14px; line-height: 1.5; font-weight: 400; }
+.cf-caption { font-size: 13px; line-height: 1.4; color: var(--cf-ink-500); }
+
+/* Keyword de destaque — Times Bold Italic, gradiente aplicado ao texto */
+.cf-accent {
+  font-family: var(--cf-font-accent);
+  font-weight: 700;
+  font-style: italic;
+  background: var(--cf-gradient-signature);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cf-surface-light .cf-body, .cf-surface-light .cf-body-1, .cf-surface-light .cf-body-s {
+  color: var(--cf-ink-500);
+}

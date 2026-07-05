@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa de Papéis &amp; Cadência · Conversion Map™ · Convertfly</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../slides/deck-stage.css">
+<style>
+  body { margin: 0; font-family: var(--cf-font-body); }
+  .cf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cf-sp-8); }
+  .cf-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cf-sp-6); }
+  .cf-timeline { display: flex; flex-direction: column; gap: var(--cf-sp-2); max-height: 60vh; overflow-y: auto; padding-right: var(--cf-sp-2); }
+  .cf-timeline-row { display: flex; align-items: center; gap: var(--cf-sp-4); padding: var(--cf-sp-3) var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .cf-timeline-row.gate { border-color: rgba(215,151,47,0.4); background: rgba(215,151,47,0.08); }
+  .cf-timeline-row.handoff { border-color: rgba(153,49,255,0.4); background: rgba(153,49,255,0.08); }
+  .cf-timeline-num { width: 28px; height: 28px; border-radius: 50%; background: var(--cf-coral); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+  .cf-timeline-body { flex: 1; }
+  .cf-timeline-title { font-weight: 700; font-size: 15px; }
+  .cf-timeline-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .cf-timeline-window { font-size: 12px; color: rgba(255,255,255,0.4); white-space: nowrap; }
+  .cf-role-card { display: flex; flex-direction: column; gap: var(--cf-sp-2); }
+  .cf-role-name { font-weight: 800; font-size: 18px; }
+  .cf-role-person { font-size: 13px; color: var(--cf-coral); font-weight: 700; }
+  .cf-divider-bastao { text-align: center; padding: var(--cf-sp-3) 0; color: var(--cf-gold); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; }
+</style>
+</head>
+<body class="cf-scope">
+
+<div id="cf-deck">
+
+  <!-- SLIDE 1 · COVER -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Conversion Map™ · Convertfly · Onboarding</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff; max-width: 900px;">
+      Mapa de <span class="cf-accent">papéis</span> &amp; cadência
+    </h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 640px; color: rgba(255,255,255,0.7);">
+      Quem é quem, e onde cada pessoa entra — do onboarding do cliente até o aprendizado que retroalimenta o sistema.
+    </p>
+    <div class="cf-slide-num">B1</div>
+  </section>
+
+  <!-- SLIDE 2 · O QUE É O CM -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">01 · O método</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 780px;">
+      O Conversion Map™ é o sistema de diagnóstico estratégico da Convertfly.
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 680px; color: var(--cf-ink-500);">
+      Opera em pilares encadeados — <strong>Research → Estratégia (Canvas PDP) → HTMLs → Mensuração → Aprendizado</strong> —
+      onde cada etapa entrega um pacote estruturado para a próxima. Nenhuma decisão é achismo.
+    </p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-light">
+        <div class="cf-h3">Tech partner de conversão</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Não agência, não dev house. Especialista na página onde a decisão de compra acontece.</p>
+      </div>
+      <div class="cf-card-light">
+        <div class="cf-h3">O cérebro que aprende</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Cada projeto medido vira dado; dado vira padrão; padrão vira peso na Matriz de Decisão.</p>
+      </div>
+      <div class="cf-card-light">
+        <div class="cf-h3">Reduzir a pessoa-chave</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">O método segura o conhecimento — a pessoa executa, não é o método. É o que torna a operação escalável.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 · PAPÉIS -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">02 · Quem é quem</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Os <span class="cf-accent">papéis</span> da cadência</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass cf-role-card">
+        <div class="cf-role-name">Dono do método</div>
+        <div class="cf-role-person">Estrategista-chefe</div>
+        <p class="cf-body-s">Visão, régua de qualidade, decisão estratégica, cocriação do CM™ com o Claude.</p>
+      </div>
+      <div class="cf-card-glass cf-role-card">
+        <div class="cf-role-name">Facilitador</div>
+        <div class="cf-role-person">Breno</div>
+        <p class="cf-body-s">Conduz a cadência, toma decisão estratégica, opera os projetos Claude — etapas 0 a 7.</p>
+      </div>
+      <div class="cf-card-glass cf-role-card">
+        <div class="cf-role-name">Design / Figma</div>
+        <div class="cf-role-person">Bia</div>
+        <p class="cf-body-s">Traduz OPS + HTML em página visual no Figma, refina copy, leva para aprovação — etapa 8.</p>
+      </div>
+      <div class="cf-card-glass cf-role-card">
+        <div class="cf-role-name">Implementação</div>
+        <div class="cf-role-person">Bruno</div>
+        <p class="cf-body-s">Constrói a página aprovada dentro do App Convertfly e publica — etapa 9.</p>
+      </div>
+      <div class="cf-card-glass cf-role-card">
+        <div class="cf-role-name">CRO / Mensuração</div>
+        <div class="cf-role-person">Mauro</div>
+        <p class="cf-body-s">Configura tracking antes do go-live, coleta baseline, mede D+30 e D+90 — etapas 9 a 11.</p>
+      </div>
+      <div class="cf-card-glass cf-role-card">
+        <div class="cf-role-name">Cliente</div>
+        <div class="cf-role-person">—</div>
+        <p class="cf-body-s">Responde briefing, participa das sessões, aprova o visual.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 · TIMELINE — ETAPAS 0-7 (PROJETOS CLAUDE) -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">03 · A cadência · parte 1</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Etapas 0–7 · <span class="cf-accent">projetos Claude</span></h2>
+    <div class="cf-timeline" style="margin-top: var(--cf-sp-8); max-width: 760px; max-height: none; overflow: visible;">
+      <div class="cf-timeline-row"><div class="cf-timeline-num">0</div><div class="cf-timeline-body"><div class="cf-timeline-title">Onboarding</div><div class="cf-timeline-meta">Facilitador · envia Briefing Virtual v2.0</div></div><div class="cf-timeline-window">D+0</div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">1</div><div class="cf-timeline-body"><div class="cf-timeline-title">Research</div><div class="cf-timeline-meta">Facilitador · 4 blocos de inteligência</div></div><div class="cf-timeline-window">D+3–12</div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">2</div><div class="cf-timeline-body"><div class="cf-timeline-title">Preparar Sessão 1</div><div class="cf-timeline-meta">Facilitador · board Miro pré-preenchido</div></div><div class="cf-timeline-window">D+10–12</div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">3</div><div class="cf-timeline-body"><div class="cf-timeline-title">Processar Sessão 1</div><div class="cf-timeline-meta">Facilitador · lição de casa + board S2</div></div><div class="cf-timeline-window">D+15</div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">4</div><div class="cf-timeline-body"><div class="cf-timeline-title">Processar Sessão 2</div><div class="cf-timeline-meta">Facilitador · semáforo de status</div></div><div class="cf-timeline-window">D+20</div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">5</div><div class="cf-timeline-body"><div class="cf-timeline-title">Gerar OPS</div><div class="cf-timeline-meta">Facilitador · OPS cliente + time</div></div><div class="cf-timeline-window">D+21–22</div></div>
+      <div class="cf-timeline-row gate"><div class="cf-timeline-num">6</div><div class="cf-timeline-body"><div class="cf-timeline-title">Mini-fichas · gate anti-TSJ</div><div class="cf-timeline-meta">Facilitador · aprovação por página antes do HTML</div></div><div class="cf-timeline-window">D+23–24</div></div>
+      <div class="cf-timeline-row gate"><div class="cf-timeline-num">7</div><div class="cf-timeline-body"><div class="cf-timeline-title">HTMLs</div><div class="cf-timeline-meta">Facilitador · design system + páginas + pacote de entrega</div></div><div class="cf-timeline-window">D+24–30</div></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4B · TIMELINE — ETAPAS 8-11 (TIME DE OPERAÇÃO) -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">03 · A cadência · parte 2</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Etapas 8–11 · <span class="cf-accent">time de operação</span></h2>
+    <div class="cf-divider-bastao" style="text-align:left; margin-top: var(--cf-sp-8); max-width: 760px;">⟶ O BASTÃO PASSOU PARA O TIME — PROTAGONISMO SAI DOS PROJETOS CLAUDE</div>
+    <div class="cf-timeline" style="margin-top: var(--cf-sp-4); max-width: 760px; max-height: none; overflow: visible;">
+      <div class="cf-timeline-row handoff"><div class="cf-timeline-num">8</div><div class="cf-timeline-body"><div class="cf-timeline-title">Tradução visual · gate de aprovação</div><div class="cf-timeline-meta">Bia · Figma + copy final → aprovação do cliente</div></div><div class="cf-timeline-window">D+30–45</div></div>
+      <div class="cf-timeline-row handoff"><div class="cf-timeline-num">9</div><div class="cf-timeline-body"><div class="cf-timeline-title">Go-Live</div><div class="cf-timeline-meta">Bruno + Mauro · tracking configurado ANTES de publicar</div></div><div class="cf-timeline-window">D+45–60</div></div>
+      <div class="cf-timeline-row handoff"><div class="cf-timeline-num">10</div><div class="cf-timeline-body"><div class="cf-timeline-title">Mensuração</div><div class="cf-timeline-meta">Mauro · baseline, heatmap, Relatório D+90</div></div><div class="cf-timeline-window">D+60–90+</div></div>
+      <div class="cf-timeline-row handoff"><div class="cf-timeline-num">11</div><div class="cf-timeline-body"><div class="cf-timeline-title">Aprendizado</div><div class="cf-timeline-meta">Facilitador + Mauro · quanti + quali → Matriz + Master</div></div><div class="cf-timeline-window">D+90+</div></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 · GATE INEGOCIÁVEL -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">05 · A regra que não se quebra</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">
+      Depois do HTML (etapa 7), <span style="color:var(--cf-coral);">não vem go-live direto.</span>
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 680px; color: var(--cf-ink-500);">
+      O HTML é a estratégia materializada. O Figma aprovado pelo cliente é o que vai pro ar. A etapa 8 — tradução visual da Bia —
+      é gate obrigatório. E o Mauro configura o tracking <strong>antes</strong> do go-live: sem baseline, não há aprendizado.
+    </p>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 800px;">
+      <div class="cf-card-light">
+        <span class="cf-tag cf-tag--novo">Gate 1</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Mini-fichas (etapa 6)</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Gate anti-TSJ: nenhuma página constrói sem pergunta central e objeção âncora próprias, aprovadas antes do HTML.</p>
+      </div>
+      <div class="cf-card-light">
+        <span class="cf-tag cf-tag--beta">Gate 2</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Tradução visual (etapa 8)</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Nenhuma página avança para o go-live sem o "ok" do cliente no Figma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6 · ONDE VOCÊ ENTRA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">06 · Isabella</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 820px;">
+      Você atua <span class="cf-accent">entre o OPS e os HTMLs</span> — etapas 6 a 8.
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      É a zona onde a estratégia (OPS) vira gate aprovado (mini-fichas), depois HTML com design system e ann-tags,
+      e por fim o pacote que a Bia recebe pra traduzir em Figma. É o ponto de maior risco de erro — e onde o método mais protege.
+    </p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Etapa 6</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Mini-fichas — gate anti-TSJ. D+23–24.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Etapa 7</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">HTMLs — design system + ann-tags. D+24–30.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Etapa 8</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Tradução visual — a Bia recebe o pacote. D+30–45.</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); color: rgba(255,255,255,0.4);">O detalhe operacional completo de cada etapa está no próximo material — B2, Aprofundamento Etapas 6-8.</p>
+  </section>
+
+  <!-- SLIDE 7 · REGRA DE OURO DO HANDOFF -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">07 · O bastão</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">A regra de ouro de todo Pacote de Handoff</h2>
+    <div class="cf-card-glass" style="margin-top: var(--cf-sp-8); max-width: 720px; background: var(--cf-ink-900);">
+      <p class="cf-body-1" style="font-style: italic;">
+        "Um facilitador que nunca viu este cliente conseguiria começar a próxima etapa só com este pacote?
+        Se a resposta é não, falta coisa — não fecha o handoff."
+      </p>
+    </div>
+    <p class="cf-body" style="margin-top: var(--cf-sp-8); max-width: 680px; color: var(--cf-ink-500);">
+      Entre projetos Claude (Research → Canvas → HTMLs), o bastão passa por um bloco copiável, delimitado por
+      <code>═══ INÍCIO/FIM ═══</code>. Da etapa 8 em diante, o bastão é humano — mas a regra de ouro é a mesma:
+      quem recebe não precisa perguntar nada para começar.
+    </p>
+  </section>
+
+  <!-- SLIDE 8 · KIT BASE -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">08 · O chão comum</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O <span class="cf-accent">Kit Base</span></h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 680px; color: rgba(255,255,255,0.7);">
+      Todo projeto Claude carrega o mesmo conjunto de documentos — o que impede cada projeto de interpretar o método à sua maneira.
+    </p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Claude Master</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">A constituição — identidade, papel do Claude, arquitetura, princípios que não mudam.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Glossário CM™</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Um termo, um sentido. A língua comum de todo projeto.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Sequenciamento A-Z</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">O runbook — prompt a colar, etapa por etapa.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">12 Fichas de Etapa</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Cartão de bolso + detalhe de cada etapa da cadência.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Spec de Handoff</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">O contrato de interface entre projetos.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Padrão de Qualidade</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Checklist anti-TSJ + anti-erros do ciclo King Joe.</p></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9 · FECHAMENTO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Fechamento</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Você já sabe quem é quem, e onde cada etapa entrega o quê.</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 640px; color: var(--cf-ink-500);">
+      Próximo passo: aprofundar nas etapas 6 a 8 — onde você atua no dia a dia, com o detalhe operacional completo
+      (mini-fichas, design system extraído, ann-tags, pacote de entrega para a Bia).
+    </p>
+    <div style="margin-top: var(--cf-sp-8);">
+      <span class="cf-tag cf-tag--category">Próximo material</span>
+      <div class="cf-h3" style="margin-top: var(--cf-sp-3);">B2 — Aprofundamento Etapas 6-8</div>
+    </div>
+  </section>
+
+</div>
+
+<div id="cf-deck-rail"></div>
+<div class="cf-deck-nav">
+  <button id="cf-deck-prev" aria-label="Anterior">←</button>
+  <span id="cf-deck-counter">1 / 10</span>
+  <button id="cf-deck-next" aria-label="Próximo">→</button>
+  <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
+</div>
+
+<script src="../../slides/deck-stage.js"></script>
+</body>
+</html>
