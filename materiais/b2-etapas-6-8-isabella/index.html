@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprofundamento Etapas 6-8 · Conversion Map™ · Convertfly</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../slides/deck-stage.css">
+<style>
+  body { margin: 0; font-family: var(--cf-font-body); }
+  .cf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cf-sp-8); }
+  .cf-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cf-sp-6); }
+  .cf-scroll-area { max-height: 62vh; overflow-y: auto; padding-right: var(--cf-sp-2); }
+
+  /* mini-ficha anatomy */
+  .cf-ficha { display: flex; flex-direction: column; gap: var(--cf-sp-2); max-width: 820px; }
+  .cf-ficha-field { display: flex; gap: var(--cf-sp-4); padding: var(--cf-sp-3) var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .cf-ficha-label { width: 200px; flex-shrink: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cf-gold); }
+  .cf-ficha-value { font-size: 14px; color: rgba(255,255,255,0.85); }
+
+  /* objection / motivator rows */
+  .cf-row-table { display: flex; flex-direction: column; gap: var(--cf-sp-2); max-width: 900px; }
+  .cf-row { display: grid; grid-template-columns: 90px 1fr 1.4fr; gap: var(--cf-sp-4); align-items: center; padding: var(--cf-sp-3) var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .cf-row-code { font-weight: 800; color: var(--cf-coral); font-size: 14px; }
+  .cf-row-main { font-size: 14px; font-weight: 700; }
+  .cf-row-sub { font-size: 13px; color: rgba(255,255,255,0.55); }
+
+  /* lens cards */
+  .cf-lens-order { display: flex; flex-direction: column; gap: var(--cf-sp-3); max-width: 640px; }
+  .cf-lens-step { display: flex; gap: var(--cf-sp-4); align-items: flex-start; }
+  .cf-lens-num { width: 26px; height: 26px; border-radius: 50%; background: var(--cf-violet); color: #fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; flex-shrink:0; }
+
+  /* ann-tag chips */
+  .cf-anntag { display: inline-flex; align-items: center; gap: var(--cf-sp-2); padding: 6px 14px; border-radius: var(--cf-r-pill); font-size: 13px; font-weight: 700; color: #fff; }
+  .cf-anntag-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* checklist */
+  .cf-check-row { display: flex; gap: var(--cf-sp-3); padding: var(--cf-sp-3) 0; border-bottom: 1px solid rgba(22,14,51,0.08); }
+  .cf-check-num { font-weight: 800; color: var(--cf-coral); flex-shrink: 0; }
+
+  .cf-erro-card { border-left: 3px solid var(--cf-coral); padding-left: var(--cf-sp-4); }
+</style>
+</head>
+<body class="cf-scope">
+
+<div id="cf-deck">
+
+  <!-- 1 · COVER -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Conversion Map™ · Convertfly · B2</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff; max-width: 900px;">
+      Etapas <span class="cf-accent">6 a 8</span>: do OPS ao Figma
+    </h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 640px; color: rgba(255,255,255,0.7);">
+      O detalhe operacional completo da zona onde você atua: mini-fichas, design system extraído,
+      HTMLs com ann-tags e o pacote que a Bia recebe.
+    </p>
+    <div class="cf-slide-num">B2</div>
+  </section>
+
+  <!-- 2 · RECAP: ONDE ISSO ENTRA -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Recap</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Do OPS ao Figma, em três etapas</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8); max-width: 980px;">
+      <div class="cf-card-light">
+        <span class="cf-tag cf-tag--novo">Etapa 6</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Mini-fichas</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">D+23–24 · gate anti-TSJ. Trava a estratégia por página antes de qualquer HTML.</p>
+      </div>
+      <div class="cf-card-light">
+        <span class="cf-tag cf-tag--beta">Etapa 7</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">HTMLs</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">D+24–30 · design system extraído + páginas com ann-tags + pacote de entrega.</p>
+      </div>
+      <div class="cf-card-light">
+        <span class="cf-tag cf-tag--publicado">Etapa 8</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Tradução visual</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">D+30–45 · Bia traduz pro Figma. Gate de aprovação do cliente.</p>
+      </div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 700px;">Recebe: OPS versão time + Pacote de Handoff. Entrega: Figma aprovado + tracking avisado pro Mauro (etapa 9).</p>
+  </section>
+
+  <!-- 3 · ETAPA 6 · O QUE É -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">01 · Etapa 6 · Mini-fichas</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 820px;">
+      O <span class="cf-accent">gate anti-TSJ</span>: nada se constrói sem ficha aprovada.
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      Antes de qualquer HTML, toda página passa pela pergunta central — obrigatória, sem exceção:
+    </p>
+    <div class="cf-card-glass" style="margin-top: var(--cf-sp-6); max-width: 720px;">
+      <p class="cf-body-1" style="font-style: italic; margin:0;">
+        "Qual é o problema específico que esta página resolve para este visitante específico —
+        e que nenhuma outra página deste projeto resolve?"
+      </p>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.55);">
+      Resposta vaga, genérica ou igual à de outra página do projeto → <strong>parar</strong>. Ou o cohort está errado,
+      ou as páginas são redundantes, ou a seção âncora ainda não foi identificada.
+    </p>
+  </section>
+
+  <!-- 4 · ANATOMIA DA MINI-FICHA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">01 · Etapa 6 · Anatomia</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">A <span class="cf-accent">mini-ficha</span>, campo a campo</h2>
+    <div class="cf-ficha cf-scroll-area" style="margin-top: var(--cf-sp-6);">
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Página / Tipo / Prioridade</div><div class="cf-ficha-value">Nome · tipo do App Convertfly · Camada 1/2/3</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Problema único</div><div class="cf-ficha-value">A pergunta central respondida em 1 frase específica e intransferível</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Cohort principal</div><div class="cf-ficha-value">Nome · o que sente nos 1os 3s · o que precisa entender · nível de consciência</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Cohort secundário</div><div class="cf-ficha-value">Como aparece sem fragmentar o argumento principal</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Objeção âncora</div><div class="cf-ficha-value">Tipo (F/FN/S/T/I/C/P) · frase real · posição na página · como a página responde</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Força de venda principal</div><div class="cf-ficha-value">Motivador · a prova específica desta página (dado real do OPS)</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Seção âncora</div><div class="cf-ficha-value">O que é · por que é única neste projeto · argumento que executa</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">CTA principal</div><div class="cf-ficha-value">Frase (refina o CTA base do OPS) · canal · micro-copy</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Rascunho de sequência</div><div class="cf-ficha-value">Seções candidatas — ponto de partida, não definitivo</div></div>
+      <div class="cf-ficha-field"><div class="cf-ficha-label">Materiais necessários</div><div class="cf-ficha-value">Item · TEM / CRIAR / SOLICITAR AO CLIENTE + urgência</div></div>
+    </div>
+  </section>
+
+  <!-- 5 · OS 7 TIPOS DE OBJEÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">01 · Etapa 6 · Objeção âncora</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Os <span class="cf-accent">7 tipos</span> de objeção</h2>
+    <div class="cf-row-table" style="margin-top: var(--cf-sp-6);">
+      <div class="cf-row"><div class="cf-row-code">F</div><div class="cf-row-main">Financeira<div class="cf-row-sub">Seção 2–3</div></div><div class="cf-row-sub">"Vale o preço?" — custo por uso, comparativo, ROI</div></div>
+      <div class="cf-row"><div class="cf-row-code">FN</div><div class="cf-row-main">Funcional<div class="cf-row-sub">Seção 2</div></div><div class="cf-row-sub">"Funciona pra mim?" — guia de uso, passo a passo, demonstração</div></div>
+      <div class="cf-row"><div class="cf-row-code">S</div><div class="cf-row-main">Social<div class="cf-row-sub">Alta na página</div></div><div class="cf-row-sub">"Posso confiar?" — autoridade, números reais, selos verificáveis</div></div>
+      <div class="cf-row"><div class="cf-row-code">T</div><div class="cf-row-main">Temporal<div class="cf-row-sub">Próximo ao CTA</div></div><div class="cf-row-sub">"E se der errado?" — garantia clara, prazo, processo de troca</div></div>
+      <div class="cf-row"><div class="cf-row-code">I</div><div class="cf-row-main">Informacional<div class="cf-row-sub">Logo após o hero</div></div><div class="cf-row-sub">"Nunca fiz isso, como funciona?" — processo visual, FAQ expandido</div></div>
+      <div class="cf-row"><div class="cf-row-code">C</div><div class="cf-row-main">Comparativa<div class="cf-row-sub">Seção 3–4</div></div><div class="cf-row-sub">"Vi similar mais barato" — comparativo direto com alternativa conhecida</div></div>
+      <div class="cf-row"><div class="cf-row-code">P</div><div class="cf-row-main">Psicológica<div class="cf-row-sub">Prova social</div></div><div class="cf-row-sub">"Estou sendo impulsivo?" — diversidade de cohorts, UGC real, identificação</div></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-6); color: rgba(255,255,255,0.4);">Objeção crítica nunca vai pro FAQ — vai para a posição de maior atenção da página.</p>
+  </section>
+
+  <!-- 6 · OS 6 MOTIVADORES -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">01 · Etapa 6 · Força de venda</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Os 6 motivadores de compra</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8); max-width: 980px;">
+      <div class="cf-card-light"><div class="cf-h3">Autoridade</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Fundadores, especialistas, parceiros. Nome + contexto específico — não genérico.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Resultado</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Frase exata do cliente + nome + história. Depoimento genérico não convence.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Segurança</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Prazo + processo + o que acontece se der errado. Não apenas "tem garantia".</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Exclusividade</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Deve sobreviver ao teste: "o concorrente também pode dizer isso?"</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Custo-Benefício</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Número concreto. "R$9,58/dia vs. R$150/sessão" é prova; ROI vago não é.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Pertencimento</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">UGC real, número de comunidade, eventos — não "grande comunidade".</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 700px;">Regra de ouro: sem história específica ou número concreto, a força de venda é um desejo — não uma prova.</p>
+  </section>
+
+  <!-- 7 · ETAPA 7 · LENTE 1 VISUAL -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">02 · Etapa 7 · HTMLs · Lente 1</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Lente Visual — <span class="cf-accent">ordem de coleta</span></h2>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-4); max-width: 680px; color: rgba(255,255,255,0.6);">Antes de qualquer CSS, nesta ordem — nunca pular etapa:</p>
+    <div class="cf-lens-order" style="margin-top: var(--cf-sp-6);">
+      <div class="cf-lens-step"><div class="cf-lens-num">1</div><div><strong>Brandbook oficial</strong>, se existir. Pergunte explicitamente ao facilitador — nunca presuma que não existe.</div></div>
+      <div class="cf-lens-step"><div class="cf-lens-num">2</div><div><strong>web_fetch no site real</strong> — pelo menos uma categoria e um produto específico (preço, descrição, especificação real).</div></div>
+      <div class="cf-lens-step"><div class="cf-lens-num">3</div><div><strong>image_search / print real</strong> do Instagram — print fornecido pelo facilitador é sempre mais confiável que busca indexada.</div></div>
+    </div>
+    <div class="cf-card-glass" style="margin-top: var(--cf-sp-8); max-width: 720px; border-color: rgba(215,151,47,0.4);">
+      <p class="cf-body-s" style="margin:0;"><strong style="color:var(--cf-gold);">⚠️ Lição do ciclo King Joe:</strong> decisão sobre paleta, dark/light mode ou composição nunca vem só de web_fetch (não preserva CSS/visual) — sempre priorizar print real ou imagem quando a decisão for visual.</p>
+    </div>
+  </section>
+
+  <!-- 8 · ETAPA 7 · LENTE 2 COPY -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">02 · Etapa 7 · HTMLs · Lente 2</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Lente Copy — hierarquia de fontes</h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px; grid-template-columns: 140px 1fr; gap: var(--cf-sp-4);">
+      <div class="cf-tag cf-tag--novo" style="justify-content:center;">🥇 Máxima</div>
+      <p class="cf-body-s" style="color:var(--cf-ink-500); margin:0;">Frase exata do cliente (transcrições S1+S2) ou brandbook oficial → hero, diferenciais, depoimentos.</p>
+      <div class="cf-tag cf-tag--beta" style="justify-content:center;">🥈 Alta</div>
+      <p class="cf-body-s" style="color:var(--cf-ink-500); margin:0;">Dado validado nas sessões → FAQ, garantia, especificações.</p>
+      <div class="cf-tag cf-tag--publicado" style="justify-content:center;">🥉 Média</div>
+      <p class="cf-body-s" style="color:var(--cf-ink-500); margin:0;">Hipótese confirmada no OPS sem frase exata → seções de suporte.</p>
+      <div class="cf-tag cf-tag--rascunho" style="justify-content:center;">⚪ Base</div>
+      <p class="cf-body-s" style="color:var(--cf-ink-500); margin:0;">Copy criada pelo agente → só onde não há dado real, sempre sinalizada.</p>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 700px;">⚠️ Brandbook documenta arquitetura de portfólio interna (linguagem de buyer/mix) — sempre confirmar contra o menu real do site antes de usar como estrutura de página.</p>
+  </section>
+
+  <!-- 9 · ETAPA 7 · LENTE 3 + ANN-TAGS -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">02 · Etapa 7 · HTMLs · Lente 3 + ann-tags</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Experiência + <span class="cf-accent">ann-tags</span></h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-6);">
+      <div>
+        <div class="cf-eyebrow" style="color:rgba(255,255,255,0.5);">Lente 3 — o facilitador valida</div>
+        <ul class="cf-body-s" style="margin-top:var(--cf-sp-3); padding-left: 18px; color: rgba(255,255,255,0.75); line-height:1.8;">
+          <li><strong>Ritmo</strong> — alternância entre denso e leve</li>
+          <li><strong>Pico emocional</strong> — a seção de conexão mais intensa</li>
+          <li><strong>Coerência de identidade</strong> — trocar o logo, ainda parece a marca?</li>
+          <li><strong>Mobile-first</strong> — hero ocupa a tela, CTA visível sem rolar</li>
+        </ul>
+      </div>
+      <div>
+        <div class="cf-eyebrow" style="color:rgba(255,255,255,0.5);">Sistema de ann-tags</div>
+        <div style="display:flex; flex-direction:column; gap:var(--cf-sp-3); margin-top:var(--cf-sp-3);">
+          <span class="cf-anntag" style="background: rgba(107,47,232,0.25); border:1px solid #6B2FE8;"><span class="cf-anntag-dot" style="background:#6B2FE8;"></span>Padrão — toda seção, missão declarada</span>
+          <span class="cf-anntag" style="background: rgba(201,162,67,0.2); border:1px solid #C9A243;"><span class="cf-anntag-dot" style="background:#C9A243;"></span>Crítica — resolve a objeção âncora</span>
+          <span class="cf-anntag" style="background: rgba(0,209,122,0.15); border:1px solid #00D17A;"><span class="cf-anntag-dot" style="background:#00D17A;"></span>Inédita — não existia no site atual</span>
+          <span class="cf-anntag" style="background: rgba(43,41,38,0.4); border:1px solid #2B2926;"><span class="cf-anntag-dot" style="background:#2B2926;"></span>Nota Bia — substituição necessária</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · CHECKLISTS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Padrão de Qualidade</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Duas checklists, antes de qualquer entrega</h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 1000px;">
+      <div>
+        <div class="cf-h3">A · Anti-TSJ</div>
+        <div class="cf-check-row"><div class="cf-check-num">1</div><div class="cf-body-s">Pergunta central própria, ou template repetido?</div></div>
+        <div class="cf-check-row"><div class="cf-check-num">2</div><div class="cf-body-s">Objeção âncora da fala real, ou interpretação minha?</div></div>
+        <div class="cf-check-row"><div class="cf-check-num">3</div><div class="cf-body-s">Design system com composição e ritmo, ou só cor?</div></div>
+        <div class="cf-check-row"><div class="cf-check-num">4</div><div class="cf-body-s">Cada seção com ancoragem individual, ou escopo acumulado?</div></div>
+      </div>
+      <div>
+        <div class="cf-h3">A2 · Anti-erros King Joe</div>
+        <div class="cf-check-row"><div class="cf-check-num">1</div><div class="cf-body-s">Número/categoria/modelo checado contra o site real?</div></div>
+        <div class="cf-check-row"><div class="cf-check-num">2</div><div class="cf-body-s">Correção de página anterior foi checada de novo pra esta?</div></div>
+        <div class="cf-check-row"><div class="cf-check-num">3</div><div class="cf-body-s">Categoria "enxuta" ainda explora atributo/portfólio reais?</div></div>
+        <div class="cf-check-row"><div class="cf-check-num">4</div><div class="cf-body-s">Decisão visual veio de inspeção real, não só web_fetch?</div></div>
+      </div>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-8); color: var(--cf-error); font-weight:700;">Se qualquer resposta cair no lado errado, a página não sai.</p>
+  </section>
+
+  <!-- 11 · ETAPA 8 -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">03 · Etapa 8 · Tradução visual</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">O que a <span class="cf-accent">Bia</span> recebe — e o que ela devolve</h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass">
+        <div class="cf-h3">Pacote que ela recebe</div>
+        <ul class="cf-body-s" style="margin-top:var(--cf-sp-3); padding-left:18px; line-height:1.9;">
+          <li>HTMLs completos com ann-tags</li>
+          <li>OPS versão time</li>
+          <li>Design system (composição + ritmo)</li>
+          <li>Mini-fichas aprovadas</li>
+        </ul>
+      </div>
+      <div class="cf-card-glass">
+        <div class="cf-h3">O que ela entrega</div>
+        <ul class="cf-body-s" style="margin-top:var(--cf-sp-3); padding-left:18px; line-height:1.9;">
+          <li>Páginas no Figma, fiéis à estratégia</li>
+          <li>Copy final refinado</li>
+          <li>Visual aprovado pelo cliente</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cf-card-glass" style="margin-top: var(--cf-sp-6); max-width: 760px; border-color: rgba(215,151,47,0.4);">
+      <p class="cf-body-s" style="margin:0;"><strong style="color:var(--cf-gold);">Gate:</strong> nenhuma página avança pro go-live sem o "ok" do cliente no Figma. Se a aprovação mudar a estratégia (trocou objeção, cortou seção âncora) — isso é <strong>dado</strong>, registrado pra etapa 11.</p>
+    </div>
+  </section>
+
+  <!-- 12 · ERROS COMUNS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">O que não fazer</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Erros comuns nas etapas 6 a 8</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8); max-width: 1000px;">
+      <div class="cf-erro-card">
+        <div class="cf-body-s" style="font-weight:700;">Etapa 6</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Template repetido, objeção inventada, escopo sem âncora — os 4 erros da TSJ aparecem aqui primeiro. Também: aceitar número do OPS sem checar o catálogo real.</p>
+      </div>
+      <div class="cf-erro-card">
+        <div class="cf-body-s" style="font-weight:700;">Etapa 7</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Design system só de cor, página que se arrasta, ann-tags ausentes, página Global tratada como destino de clique, combo/kit inventado sem existir no catálogo.</p>
+      </div>
+      <div class="cf-erro-card">
+        <div class="cf-body-s" style="font-weight:700;">Etapa 8</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Embelezar e diluir o argumento, cortar a seção âncora por estética, perder o ritmo definido no HTML.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · FECHAMENTO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Fechamento</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Checklist de transição — pra não perder o fio</h2>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-6); max-width: 780px;">
+      <div class="cf-check-row"><div class="cf-body-s" style="font-weight:700; width:220px; flex-shrink:0;">OPS → HTMLs</div><div class="cf-body-s" style="color:var(--cf-ink-500);">OPS versão time + Pacote de Handoff (brandbook apontado, se existir)</div></div>
+      <div class="cf-check-row"><div class="cf-body-s" style="font-weight:700; width:220px; flex-shrink:0;">Mini-fichas → HTMLs</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Toda ficha com pergunta central + objeção âncora aprovadas, dados incertos checados</div></div>
+      <div class="cf-check-row"><div class="cf-body-s" style="font-weight:700; width:220px; flex-shrink:0;">HTMLs → Bia</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Pacote de entrega: HTML + OPS + design system + fichas</div></div>
+      <div class="cf-check-row"><div class="cf-body-s" style="font-weight:700; width:220px; flex-shrink:0;">Bia → Go-live</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Figma aprovado pelo cliente + Mauro avisado</div></div>
+    </div>
+    <div style="margin-top: var(--cf-sp-8);">
+      <span class="cf-tag cf-tag--category">Próximo material</span>
+      <div class="cf-h3" style="margin-top: var(--cf-sp-3);">B3 — Onboarding completo do método (visão geral CM™)</div>
+    </div>
+  </section>
+
+</div>
+
+<div id="cf-deck-rail"></div>
+<div class="cf-deck-nav">
+  <button id="cf-deck-prev" aria-label="Anterior">←</button>
+  <span id="cf-deck-counter">1 / 13</span>
+  <button id="cf-deck-next" aria-label="Próximo">→</button>
+  <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
+</div>
+
+<script src="../../slides/deck-stage.js"></script>
+</body>
+</html>
