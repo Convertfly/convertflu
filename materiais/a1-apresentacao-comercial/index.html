@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apresentação Comercial · Convertfly</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../slides/deck-stage.css">
+<style>
+  body { margin: 0; font-family: var(--cf-font-body); }
+  .cf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cf-sp-8); }
+  .cf-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cf-sp-6); }
+  .cf-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--cf-sp-4); }
+
+  .cf-sumario-row { display: flex; gap: var(--cf-sp-6); align-items: baseline; padding: var(--cf-sp-4) 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .cf-sumario-num { font-family: var(--cf-font-accent); font-style: italic; font-size: 28px; color: var(--cf-gold); width: 50px; flex-shrink: 0; }
+
+  .cf-pain-card { max-width: 640px; }
+  .cf-pain-row { padding: var(--cf-sp-4) 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .cf-pain-row:last-child { border-bottom: none; }
+
+  .cf-process-step { display: flex; gap: var(--cf-sp-4); align-items: flex-start; padding: var(--cf-sp-4) 0; border-bottom: 1px solid rgba(22,14,51,0.08); }
+  .cf-process-num { font-family: var(--cf-font-accent); font-style: italic; font-weight:700; font-size: 22px; color: var(--cf-coral); width: 44px; flex-shrink: 0; }
+
+  .cf-case-card { aspect-ratio: 4/3; border-radius: var(--cf-r-xl); background: linear-gradient(135deg, rgba(153,49,255,0.25), rgba(244,89,74,0.2)); display:flex; align-items:flex-end; padding: var(--cf-sp-6); border: 1px solid rgba(255,255,255,0.14); }
+
+  .cf-price-card { display: flex; flex-direction: column; border-radius: var(--cf-r-xl); padding: var(--cf-sp-8); position: relative; }
+  .cf-price-badge { position: absolute; top: -12px; right: 24px; }
+  .cf-price-value { font-family: var(--cf-font-accent); font-style: italic; font-weight: 700; font-size: 36px; }
+  .cf-price-feat { font-size: 13px; padding: var(--cf-sp-2) 0; border-bottom: 1px solid rgba(22,14,51,0.06); }
+</style>
+</head>
+<body class="cf-scope">
+
+<div id="cf-deck">
+
+  <!-- 1 · COVER -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Apresentação comercial · 2026</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff; max-width: 900px;">
+      Sua loja merece uma página que <span class="cf-accent">vende</span>.
+    </h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 620px; color: rgba(255,255,255,0.7);">
+      Páginas personalizadas para lojas Nuvemshop — construídas com estratégia de conversão, não com template universal.
+    </p>
+    <div style="margin-top: var(--cf-sp-16); display:flex; justify-content:space-between; align-items:center; max-width: 900px;">
+      <span class="cf-body-s" style="color: rgba(255,255,255,0.5);">www.convertfly.com.br</span>
+      <span class="cf-body-s" style="color: rgba(255,255,255,0.5);">Para Juleme Hair · Ana Cardoso</span>
+    </div>
+  </section>
+
+  <!-- 2 · SUMÁRIO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Sumário</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O que vamos <span class="cf-accent">cobrir</span></h2>
+    <div style="margin-top: var(--cf-sp-8); max-width: 760px;">
+      <div class="cf-sumario-row"><div class="cf-sumario-num">01</div><div><div class="cf-h3" style="color:#fff;">A dor real do lojista</div><div class="cf-body-s" style="color:rgba(255,255,255,0.5);">Por que tráfego sem estrutura não vende</div></div></div>
+      <div class="cf-sumario-row"><div class="cf-sumario-num">02</div><div><div class="cf-h3" style="color:#fff;">A solução Convertfly</div><div class="cf-body-s" style="color:rgba(255,255,255,0.5);">Página personalizada, alinhada à estratégia</div></div></div>
+      <div class="cf-sumario-row"><div class="cf-sumario-num">03</div><div><div class="cf-h3" style="color:#fff;">Como trabalhamos</div><div class="cf-body-s" style="color:rgba(255,255,255,0.5);">4 etapas, da diagnose à publicação</div></div></div>
+      <div class="cf-sumario-row" style="border-bottom:none;"><div class="cf-sumario-num">04</div><div><div class="cf-h3" style="color:#fff;">Investimento</div><div class="cf-body-s" style="color:rgba(255,255,255,0.5);">Planos, prazos, próximos passos</div></div></div>
+    </div>
+  </section>
+
+  <!-- 3 · CAPÍTULO 01 -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Capítulo 01</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff;">A <span class="cf-accent">dor</span>.</h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 600px; color: rgba(255,255,255,0.7);">O que está acontecendo entre o clique e o pedido.</p>
+  </section>
+
+  <!-- 4 · A DOR EM NÚMERO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Pesquisa Convertfly · 1.200 lojistas Nuvemshop · 2025</div>
+    <h2 class="cf-display-l" style="margin-top: var(--cf-sp-6); max-width: 880px;">
+      <span class="cf-accent" style="font-size: inherit;">82%</span> dos lojistas perdem vendas na página de produto, não no tráfego.
+    </h2>
+  </section>
+
+  <!-- 5 · TRÊS SINTOMAS -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Diagnóstico</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">Três sintomas de uma <span class="cf-accent">estrutura</span> quebrada.</h2>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-3); color: rgba(255,255,255,0.5);">Você reconhece pelo menos um destes em sua loja.</p>
+    <div class="cf-card-glass cf-pain-card" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-pain-row"><div class="cf-h3" style="color:#fff;">Você investe em tráfego…</div><p class="cf-body-s" style="color:rgba(255,255,255,0.55); margin-top:var(--cf-sp-2);">Mas a página não convence.</p></div>
+      <div class="cf-pain-row"><div class="cf-h3" style="color:#fff;">Você tem visitas…</div><p class="cf-body-s" style="color:rgba(255,255,255,0.55); margin-top:var(--cf-sp-2);">Mas o cliente não sente segurança.</p></div>
+      <div class="cf-pain-row"><div class="cf-h3" style="color:#fff;">Você tem produto bom…</div><p class="cf-body-s" style="color:rgba(255,255,255,0.55); margin-top:var(--cf-sp-2);">Mas a apresentação não vende.</p></div>
+    </div>
+  </section>
+
+  <!-- 6 · A CONCLUSÃO -->
+  <section class="cf-slide cf-surface-light">
+    <h2 class="cf-display-m" style="max-width: 800px;">O problema quase nunca é o tráfego.<br>É a <span class="cf-accent">estrutura</span> da página.</h2>
+  </section>
+
+  <!-- 7 · CAPÍTULO 02 -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Capítulo 02</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff;">A <span class="cf-accent">solução</span>.</h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 600px; color: rgba(255,255,255,0.7);">Página personalizada — e nada parecido com template.</p>
+  </section>
+
+  <!-- 8 · A SOLUÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <h2 class="cf-display-m" style="color:#fff; max-width: 720px;">Por isso criamos o <span class="cf-accent">Convertfly!</span></h2>
+    <div style="display:flex; flex-direction:column; gap:var(--cf-sp-3); margin-top: var(--cf-sp-8); max-width: 480px;">
+      <div class="cf-capsule-toggle"><span>Páginas personalizadas</span><div class="cf-toggle-switch cf-toggle-switch--on"></div></div>
+      <div class="cf-capsule-toggle"><span>Conteúdos estratégicos</span><div class="cf-toggle-switch cf-toggle-switch--on"></div></div>
+      <div class="cf-capsule-toggle"><span>Foco em conversão e valor</span><div class="cf-toggle-switch cf-toggle-switch--on"></div></div>
+    </div>
+  </section>
+
+  <!-- 9 · COMO TRABALHAMOS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Como trabalhamos</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Quatro etapas. Zero adivinhação.</h2>
+    <div style="margin-top: var(--cf-sp-8); max-width: 820px;">
+      <div class="cf-process-step"><div class="cf-process-num">01</div><div><div class="cf-h3">Diagnose — Audit da página atual</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Heatmap, sessões gravadas e benchmark do seu segmento.</p></div></div>
+      <div class="cf-process-step"><div class="cf-process-num">02</div><div><div class="cf-h3">Estratégia — Mapa de conversão</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Hipóteses de copy, hierarquia visual e prova social.</p></div></div>
+      <div class="cf-process-step"><div class="cf-process-num">03</div><div><div class="cf-h3">Design — Página personalizada</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Construção sob medida no editor da Nuvemshop, alinhada à marca.</p></div></div>
+      <div class="cf-process-step" style="border-bottom:none;"><div class="cf-process-num">04</div><div><div class="cf-h3">Lançamento — Publica, mede, ajusta</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Vai pro ar com tracking e dashboard de receita × conversão.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 10 · CASES -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Casos recentes</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">Cada loja, <span class="cf-accent">cada página</span>.</h2>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-3); max-width: 680px; color: rgba(255,255,255,0.55);">Joalheria, beleza, equipamentos — três visuais diferentes, um mesmo método de conversão.</p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-case-card"><span class="cf-body-s" style="color:#fff; font-weight:700;">Joias · Lola</span></div>
+      <div class="cf-case-card"><span class="cf-body-s" style="color:#fff; font-weight:700;">Beleza · Juleme</span></div>
+      <div class="cf-case-card"><span class="cf-body-s" style="color:#fff; font-weight:700;">Equipamentos · Brava</span></div>
+    </div>
+  </section>
+
+  <!-- 11 · DEPOIMENTO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Depoimento</div>
+    <div class="cf-card-light" style="margin-top: var(--cf-sp-8); max-width: 780px; padding: var(--cf-sp-12);">
+      <p class="cf-h2" style="font-weight: 500; line-height:1.4;">
+        "Em 60 dias, a nova página de produto subiu nossa conversão de 1,9% para <span class="cf-accent">4,3%</span>.
+        A diferença não foi tráfego. Foi a estrutura."
+      </p>
+      <div style="display:flex; align-items:center; gap:var(--cf-sp-4); margin-top: var(--cf-sp-8);">
+        <div style="width:48px; height:48px; border-radius:50%; background:var(--cf-gradient-signature); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800;">AC</div>
+        <div>
+          <div class="cf-body" style="font-weight:700;">Ana Cardoso</div>
+          <div class="cf-caption">Founder · Juleme Hair · cliente desde 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · INVESTIMENTO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Investimento</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 700px;">Três planos. Mesmo método.</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-price-card" style="background:#fff; border: 1px solid rgba(22,14,51,0.08); box-shadow: var(--cf-shadow-md);">
+        <div class="cf-h3">Página única</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2); min-height: 48px;">Uma página crítica (produto ou landing), do briefing à publicação.</p>
+        <div class="cf-price-value" style="margin-top:var(--cf-sp-6);">R$ 3.490<span class="cf-body-s" style="font-family:var(--cf-font-body); font-style:normal; font-weight:400; color:var(--cf-ink-400);"> /projeto</span></div>
+        <div style="margin-top:var(--cf-sp-6);">
+          <div class="cf-price-feat">Audit da página atual</div>
+          <div class="cf-price-feat">1 página personalizada</div>
+          <div class="cf-price-feat">Tracking de conversão</div>
+          <div class="cf-price-feat" style="border-bottom:none;">30 dias de ajustes</div>
+        </div>
+        <button class="cf-btn cf-btn-secondary" style="margin-top:var(--cf-sp-8);">Começar</button>
+      </div>
+      <div class="cf-price-card" style="background: var(--cf-ink-900); color:#fff; box-shadow: var(--cf-shadow-lg); transform: scale(1.03);">
+        <span class="cf-tag cf-tag--novo cf-price-badge">+ vendido</span>
+        <div class="cf-h3" style="color:#fff;">Loja completa</div>
+        <p class="cf-body-s" style="color:rgba(255,255,255,0.6); margin-top:var(--cf-sp-2); min-height: 48px;">Home, categoria, top 5 produtos e institucional. Tudo no mesmo idioma de marca.</p>
+        <div class="cf-price-value" style="margin-top:var(--cf-sp-6); background:var(--cf-gradient-signature); -webkit-background-clip:text; background-clip:text; color:transparent;">R$ 12.900<span class="cf-body-s" style="font-family:var(--cf-font-body); font-style:normal; font-weight:400; -webkit-text-fill-color: rgba(255,255,255,0.5);"> /projeto</span></div>
+        <div style="margin-top:var(--cf-sp-6);">
+          <div class="cf-price-feat" style="border-color:rgba(255,255,255,0.1);">Audit completo</div>
+          <div class="cf-price-feat" style="border-color:rgba(255,255,255,0.1);">Home + categoria + 5 PDPs</div>
+          <div class="cf-price-feat" style="border-color:rgba(255,255,255,0.1);">Sistema de conteúdos estratégicos</div>
+          <div class="cf-price-feat" style="border-color:rgba(255,255,255,0.1);">Dashboard de performance</div>
+          <div class="cf-price-feat" style="border-bottom:none;">60 dias de ajustes</div>
+        </div>
+        <button class="cf-btn cf-btn-primary" style="margin-top:var(--cf-sp-8);">Quero o pacote completo</button>
+      </div>
+      <div class="cf-price-card" style="background:#fff; border: 1px solid rgba(22,14,51,0.08); box-shadow: var(--cf-shadow-md);">
+        <div class="cf-h3">Sob medida</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2); min-height: 48px;">Para lojas com mais de 50 SKUs ou múltiplas marcas no mesmo CNPJ.</p>
+        <div class="cf-price-value" style="margin-top:var(--cf-sp-6);">Custom</div>
+        <div style="margin-top:var(--cf-sp-6);">
+          <div class="cf-price-feat">Audit por marca</div>
+          <div class="cf-price-feat">Roadmap trimestral</div>
+          <div class="cf-price-feat">Squad dedicado</div>
+          <div class="cf-price-feat" style="border-bottom:none;">SLA de manutenção</div>
+        </div>
+        <button class="cf-btn cf-btn-secondary" style="margin-top:var(--cf-sp-8);">Conversar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · CTA FINAL -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Próximo passo</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">Vamos colocar sua próxima página <span class="cf-accent">no ar</span>.</h2>
+    <div style="margin-top: var(--cf-sp-8); display:flex; gap: var(--cf-sp-8); flex-wrap: wrap;">
+      <span class="cf-body" style="color:#fff;">ana@convertfly.com.br</span>
+      <span class="cf-body" style="color:rgba(255,255,255,0.5);">@convertfly.com.br</span>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-6); color: rgba(255,255,255,0.4);">Resposta em até 1 dia útil · primeira call sem compromisso.</p>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-16); color: rgba(255,255,255,0.4);">www.convertfly.com.br</p>
+  </section>
+
+</div>
+
+<div id="cf-deck-rail"></div>
+<div class="cf-deck-nav">
+  <button id="cf-deck-prev" aria-label="Anterior">←</button>
+  <span id="cf-deck-counter">1 / 13</span>
+  <button id="cf-deck-next" aria-label="Próximo">→</button>
+  <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
+</div>
+
+<script src="../../slides/deck-stage.js"></script>
+</body>
+</html>
