@@ -3,7 +3,7 @@
   Engine genérica para decks HTML no design system Convertfly.
   Navegação por teclado, trilha de miniaturas, print-to-PDF.
 
-  Uso: <div id="cf-deck">[slides .cf-slide]</div> + <script src="deck-stage.js"></script>
+  Uso: div#cf-deck com os slides dentro, mais este arquivo carregado via tag de script.
 */
 (function () {
   function initDeck(root) {
