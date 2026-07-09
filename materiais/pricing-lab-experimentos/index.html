@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratório de Precificação · Convertfly</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../slides/deck-stage.css">
+<style>
+  body { margin: 0; font-family: var(--cf-font-body); }
+  .cf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cf-sp-8); }
+  .cf-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cf-sp-6); }
+  .cf-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--cf-sp-4); }
+
+  /* calculator */
+  .cf-calc { display: grid; grid-template-columns: 320px 1fr; gap: var(--cf-sp-12); max-width: 1100px; align-items: start; }
+  .cf-calc-input { display: flex; flex-direction: column; gap: var(--cf-sp-6); }
+  .cf-logic-btn { display: block; width: 100%; text-align: left; padding: var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: #fff; cursor: pointer; margin-bottom: var(--cf-sp-2); }
+  .cf-logic-btn.active { border-color: var(--cf-coral); background: rgba(244,89,74,0.12); }
+  .cf-logic-btn .name { font-weight: 700; font-size: 14px; }
+  .cf-logic-btn .desc { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .cf-calc-result { text-align: center; padding: var(--cf-sp-12); }
+  .cf-calc-total { font-family: var(--cf-font-accent); font-style: italic; font-weight: 700; font-size: 64px; background: var(--cf-gradient-signature); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .cf-calc-breakdown { margin-top: var(--cf-sp-6); text-align: left; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .cf-calc-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 13px; color: rgba(255,255,255,0.7); }
+
+  /* compare table */
+  .cf-cmp-table { width: 100%; max-width: 1100px; border-collapse: collapse; }
+  .cf-cmp-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-align: right; padding: var(--cf-sp-2) var(--cf-sp-4); }
+  .cf-cmp-table th:first-child, .cf-cmp-table td:first-child { text-align: left; }
+  .cf-cmp-table td { text-align: right; padding: var(--cf-sp-3) var(--cf-sp-4); font-size: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .cf-cmp-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  /* tier table */
+  .cf-tier-table { width: 100%; max-width: 800px; }
+  .cf-tier-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--cf-sp-4); padding: var(--cf-sp-4); border-radius: var(--cf-r-md); background: #fff; border: 1px solid rgba(22,14,51,0.08); box-shadow: var(--cf-shadow-sm); margin-bottom: var(--cf-sp-3); align-items: center; }
+  .cf-tier-row.highlight { border-color: var(--cf-coral); box-shadow: var(--cf-shadow-md); }
+
+  /* tier cards */
+  .cf-tcard { border-radius: var(--cf-r-xl); padding: var(--cf-sp-8); text-align: center; }
+  .cf-tcard-rate { font-family: var(--cf-font-accent); font-style: italic; font-weight: 700; font-size: 40px; }
+
+  /* marginal block viz */
+  .cf-block-row { display: flex; align-items: center; gap: var(--cf-sp-3); padding: var(--cf-sp-3) 0; }
+  .cf-block-bar { height: 28px; border-radius: var(--cf-r-xs); background: var(--cf-gradient-signature); }
+  .cf-block-label { width: 220px; font-size: 13px; flex-shrink: 0; }
+  .cf-block-value { width: 140px; text-align: right; font-size: 13px; flex-shrink: 0; }
+
+  .cf-savings-box { border-radius: var(--cf-r-2xl); padding: var(--cf-sp-12); text-align: center; }
+</style>
+</head>
+<body class="cf-scope">
+
+<div id="cf-deck">
+
+  <!-- 1 · COVER -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Laboratório interno · não é material de cliente</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff; max-width: 900px;">
+      Três lógicas. <span class="cf-accent">Vários formatos.</span>
+    </h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 660px; color: rgba(255,255,255,0.7);">
+      Um espaço pra testar como precificar por volume de páginas — a matemática de cada modelo e as formas
+      visuais de mostrar isso numa proposta. Nada aqui está decidido ainda.
+    </p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-16); max-width: 900px;">
+      <div class="cf-card-glass"><div class="cf-h3">A · Faixa única</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">O total de páginas define UMA faixa — todo o pedido é cobrado nela. É o que já está em uso hoje.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">B · Faixa única + micro-tier</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Igual à A, com um degrau extra pra pedidos de 1 a 5 páginas — protege margem no pedido pequeno.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">C · Marginal (por bloco)</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Cada faixa de páginas é cobrada no seu próprio valor, somada — sem "penhasco" de preço, mas com total mais alto.</p></div>
+    </div>
+  </section>
+
+  <!-- 2 · CALCULADORA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Calculadora ao vivo</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Testa <span class="cf-accent">qualquer</span> quantidade</h2>
+    <div class="cf-calc" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-calc-input">
+        <div class="cf-field">
+          <label style="color:rgba(255,255,255,0.7);">Número de páginas</label>
+          <input type="number" id="calc-pages" value="25" min="1" max="200" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.14); color:#fff;">
+        </div>
+        <div>
+          <label class="cf-body-s" style="color:rgba(255,255,255,0.7); font-weight:600; display:block; margin-bottom:var(--cf-sp-2);">Lógica de precificação</label>
+          <button class="cf-logic-btn active" data-logic="A"><div class="name">A · Faixa única</div><div class="desc">1–10: R$2.000 · 11–20: R$1.500 · 21+: R$1.250 (por página, aplicada ao total)</div></button>
+          <button class="cf-logic-btn" data-logic="B"><div class="name">B · Faixa única + micro-tier</div><div class="desc">1–5: R$2.500 · 6–10: R$2.000 · 11–20: R$1.500 · 21+: R$1.250</div></button>
+          <button class="cf-logic-btn" data-logic="C"><div class="name">C · Marginal por bloco</div><div class="desc">Cada bloco de páginas cobrado no seu valor — somado ao final</div></button>
+        </div>
+      </div>
+      <div class="cf-card-glass cf-calc-result">
+        <div class="cf-caption" id="calc-tier-label" style="color:rgba(255,255,255,0.5);">faixa aplicada</div>
+        <div class="cf-calc-total" id="calc-total">R$ 0</div>
+        <div class="cf-caption" id="calc-rate" style="margin-top:var(--cf-sp-2);">R$0/página (efetivo)</div>
+        <div class="cf-calc-breakdown" id="calc-breakdown"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · COMPARATIVO LADO A LADO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Referência rápida</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">As três lógicas, <span class="cf-accent">lado a lado</span></h2>
+    <table class="cf-cmp-table" style="margin-top: var(--cf-sp-8); color:#fff;">
+      <thead><tr><th>Páginas</th><th>A · Faixa única</th><th>B · +micro-tier</th><th>C · Marginal</th></tr></thead>
+      <tbody>
+        <tr><td>5</td><td>R$10.000</td><td>R$12.500</td><td>R$10.000</td></tr>
+        <tr><td>10</td><td>R$20.000</td><td>R$20.000</td><td>R$20.000</td></tr>
+        <tr><td>15</td><td>R$22.500</td><td>R$22.500</td><td>R$27.500</td></tr>
+        <tr><td>20</td><td>R$30.000</td><td>R$30.000</td><td>R$35.000</td></tr>
+        <tr style="background:rgba(244,89,74,0.08);"><td><strong>25 (LF8)</strong></td><td><strong>R$31.250</strong></td><td><strong>R$31.250</strong></td><td><strong>R$41.250</strong></td></tr>
+        <tr><td>30</td><td>R$37.500</td><td>R$37.500</td><td>R$47.500</td></tr>
+        <tr><td>40</td><td>R$50.000</td><td>R$50.000</td><td>R$60.000</td></tr>
+      </tbody>
+    </table>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-6); color: rgba(255,255,255,0.4);">A e B batem com o preço já praticado hoje (25 páginas = R$31.250). C é um modelo de receita diferente — 32% mais caro no mesmo volume.</p>
+  </section>
+
+  <!-- 4 · FORMATO · TABELA EXPLÍCITA (LÓGICA A) -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Formato 1 · Tabela explícita · Lógica A</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Investimento por faixa de páginas</h2>
+    <div class="cf-tier-table" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-tier-row"><div><strong>1 a 10 páginas</strong></div><div style="color:var(--cf-ink-500);">Projetos pontuais</div><div style="text-align:right; font-weight:700;">R$2.000 /página</div></div>
+      <div class="cf-tier-row"><div><strong>11 a 20 páginas</strong></div><div style="color:var(--cf-ink-500);">Lojas em expansão</div><div style="text-align:right; font-weight:700;">R$1.500 /página</div></div>
+      <div class="cf-tier-row highlight"><div><strong>21+ páginas</strong></div><div style="color:var(--cf-ink-500);">Operações completas</div><div style="text-align:right; font-weight:700; color:var(--cf-coral);">R$1.250 /página</div></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-6);">Transparente e fácil de conferir — bom pra compradores que comparam propostas linha a linha.</p>
+  </section>
+
+  <!-- 5 · FORMATO · TABELA COM MICRO-TIER (LÓGICA B) -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Formato 1b · Tabela explícita · Lógica B</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Com degrau pra pedido pequeno</h2>
+    <div class="cf-tier-table" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-tier-row"><div><strong>1 a 5 páginas</strong></div><div style="color:var(--cf-ink-500);">Teste ou página única</div><div style="text-align:right; font-weight:700;">R$2.500 /página</div></div>
+      <div class="cf-tier-row"><div><strong>6 a 10 páginas</strong></div><div style="color:var(--cf-ink-500);">Projetos pontuais</div><div style="text-align:right; font-weight:700;">R$2.000 /página</div></div>
+      <div class="cf-tier-row"><div><strong>11 a 20 páginas</strong></div><div style="color:var(--cf-ink-500);">Lojas em expansão</div><div style="text-align:right; font-weight:700;">R$1.500 /página</div></div>
+      <div class="cf-tier-row highlight"><div><strong>21+ páginas</strong></div><div style="color:var(--cf-ink-500);">Operações completas</div><div style="text-align:right; font-weight:700; color:var(--cf-coral);">R$1.250 /página</div></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-6);">Mesma lógica de A — só protege a margem em pedidos de 1 a 5 páginas, onde o custo fixo de setup pesa mais.</p>
+  </section>
+
+  <!-- 6 · FORMATO · BLOCOS MARGINAIS (LÓGICA C) -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Formato 2 · Blocos empilhados · Lógica C</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Como o marginal <span class="cf-accent">se soma</span></h2>
+    <p class="cf-body-s" style="margin-top:var(--cf-sp-3); color:rgba(255,255,255,0.55);">Exemplo com 25 páginas — cada bloco pago no seu próprio valor:</p>
+    <div style="margin-top: var(--cf-sp-8); max-width: 700px;">
+      <div class="cf-block-row"><div class="cf-block-label">10 págs × R$2.000</div><div class="cf-block-bar" style="width:280px;"></div><div class="cf-block-value">R$20.000</div></div>
+      <div class="cf-block-row"><div class="cf-block-label">10 págs × R$1.500</div><div class="cf-block-bar" style="width:210px;"></div><div class="cf-block-value">R$15.000</div></div>
+      <div class="cf-block-row"><div class="cf-block-label">5 págs × R$1.250</div><div class="cf-block-bar" style="width:87px;"></div><div class="cf-block-value">R$6.250</div></div>
+      <div class="cf-block-row" style="border-top: 1px solid rgba(255,255,255,0.14); margin-top:var(--cf-sp-3); padding-top:var(--cf-sp-4);"><div class="cf-block-label" style="font-weight:700; color:#fff;">Total</div><div class="cf-block-bar" style="width:0;"></div><div class="cf-block-value" style="font-weight:700; color:var(--cf-coral); font-size:18px;">R$41.250</div></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 640px; color: rgba(255,255,255,0.4);">Sem "penhasco" — adicionar 1 página nunca reclassifica as anteriores. Mas o total sobe 32% frente à lógica A/B no mesmo volume.</p>
+  </section>
+
+  <!-- 7 · FORMATO · CARDS POR FAIXA -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Formato 3 · Cards por faixa</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Mesma lógica A, em formato de plano</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-tcard" style="background:#fff; border:1px solid rgba(22,14,51,0.08); box-shadow:var(--cf-shadow-md);">
+        <div class="cf-eyebrow">1–10 páginas</div>
+        <div class="cf-tcard-rate" style="margin-top:var(--cf-sp-3);">R$2.000</div>
+        <div class="cf-caption">por página</div>
+      </div>
+      <div class="cf-tcard" style="background:var(--cf-ink-900); color:#fff; box-shadow:var(--cf-shadow-lg); transform:scale(1.03);">
+        <div class="cf-eyebrow">11–20 páginas</div>
+        <div class="cf-tcard-rate" style="margin-top:var(--cf-sp-3); color:var(--cf-gold);">R$1.500</div>
+        <div class="cf-caption" style="color:rgba(255,255,255,0.5);">por página</div>
+      </div>
+      <div class="cf-tcard" style="background:#fff; border:1px solid rgba(22,14,51,0.08); box-shadow:var(--cf-shadow-md);">
+        <div class="cf-eyebrow">21+ páginas</div>
+        <div class="cf-tcard-rate" style="margin-top:var(--cf-sp-3); color:var(--cf-coral);">R$1.250</div>
+        <div class="cf-caption">por página</div>
+      </div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8);">Mais visual, menos "planilha" — bom pra quem decide olhando rápido, não linha a linha.</p>
+  </section>
+
+  <!-- 8 · FORMATO · ÂNCORA ÚNICO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Formato 4 · Âncora único · o que já está no deck comercial</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 760px;">Sem tabela nenhuma. Só o número, já calculado.</h2>
+    <div class="cf-card-glass" style="margin-top: var(--cf-sp-8); max-width: 620px; text-align:center; padding: var(--cf-sp-16);">
+      <div class="cf-calc-total" style="font-size:56px;">R$ 31.250,00</div>
+      <p class="cf-body-s" style="margin-top: var(--cf-sp-4);">25 páginas · Lab8 (15) + Fluy (10) · R$1.250/página</p>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 640px; color: rgba(255,255,255,0.4);">A tabela existe, mas fica de reserva — só entra na conversa se o cliente pedir o detalhamento.</p>
+  </section>
+
+  <!-- 9 · JUNTE E ECONOMIZE -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Formato 5 · O argumento do bundling</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Separado custa mais do que junto</h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-light">
+        <div class="cf-eyebrow">Cotado separado</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-3);">Lab8 (15 págs, faixa 11–20) — R$22.500<br>Fluy (10 págs, faixa 1–10) — R$20.000</p>
+        <div class="cf-h1" style="margin-top:var(--cf-sp-6); color:var(--cf-ink-400); text-decoration: line-through;">R$42.500</div>
+      </div>
+      <div class="cf-card-light" style="background:var(--cf-ink-900); color:#fff;">
+        <div class="cf-eyebrow">Cotado como Grupo</div>
+        <p class="cf-body-s" style="color:rgba(255,255,255,0.6); margin-top:var(--cf-sp-3);">Lab8 + Fluy juntas (25 págs, faixa 21+)</p>
+        <div class="cf-h1" style="margin-top:var(--cf-sp-6); color:var(--cf-gold);">R$31.250</div>
+      </div>
+    </div>
+    <div class="cf-savings-box cf-card-light" style="margin-top: var(--cf-sp-8); max-width: 500px; background: rgba(90,158,109,0.08); border-color: rgba(90,158,109,0.3);">
+      <p class="cf-body-1" style="margin:0; color: var(--cf-positive); font-weight:700;">Economia de R$11.250 (26%) ao unificar as duas marcas num projeto só.</p>
+    </div>
+  </section>
+
+  <!-- 10 · FECHAMENTO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Pra decidir</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">Qual lógica, qual formato — ou uma mistura?</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Lógica</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">A, B ou C — muda receita, não só visual</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Formato</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Tabela, blocos, cards, âncora ou bundling — muda como o cliente lê o número</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Por segmento</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Nada impede usar formatos diferentes pra perfis diferentes de cliente</p></div>
+    </div>
+  </section>
+
+</div>
+
+<div id="cf-deck-rail"></div>
+<div class="cf-deck-nav">
+  <button id="cf-deck-prev" aria-label="Anterior">←</button>
+  <span id="cf-deck-counter">1 / 10</span>
+  <button id="cf-deck-next" aria-label="Próximo">→</button>
+  <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
+</div>
+
+<script src="../../slides/deck-stage.js"></script>
+<script>
+(function () {
+  var TIERS_A = [[1,10,2000],[11,20,1500],[21,Infinity,1250]];
+  var TIERS_B = [[1,5,2500],[6,10,2000],[11,20,1500],[21,Infinity,1250]];
+
+  function wholeTier(pages, tiers) {
+    for (var i = 0; i < tiers.length; i++) {
+      if (pages >= tiers[i][0] && pages <= tiers[i][1]) {
+        return { rate: tiers[i][2], label: tiers[i][1] === Infinity ? (tiers[i][0] + '+ páginas') : (tiers[i][0] + '–' + tiers[i][1] + ' páginas') };
+      }
+    }
+    return { rate: tiers[tiers.length - 1][2], label: 'faixa máxima' };
+  }
+
+  function marginal(pages, tiers) {
+    var remaining = pages;
+    var total = 0;
+    var breakdown = [];
+    for (var i = 0; i < tiers.length; i++) {
+      var bandSize = (tiers[i][1] === Infinity ? remaining : tiers[i][1] - tiers[i][0] + 1);
+      var used = Math.min(remaining, bandSize);
+      if (used <= 0) break;
+      total += used * tiers[i][2];
+      breakdown.push(used + ' págs × R$' + tiers[i][2].toLocaleString('pt-BR'));
+      remaining -= used;
+      if (remaining <= 0) break;
+    }
+    return { total: total, breakdown: breakdown };
+  }
+
+  function fmt(n) { return 'R$ ' + Math.round(n).toLocaleString('pt-BR'); }
+
+  function update() {
+    var pages = parseInt(document.getElementById('calc-pages').value, 10) || 0;
+    var logic = document.querySelector('.cf-logic-btn.active').getAttribute('data-logic');
+    var totalEl = document.getElementById('calc-total');
+    var tierLabelEl = document.getElementById('calc-tier-label');
+    var rateEl = document.getElementById('calc-rate');
+    var breakdownEl = document.getElementById('calc-breakdown');
+    breakdownEl.innerHTML = '';
+
+    if (logic === 'A' || logic === 'B') {
+      var tiers = logic === 'A' ? TIERS_A : TIERS_B;
+      var r = wholeTier(pages, tiers);
+      var total = pages * r.rate;
+      totalEl.textContent = fmt(total);
+      tierLabelEl.textContent = 'faixa aplicada: ' + r.label;
+      rateEl.textContent = 'R$' + r.rate.toLocaleString('pt-BR') + '/página (todas as ' + pages + ' páginas)';
+    } else {
+      var m = marginal(pages, TIERS_A);
+      totalEl.textContent = fmt(m.total);
+      tierLabelEl.textContent = 'soma de ' + m.breakdown.length + ' blocos';
+      rateEl.textContent = fmt(m.total / pages) + '/página (efetivo, médio)';
+      m.breakdown.forEach(function (line) {
+        var row = document.createElement('div');
+        row.className = 'cf-calc-row';
+        row.textContent = line;
+        breakdownEl.appendChild(row);
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('calc-pages').addEventListener('input', update);
+    document.querySelectorAll('.cf-logic-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.cf-logic-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        update();
+      });
+    });
+    update();
+  });
+})();
+</script>
+</body>
+</html>
