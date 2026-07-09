@@ -22,9 +22,11 @@
   .cf-friction-item { border-top: 3px solid var(--cf-violet); padding-top: var(--cf-sp-3); }
 
   .cf-friction-table { display: flex; flex-direction: column; gap: 6px; }
-  .cf-friction-head { display: grid; grid-template-columns: 60px 1.3fr 1fr 1.4fr; gap: var(--cf-sp-4); padding: 0 var(--cf-sp-4); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); font-weight: 700; }
-  .cf-friction-tr { display: grid; grid-template-columns: 60px 1.3fr 1fr 1.4fr; gap: var(--cf-sp-4); padding: 10px var(--cf-sp-4); border-radius: var(--cf-r-sm); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); align-items: center; }
+  .cf-friction-head { display: grid; grid-template-columns: 130px 1.3fr 1fr 1.4fr; gap: var(--cf-sp-4); padding: 0 var(--cf-sp-4); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); font-weight: 700; }
+  .cf-friction-tr { display: grid; grid-template-columns: 130px 1.3fr 1fr 1.4fr; gap: var(--cf-sp-4); padding: 10px var(--cf-sp-4); border-radius: var(--cf-r-sm); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); align-items: center; }
+  .cf-friction-id { display: flex; align-items: baseline; gap: 6px; }
   .cf-friction-code { font-weight: 800; color: var(--cf-coral); font-size: 14px; }
+  .cf-friction-name { font-size: 12px; color: rgba(255,255,255,0.55); }
   .cf-friction-tr .cf-body-s { font-size: 12.5px; line-height: 1.35; margin: 0; }
 
   .cf-flow { display: flex; align-items: stretch; gap: var(--cf-sp-3); max-width: 1100px; flex-wrap: wrap; }
@@ -107,14 +109,14 @@
     <div class="cf-eyebrow">Onde a venda se perde</div>
     <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Sete fricções. <span class="cf-accent">Um padrão.</span></h2>
     <div class="cf-friction-table" style="margin-top: var(--cf-sp-6); max-width: 1060px;">
-      <div class="cf-friction-head"><div></div><div>Pergunta central do visitante</div><div>Emoção dominante</div><div>Princípio científico</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">F</div><div class="cf-body-s">Vale o preço? Estou pagando justo?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Medo de desperdiçar dinheiro</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Aversão à perda (Kahneman): perder dói 2× mais que ganhar</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">FN</div><div class="cf-body-s">Sei o que vou receber? Funciona pra mim?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Incerteza e confusão</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Carga cognitiva (Hick): dúvidas paralisam a decisão</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">S</div><div class="cf-body-s">Posso confiar? É sério? Não é golpe?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Desconfiança</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Prova social (Cialdini): decidimos olhando o que outros fizeram</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">T</div><div class="cf-body-s">E se der errado depois? Demora? Tem troca?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Ansiedade pós-compra</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Redução de risco: garantia elimina a última barreira</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">I</div><div class="cf-body-s">Tenho informação suficiente pra decidir agora?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Procrastinação</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Efeito de dotação: sem informação completa, o visitante "espera mais"</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">C</div><div class="cf-body-s">Isso é melhor do que o que já conheço?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Necessidade de validação</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Ancoragem: comparação com referência define o valor percebido</div></div>
-      <div class="cf-friction-tr"><div class="cf-friction-code">P</div><div class="cf-body-s">Isso é realmente pra mim? Me vejo usando isso?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Falta de identificação</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Identidade de consumo: compramos o que reforça quem queremos ser</div></div>
+      <div class="cf-friction-head"><div>Tipo</div><div>Pergunta central do visitante</div><div>Emoção dominante</div><div>Princípio científico</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">F</span><span class="cf-friction-name">Financeira</span></div><div class="cf-body-s">Vale o preço? Estou pagando justo?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Medo de desperdiçar dinheiro</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Aversão à perda (Kahneman): perder dói 2× mais que ganhar</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">FN</span><span class="cf-friction-name">Funcional</span></div><div class="cf-body-s">Sei o que vou receber? Funciona pra mim?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Incerteza e confusão</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Carga cognitiva (Hick): dúvidas paralisam a decisão</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">S</span><span class="cf-friction-name">Social</span></div><div class="cf-body-s">Posso confiar? É sério? Não é golpe?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Desconfiança</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Prova social (Cialdini): decidimos olhando o que outros fizeram</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">T</span><span class="cf-friction-name">Temporal</span></div><div class="cf-body-s">E se der errado depois? Demora? Tem troca?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Ansiedade pós-compra</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Redução de risco: garantia elimina a última barreira</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">I</span><span class="cf-friction-name">Informacional</span></div><div class="cf-body-s">Tenho informação suficiente pra decidir agora?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Procrastinação</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Efeito de dotação: sem informação completa, o visitante "espera mais"</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">C</span><span class="cf-friction-name">Comparativa</span></div><div class="cf-body-s">Isso é melhor do que o que já conheço?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Necessidade de validação</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Ancoragem: comparação com referência define o valor percebido</div></div>
+      <div class="cf-friction-tr"><div class="cf-friction-id"><span class="cf-friction-code">P</span><span class="cf-friction-name">Psicológica</span></div><div class="cf-body-s">Isso é realmente pra mim? Me vejo usando isso?</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Falta de identificação</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Identidade de consumo: compramos o que reforça quem queremos ser</div></div>
     </div>
   </section>
 
@@ -143,7 +145,7 @@
 
   <!-- 7 · AS 5 ETAPAS -->
   <section class="cf-slide cf-surface-light">
-    <div class="cf-eyebrow">Etapas do processo</div>
+    <div class="cf-eyebrow">Etapas do processo · parte 1</div>
     <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 700px;">Do onboarding à implementação</h2>
     <div class="cf-flow" style="margin-top: var(--cf-sp-8);">
       <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-num">01</div><div class="cf-h3" style="margin-top:var(--cf-sp-2);">Onboarding</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Documentos da marca, formulário de contexto, tudo sobre negócio, produtos e público.</p></div>
@@ -159,7 +161,21 @@
     <p class="cf-body-1" style="margin-top: var(--cf-sp-8); max-width: 640px; font-style: italic; color: var(--cf-ink-700);">A diferença não está apenas no design. Está no diagnóstico que vem antes dele.</p>
   </section>
 
-  <!-- 8 · O APP -->
+  <!-- 8 · ETAPAS 06-08 · FIGMA, APP, MENSURAÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Etapas do processo · parte 2</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 760px;">Do Figma ao <span class="cf-accent">resultado medido</span></h2>
+    <div class="cf-flow" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-flow-step"><div class="cf-flow-num">06</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); color:#fff;">Design &amp; Aprovação</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2); color:rgba(255,255,255,0.6);">Nossa equipe traduz a estratégia em página real no Figma. Nada vai pro ar sem o seu "sim".</p></div>
+      <div class="cf-flow-arrow">→</div>
+      <div class="cf-flow-step"><div class="cf-flow-num">07</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); color:#fff;">Publicação</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2); color:rgba(255,255,255,0.6);">A página aprovada vai ao ar no App Convertfly, com tracking configurado antes de publicar.</p></div>
+      <div class="cf-flow-arrow">→</div>
+      <div class="cf-flow-step"><div class="cf-flow-num">08</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); color:#fff;">Mensuração</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2); color:rgba(255,255,255,0.6);">O Mauro acompanha os indicadores de conversão e entrega o relatório de resultado.</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 640px; color: rgba(255,255,255,0.4);">Do onboarding ao relatório de resultado, o projeto completo — entrega + mensuração — dura em média 90 a 120 dias.</p>
+  </section>
+
+  <!-- 9 · O APP -->
   <section class="cf-slide cf-surface-dark cf-hero-bg">
     <div class="cf-eyebrow">A tecnologia</div>
     <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O <span class="cf-accent">App Convertfly</span></h2>
@@ -180,25 +196,25 @@
     </div>
   </section>
 
-  <!-- 9 · DEPOIMENTO -->
+  <!-- 10 · DEPOIMENTO -->
   <section class="cf-slide cf-surface-light">
     <div class="cf-eyebrow">Depoimento</div>
     <div class="cf-card-light" style="margin-top: var(--cf-sp-8); max-width: 780px; padding: var(--cf-sp-12);">
       <p class="cf-h2" style="font-weight: 500; line-height:1.4;">
-        "Em 60 dias, a nova página de produto subiu nossa conversão de 1,9% para <span class="cf-accent">4,3%</span>.
-        A diferença não foi tráfego. Foi a estrutura."
+        "No primeiro ano de operação com o site todo construído pela Convertfly, batemos uma média de
+        <span class="cf-accent">3,5%</span> de taxa de conversão. A diferença não foi tráfego. Foi a estrutura."
       </p>
       <div style="display:flex; align-items:center; gap:var(--cf-sp-4); margin-top: var(--cf-sp-8);">
-        <div style="width:48px; height:48px; border-radius:50%; background:var(--cf-gradient-signature); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800;">AC</div>
+        <div style="width:48px; height:48px; border-radius:50%; background:var(--cf-gradient-signature); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800;">JL</div>
         <div>
-          <div class="cf-body" style="font-weight:700;">Ana Cardoso</div>
-          <div class="cf-caption">Founder · Juleme Hair · cliente desde 2024</div>
+          <div class="cf-body" style="font-weight:700;">Juliana Leme</div>
+          <div class="cf-caption">Fundadora · Juleme Hair · criadora de conteúdo, +5 milhões de seguidores</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10 · CONFIADO POR -->
+  <!-- 11 · CONFIADO POR -->
   <section class="cf-slide cf-surface-dark cf-hero-bg">
     <div class="cf-eyebrow">Confiado por</div>
     <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Marcas de segmentos <span class="cf-accent">diferentes</span>, um mesmo método</h2>
@@ -213,7 +229,7 @@
     </div>
   </section>
 
-  <!-- 11 · O PROJETO PRA GRUPO LF8 -->
+  <!-- 12 · O PROJETO PRA GRUPO LF8 -->
   <section class="cf-slide cf-surface-light">
     <div class="cf-eyebrow">O projeto</div>
     <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Duas marcas, um projeto coordenado</h2>
@@ -235,7 +251,7 @@
     </p>
   </section>
 
-  <!-- 12 · O QUE CADA TIPO DE PÁGINA RESOLVE -->
+  <!-- 13 · O QUE CADA TIPO DE PÁGINA RESOLVE -->
   <section class="cf-slide cf-surface-dark cf-hero-bg">
     <div class="cf-eyebrow">Estrutura do projeto</div>
     <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O kit de páginas disponível</h2>
@@ -248,7 +264,7 @@
     </div>
   </section>
 
-  <!-- 13 · SLOTS + TREINAMENTO -->
+  <!-- 14 · SLOTS + TREINAMENTO -->
   <section class="cf-slide cf-surface-light">
     <div class="cf-eyebrow">Escalabilidade</div>
     <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Pensado para crescer depois do go-live</h2>
@@ -259,12 +275,36 @@
     </div>
   </section>
 
-  <!-- 14 · MENSALIDADE DO APP -->
+  <!-- 15 · O INVESTIMENTO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">O investimento</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 760px;">Separado custa mais do que junto.</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 660px; color: rgba(255,255,255,0.7);">
+      A cada R$1.000 investidos em tráfego, R$991 saem sem retorno — em duas lojas rodando ao mesmo tempo,
+      isso se multiplica todo mês.
+    </p>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-glass" style="opacity:0.7;">
+        <div class="cf-eyebrow">Cotado separado</div>
+        <p class="cf-body-s" style="margin-top:var(--cf-sp-3);">Lab8 (15 págs) — R$22.500<br>Fluy (10 págs) — R$20.000</p>
+        <div class="cf-h1" style="margin-top:var(--cf-sp-6); color:rgba(255,255,255,0.5); text-decoration:line-through;">R$42.500</div>
+      </div>
+      <div class="cf-anchor-box cf-card-glass" style="border-color: var(--cf-coral);">
+        <div class="cf-eyebrow">Cotado como Grupo LF8</div>
+        <div class="cf-invest-value" style="margin-top:var(--cf-sp-3); font-size:44px;">R$ 31.250,00</div>
+        <p class="cf-body-s" style="margin-top: var(--cf-sp-4);">25 páginas · Lab8 (15) + Fluy (10) · R$1.250/página · investimento único</p>
+        <p class="cf-caption" style="margin-top: var(--cf-sp-4); color: rgba(255,255,255,0.5);">PIX com 10% off à vista, ou boleto em até 10x sem juros</p>
+      </div>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-8); color: var(--cf-positive); font-weight:700;">Economia de R$11.250 (26%) ao unificar as duas marcas num projeto só.</p>
+  </section>
+
+  <!-- 16 · MENSALIDADE DO APP -->
   <section class="cf-slide cf-surface-light">
     <div class="cf-eyebrow">Custo recorrente</div>
     <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">O que continua depois do go-live</h2>
     <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 660px; color: var(--cf-ink-500);">
-      Implementação é investimento único. A partir daí, a mensalidade do App Convertfly acompanha
+      A implementação é investimento único. A partir daí, a mensalidade do App Convertfly acompanha
       quantos slots de página sua operação usa — sem pacote fixo, sem pagar por mais do que precisa.
     </p>
     <div class="cf-grid-4" style="margin-top: var(--cf-sp-8); max-width: 900px;">
@@ -273,25 +313,9 @@
       <div class="cf-card-light" style="text-align:center;"><div class="cf-eyebrow">15 slots</div><div class="cf-h2" style="margin-top:var(--cf-sp-2);">R$249</div><div class="cf-caption">/mês</div></div>
       <div class="cf-card-light" style="text-align:center;"><div class="cf-eyebrow">20 slots</div><div class="cf-h2" style="margin-top:var(--cf-sp-2);">R$299</div><div class="cf-caption">/mês</div></div>
     </div>
-    <p class="cf-caption" style="margin-top: var(--cf-sp-6); max-width: 700px;">Implementação Convertfly: R$1.250 (padrão) — R$5.200 se a loja usar Tema Flex.</p>
   </section>
 
-  <!-- 15 · O INVESTIMENTO -->
-  <section class="cf-slide cf-surface-dark cf-hero-bg">
-    <div class="cf-eyebrow">O investimento</div>
-    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 760px;">Compare com o que já está saindo hoje.</h2>
-    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 660px; color: rgba(255,255,255,0.7);">
-      A cada R$1.000 investidos em tráfego, R$991 saem sem retorno — em duas lojas rodando ao mesmo tempo,
-      isso se multiplica todo mês. O projeto para Lab8 + Fluy:
-    </p>
-    <div class="cf-anchor-box cf-card-glass" style="margin-top: var(--cf-sp-8); max-width: 620px;">
-      <div class="cf-invest-value">R$ 31.250,00</div>
-      <p class="cf-body-s" style="margin-top: var(--cf-sp-4);">25 páginas · Lab8 (15) + Fluy (10) · R$1.250/página · investimento único</p>
-      <p class="cf-caption" style="margin-top: var(--cf-sp-4); color: rgba(255,255,255,0.5);">PIX com 10% off à vista, ou boleto em até 10x sem juros</p>
-    </div>
-  </section>
-
-  <!-- 16 · FECHAMENTO -->
+  <!-- 17 · FECHAMENTO -->
   <section class="cf-slide cf-surface-dark cf-hero-bg">
     <div class="cf-eyebrow">Vamos conversar</div>
     <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">Vamos acelerar as vendas da Lab8 e da <span class="cf-accent">Fluy</span>?</h2>
@@ -303,7 +327,7 @@
 <div id="cf-deck-rail"></div>
 <div class="cf-deck-nav">
   <button id="cf-deck-prev" aria-label="Anterior">←</button>
-  <span id="cf-deck-counter">1 / 16</span>
+  <span id="cf-deck-counter">1 / 17</span>
   <button id="cf-deck-next" aria-label="Próximo">→</button>
   <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
 </div>
