@@ -26,8 +26,13 @@
   .cf-arch-card { border-radius: var(--cf-r-xl); padding: var(--cf-sp-6); }
 
   .cf-flow { display: flex; align-items: stretch; gap: var(--cf-sp-2); max-width: 1150px; flex-wrap: wrap; }
-  .cf-flow-step { flex: 1; min-width: 130px; padding: var(--cf-sp-4); border-radius: var(--cf-r-lg); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+  .cf-flow-step { flex: 1; min-width: 130px; min-height: 150px; padding: var(--cf-sp-4); border-radius: var(--cf-r-lg); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; }
   .cf-flow-time { font-size: 11px; color: var(--cf-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .cf-name-group { margin-bottom: var(--cf-sp-6); }
+  .cf-name-group-label { font-size: 12px; font-weight: 700; color: var(--cf-gold); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: var(--cf-sp-3); }
+  .cf-name-wall { display: flex; flex-wrap: wrap; gap: var(--cf-sp-3); }
+  .cf-name-chip { padding: 10px 20px; border-radius: var(--cf-r-pill); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); font-weight: 700; font-size: 15px; color: #fff; }
 
   .cf-role-row { display: flex; gap: var(--cf-sp-3); align-items: flex-start; padding: var(--cf-sp-3) 0; border-bottom: 1px solid rgba(22,14,51,0.08); }
 </style>
@@ -171,12 +176,58 @@
     </div>
   </section>
 
+  <!-- 9B · NOME DO PROGRAMA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">09 · Nome do programa · pra votação com o time</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Algumas <span class="cf-accent">direções</span>, por estilo</h2>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-6); max-width: 1000px;">
+      <div class="cf-name-group">
+        <div class="cf-name-group-label">Marca direta</div>
+        <div class="cf-name-wall">
+          <span class="cf-name-chip">Convertfly Cast</span>
+          <span class="cf-name-chip">Convertfly Talks</span>
+          <span class="cf-name-chip">Convertfly ao Vivo</span>
+        </div>
+      </div>
+      <div class="cf-name-group">
+        <div class="cf-name-group-label">Conceito do método</div>
+        <div class="cf-name-wall">
+          <span class="cf-name-chip">Mapa da Conversão</span>
+          <span class="cf-name-chip">O Argumento</span>
+          <span class="cf-name-chip">Estrutura</span>
+        </div>
+      </div>
+      <div class="cf-name-group">
+        <div class="cf-name-group-label">A PDP como vendedor 24/7</div>
+        <div class="cf-name-wall">
+          <span class="cf-name-chip">O Vendedor Nunca Dorme</span>
+          <span class="cf-name-chip">Loja Aberta</span>
+        </div>
+      </div>
+      <div class="cf-name-group">
+        <div class="cf-name-group-label">Tom descontraído (do próprio convite)</div>
+        <div class="cf-name-wall">
+          <span class="cf-name-chip">Café com Conversão</span>
+          <span class="cf-name-chip">Direto ao Ponto</span>
+        </div>
+      </div>
+      <div class="cf-name-group">
+        <div class="cf-name-group-label">Curto, estilo podcast de negócio</div>
+        <div class="cf-name-wall">
+          <span class="cf-name-chip">Fly Talks</span>
+          <span class="cf-name-chip">Conversão em Foco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 10 · FECHAMENTO -->
   <section class="cf-slide cf-surface-light">
     <div class="cf-eyebrow">Próximo passo</div>
     <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Agora descemos pro roteiro de cada convidado</h2>
     <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 660px; color: var(--cf-ink-500);">
       Com a constituição fechada, cada episódio herda o recorte, a mensagem e o blueprint — só ajusta o que muda por convidado.
+      O mini dossiê de cada um (roteiro + perfil) está no próximo material.
     </p>
   </section>
 
@@ -185,7 +236,7 @@
 <div id="cf-deck-rail"></div>
 <div class="cf-deck-nav">
   <button id="cf-deck-prev" aria-label="Anterior">←</button>
-  <span id="cf-deck-counter">1 / 10</span>
+  <span id="cf-deck-counter">1 / 11</span>
   <button id="cf-deck-next" aria-label="Próximo">→</button>
   <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
 </div>
