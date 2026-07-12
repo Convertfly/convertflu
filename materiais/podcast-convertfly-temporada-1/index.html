@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Podcast Convertfly · Temporada 1</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../slides/deck-stage.css">
+<style>
+  body { margin: 0; font-family: var(--cf-font-body); }
+  .cf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cf-sp-8); }
+  .cf-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cf-sp-6); }
+  .cf-scroll-area { max-height: 62vh; overflow-y: auto; padding-right: var(--cf-sp-2); }
+
+  .cf-topic-wall { display:flex; flex-wrap:wrap; gap: var(--cf-sp-3); }
+  .cf-topic-chip { padding: 8px 18px; border-radius: var(--cf-r-pill); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); font-weight: 600; font-size: 14px; color: rgba(255,255,255,0.85); }
+  .cf-topic-chip.anchor { background: rgba(244,89,74,0.15); border-color: var(--cf-coral); color: #fff; }
+
+  .cf-guest-row { display: grid; grid-template-columns: 90px 1fr 1fr 140px; gap: var(--cf-sp-4); padding: var(--cf-sp-3) var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); align-items: center; margin-bottom: 6px; }
+  .cf-guest-row.head { background: transparent; border: none; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); font-weight: 700; }
+  .cf-guest-time { font-weight: 700; color: var(--cf-gold); font-size: 13px; }
+  .cf-guest-name { font-weight: 700; font-size: 14px; }
+  .cf-guest-co { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  .cf-arch-card { border-radius: var(--cf-r-xl); padding: var(--cf-sp-6); }
+
+  .cf-flow { display: flex; align-items: stretch; gap: var(--cf-sp-2); max-width: 1150px; flex-wrap: wrap; }
+  .cf-flow-step { flex: 1; min-width: 130px; padding: var(--cf-sp-4); border-radius: var(--cf-r-lg); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+  .cf-flow-time { font-size: 11px; color: var(--cf-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .cf-role-row { display: flex; gap: var(--cf-sp-3); align-items: flex-start; padding: var(--cf-sp-3) 0; border-bottom: 1px solid rgba(22,14,51,0.08); }
+</style>
+</head>
+<body class="cf-scope">
+
+<div id="cf-deck">
+
+  <!-- 1 · COVER -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Projeto interno · não é material de cliente</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff; max-width: 880px;">
+      Podcast Convertfly <span class="cf-accent">Temporada 1</span>
+    </h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 620px; color: rgba(255,255,255,0.7);">
+      A constituição do projeto — propósito, recorte, convidados e produção — antes de descer pro roteiro de cada episódio.
+    </p>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-16); color: rgba(255,255,255,0.4);">Título de programa: a definir · nome de trabalho usado neste documento</p>
+  </section>
+
+  <!-- 2 · PROPÓSITO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">01 · Propósito</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">Prova <span class="cf-accent">e</span> categoria — por arquétipo de convidado</h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-glass">
+        <div class="cf-h3">Com cliente real</div>
+        <p class="cf-body-s" style="margin-top:var(--cf-sp-3);">O Conversion Map™ funcionando de verdade — com resultado que existe fora do discurso da Convertfly.</p>
+      </div>
+      <div class="cf-card-glass">
+        <div class="cf-h3">Com parceiro de mercado</div>
+        <p class="cf-body-s" style="margin-top:var(--cf-sp-3);">A categoria "tech partner de conversão" ganhando validação de quem é dono da plataforma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · RECORTE DE CONTEÚDO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">02 · Recorte de conteúdo</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 760px;">Convertfly é o centro gravitacional — não a cerca</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 680px; color: rgba(255,255,255,0.7);">
+      Uma hora só falando de página fica monótono. A conversa respira largo — mas sempre volta pro método.
+    </p>
+    <div class="cf-topic-wall" style="margin-top: var(--cf-sp-8); max-width: 800px;">
+      <span class="cf-topic-chip anchor">Páginas · App · Conversion Map™</span>
+      <span class="cf-topic-chip">Operação do lojista</span>
+      <span class="cf-topic-chip">Desafios do ano</span>
+      <span class="cf-topic-chip">Conversão</span>
+      <span class="cf-topic-chip">Logística</span>
+      <span class="cf-topic-chip">CRM</span>
+      <span class="cf-topic-chip">D2C</span>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); color: rgba(255,255,255,0.4);">A regra não é "só fala de página" — é "sempre volta pra página".</p>
+  </section>
+
+  <!-- 4 · AUDIÊNCIA-ALVO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">03 · Audiência-alvo</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Majoritariamente quem já é cliente</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 660px; color: var(--cf-ink-500);">
+      T1 constrói prova com quem já está dentro. A abertura pro mercado/imprensa é o Capítulo 3 — não esta temporada.
+    </p>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-light"><div class="cf-h3">5 clientes</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Aevi, Lustres Gênesis, Lola, Juleme Hair (a confirmar) — prova real, resultado real</p></div>
+      <div class="cf-card-light"><div class="cf-h3">1 parceiro + 1 mercado</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Rafael (Nuvemshop) valida de fora · Dener (mercado/prospect) traz referência externa</p></div>
+    </div>
+  </section>
+
+  <!-- 5 · CRONOGRAMA REAL -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">04 · Cronograma confirmado</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">22 e 23 de julho · <span class="cf-accent">presencial</span></h2>
+    <p class="cf-caption" style="margin-top:var(--cf-sp-2); color:rgba(255,255,255,0.5);">Rua Cavazzola, 101 · Vila Nova Conceição · São Paulo/SP</p>
+    <div style="margin-top: var(--cf-sp-6); max-width: 900px;">
+      <div class="cf-guest-row head"><div>Horário</div><div>Convidado</div><div>Empresa</div><div>Host</div></div>
+      <div class="cf-guest-row"><div class="cf-guest-time">22/07 · 15:30</div><div class="cf-guest-name">Rafael Melaragno</div><div class="cf-guest-co">Nuvemshop</div><div class="cf-body-s">Breno</div></div>
+      <div class="cf-guest-row"><div class="cf-guest-time">22/07 · 17:30</div><div class="cf-guest-name">Dener Balisio</div><div class="cf-guest-co">Nuvemshop Next</div><div class="cf-body-s">Breno</div></div>
+      <div class="cf-guest-row"><div class="cf-guest-time">22/07 · 19:30</div><div class="cf-guest-name">Pedro Sanchez</div><div class="cf-guest-co">Juleme Hair</div><div class="cf-body-s">Breno + Bruno</div></div>
+      <div class="cf-guest-row"><div class="cf-guest-time">23/07 · 15:30</div><div class="cf-guest-name">Alan Romeo</div><div class="cf-guest-co">Aevi</div><div class="cf-body-s">Breno + Bruno</div></div>
+      <div class="cf-guest-row"><div class="cf-guest-time">23/07 · 17:30</div><div class="cf-guest-name">Yuri Manzolli</div><div class="cf-guest-co">Lustres Gênesis</div><div class="cf-body-s">Breno</div></div>
+      <div class="cf-guest-row"><div class="cf-guest-time">23/07 · 19:30</div><div class="cf-guest-name">Felipe e Rayane</div><div class="cf-guest-co">Lola Joalheria · Cássia (gerente geral) também presente</div><div class="cf-body-s">Breno + Bruno</div></div>
+    </div>
+  </section>
+
+  <!-- 6 · ARQUÉTIPOS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">05 · Arquétipos</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Nem todos viveram o método — e tudo bem</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-arch-card" style="background:#fff; border:1px solid rgba(22,14,51,0.08); box-shadow:var(--cf-shadow-md);">
+        <span class="cf-tag cf-tag--novo">Método em ação</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Alan Romeo</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Único que viveu Research, Canvas PDP e OPS por dentro. Pode falar do processo, não só do resultado.</p>
+      </div>
+      <div class="cf-arch-card" style="background:#fff; border:1px solid rgba(22,14,51,0.08); box-shadow:var(--cf-shadow-md);">
+        <span class="cf-tag cf-tag--beta">Aposta antes do método ter nome</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Yuri · Felipe/Rayane · Pedro</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Trabalho anterior ao Conversion Map™ formalizado. A prova é a fidelidade, não a sessão de Canvas.</p>
+      </div>
+      <div class="cf-arch-card" style="background:#fff; border:1px solid rgba(22,14,51,0.08); box-shadow:var(--cf-shadow-md);">
+        <span class="cf-tag cf-tag--category">Mercado &amp; parceiro</span>
+        <div class="cf-h3" style="margin-top:var(--cf-sp-3);">Dener · Rafael</div>
+        <p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Dener não é cliente — referência de mercado. Rafael valida de dentro da Nuvemshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · PRODUÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">06 · Produção</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Quem faz o quê</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Hosts</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Breno em todas · Bruno entra nas conversas mais técnicas de página (Pedro, Alan, Felipe/Rayane)</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Presentes</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Bia e Mauro no evento — prova de time completo em cena, não só o fundador vendendo</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Captação &amp; cortes</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Jesiel — filmmaker responsável pela gravação e pela edição dos cortes depois</p></div>
+    </div>
+  </section>
+
+  <!-- 8 · BLUEPRINT DO EPISÓDIO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">07 · Blueprint de episódio</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">A estrutura que se repete, com espaço pro que muda</h2>
+    <div class="cf-flow" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-time">0:00–0:45</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); font-size:16px;">Cold open</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Melhor trecho, sem intro</p></div>
+      <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-time">0:45–8:00</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); font-size:16px;">Contexto</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Quem é, escala real</p></div>
+      <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-time">8:00–18:00</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); font-size:16px;">Tensão</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">A virada, o quase-desistir</p></div>
+      <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-time">18:00–35:00</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); font-size:16px;">Diagnóstico</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Bloco mais denso — só o Alan ganha um sub-bloco de processo aqui</p></div>
+      <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-time">35:00–42:00</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); font-size:16px;">Futuro</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">A aposta pro ano que vem</p></div>
+      <div class="cf-flow-step" style="background:#fff; border-color:rgba(22,14,51,0.08);"><div class="cf-flow-time">42:00–50:00</div><div class="cf-h3" style="margin-top:var(--cf-sp-2); font-size:16px;">Legado + CTA</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Pergunta de conselho, fechamento</p></div>
+    </div>
+  </section>
+
+  <!-- 9 · ONDE DESEMBOCA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">08 · Onde desemboca</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">A prova desta temporada <span class="cf-accent">vira material</span></h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Portfólio de cases</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Fala exata do cliente — não hipótese do agente</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Comercial &amp; institucional</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Cortes fortalecem A1 e A2 — reforça clientes grandes e top projetos</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Capítulo 3 · O Palco</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Lastro real pro D2C Summit de outubro — aí sim a mensagem vira 100% categoria</p></div>
+    </div>
+  </section>
+
+  <!-- 10 · FECHAMENTO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Próximo passo</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Agora descemos pro roteiro de cada convidado</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 660px; color: var(--cf-ink-500);">
+      Com a constituição fechada, cada episódio herda o recorte, a mensagem e o blueprint — só ajusta o que muda por convidado.
+    </p>
+  </section>
+
+</div>
+
+<div id="cf-deck-rail"></div>
+<div class="cf-deck-nav">
+  <button id="cf-deck-prev" aria-label="Anterior">←</button>
+  <span id="cf-deck-counter">1 / 10</span>
+  <button id="cf-deck-next" aria-label="Próximo">→</button>
+  <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
+</div>
+
+<script src="../../slides/deck-stage.js"></script>
+</body>
+</html>
