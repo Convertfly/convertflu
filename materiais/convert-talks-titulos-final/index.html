@@ -33,7 +33,11 @@
     color: rgba(255,255,255,0.6); margin-bottom: var(--cf-sp-4);
   }
   .doc-hero h1 { font-size: 38px; font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; max-width: 700px; }
-  .doc-hero p { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.72); margin-top: var(--cf-sp-4); max-width: 640px; }
+  .doc-hero p { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.72); margin-top: var(--cf-sp-4); max-width: 680px; }
+  .doc-hero code {
+    font-family: 'Courier New', monospace; background: rgba(255,255,255,0.1); padding: 2px 8px;
+    border-radius: 6px; font-size: 14px; color: #fff;
+  }
   .doc-checklist {
     display: flex; flex-wrap: wrap; gap: var(--cf-sp-3); margin-top: var(--cf-sp-8);
   }
@@ -47,10 +51,11 @@
     margin-bottom: var(--cf-sp-6); overflow: hidden;
   }
   .guest-head {
-    display: flex; align-items: center; gap: var(--cf-sp-4);
+    display: flex; align-items: center; justify-content: space-between; gap: var(--cf-sp-4);
     padding: var(--cf-sp-6) var(--cf-sp-8);
     border-bottom: 1px solid var(--cf-ink-200);
   }
+  .guest-head-left { display: flex; align-items: center; gap: var(--cf-sp-4); }
   .guest-num {
     width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
     background: var(--cf-gradient-signature); color: #fff;
@@ -59,22 +64,31 @@
   }
   .guest-meta .name { font-size: 18px; font-weight: 800; color: var(--cf-ink-900); }
   .guest-meta .co { font-size: 13px; color: var(--cf-ink-500); margin-top: 2px; }
+  .char-badge {
+    font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: var(--cf-r-pill);
+    background: rgba(90,158,109,0.12); color: var(--cf-positive); white-space: nowrap;
+  }
+  .char-badge.warn { background: rgba(244,89,74,0.12); color: var(--cf-coral); }
 
   .guest-body { padding: var(--cf-sp-8); }
+  .field-block { margin-bottom: var(--cf-sp-6); }
+  .field-block:last-child { margin-bottom: 0; }
   .field-label {
     font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--cf-ink-400); margin-bottom: var(--cf-sp-2);
   }
-  .field-title {
-    font-family: var(--cf-font-body); font-size: 22px; font-weight: 800; line-height: 1.32;
-    color: var(--cf-ink-900); margin-bottom: var(--cf-sp-6);
+  .yt-title {
+    font-family: 'Courier New', monospace; font-size: 14.5px; line-height: 1.6;
+    color: var(--cf-ink-900); background: var(--cf-surface-light-alt);
+    border-radius: 8px; padding: var(--cf-sp-3) var(--cf-sp-4); word-break: break-word;
   }
-  .field-title .accent {
-    font-family: var(--cf-font-accent); font-style: italic; font-weight: 700;
-    background: var(--cf-gradient-signature); -webkit-background-clip: text; background-clip: text; color: transparent;
+  .yt-title b { color: var(--cf-violet); }
+  .thumb-phrase {
+    font-family: var(--cf-font-body); font-size: 24px; font-weight: 800; letter-spacing: -0.01em;
+    color: var(--cf-ink-900); text-transform: uppercase; line-height: 1.25;
   }
   .field-subtitle {
-    font-size: 15px; line-height: 1.6; color: var(--cf-ink-700);
+    font-size: 14.5px; line-height: 1.6; color: var(--cf-ink-700);
     background: var(--cf-surface-light-alt); border-left: 3px solid var(--cf-violet);
     border-radius: 8px; padding: var(--cf-sp-4) var(--cf-sp-6);
   }
@@ -90,7 +104,8 @@
   @media (max-width: 640px) {
     .doc-hero { padding: var(--cf-sp-8); }
     .guest-body { padding: var(--cf-sp-6); }
-    .field-title { font-size: 19px; }
+    .guest-head { flex-direction: column; align-items: flex-start; gap: var(--cf-sp-2); }
+    .thumb-phrase { font-size: 19px; }
   }
 </style>
 </head>
@@ -101,133 +116,210 @@
   <div class="doc-hero">
     <div class="doc-hero-inner">
       <div class="doc-eyebrow">Convert Talks · Temporada 1 · Para Bia (design)</div>
-      <h1>Títulos e legendas — versão final</h1>
-      <p>Formato validado contra os maiores podcasts de negócio do Brasil (Como Você Fez Isso, Jota Jota, Os Sócios): título é uma pergunta aberta e de alta busca, nunca um resumo — a legenda é que ancora no fato real do episódio.</p>
+      <h1>Títulos, thumbnails e legendas — versão final</h1>
+      <p>Padrão de título confirmado: <code>[TÍTULO] | [CONVIDADO] | [EMPRESA] | Convert Talks #00X</code> — limite oficial do YouTube é 100 caracteres no total, já contando essa cauda fixa. Todos os 7 abaixo cabem dentro do limite.</p>
       <div class="doc-checklist">
         <span>7 episódios</span>
+        <span>≤ 100 caracteres (título completo)</span>
+        <span>1 frase de thumbnail por episódio</span>
         <span>Voz sempre em 3ª pessoa</span>
-        <span>1 fato real por legenda</span>
-        <span>Nome + empresa no título</span>
       </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">1</div>
-      <div class="guest-meta">
-        <div class="name">Rafael Melaragno</div>
-        <div class="co">Nuvemshop · Coordenador Comercial, Nuvem Marketing</div>
+      <div class="guest-head-left">
+        <div class="guest-num">1</div>
+        <div class="guest-meta">
+          <div class="name">Rafael Melaragno</div>
+          <div class="co">Nuvemshop · Coordenador Comercial, Nuvem Marketing</div>
+        </div>
       </div>
+      <div class="char-badge">90 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">Como Ter <span class="accent">ROAS de +20x</span> e Vender Mais Sem Aumentar Seu Time — Usando E-mail e IA?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Rafael Melaragno (Nuvemshop) mostra como e-mail marketing (ROAS de +20x) e IA aplicada ao time comercial vêm ajudando lojistas a vender mais sem aumentar a equipe.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>Como Ter ROAS de +20x com E-mail e IA?</b> | Rafael Melaragno | Nuvemshop | Convert Talks #001</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">ROAS de +20x com IA</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Rafael Melaragno (Nuvemshop) mostra como e-mail marketing (ROAS de +20x) e IA aplicada ao time comercial vêm ajudando lojistas a vender mais sem aumentar a equipe.</div>
+      </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">2</div>
-      <div class="guest-meta">
-        <div class="name">Dener Basilio</div>
-        <div class="co">O Acessório · Sócio-gestor</div>
+      <div class="guest-head-left">
+        <div class="guest-num">2</div>
+        <div class="guest-meta">
+          <div class="name">Dener Basilio</div>
+          <div class="co">O Acessório · Sócio-gestor</div>
+        </div>
       </div>
+      <div class="char-badge">98 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">O Que <span class="accent">4 Mil Horas de Live</span> Ensinam Sobre Vender Mais Online?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Dener Basilio (O Acessório) descobriu, com +4 mil horas de live, que o canal serve pra reter — não pra conquistar cliente novo.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>O Que 4 Mil Horas de Live Ensinam Sobre Vender?</b> | Dener Basilio | O Acessório | Convert Talks #002</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">4 mil horas de live</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Dener Basilio (O Acessório) descobriu, com +4 mil horas de live, que o canal serve pra reter — não pra conquistar cliente novo.</div>
+      </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">3</div>
-      <div class="guest-meta">
-        <div class="name">Nilo Faber</div>
-        <div class="co">Haskell Cosméticos · Líder de Canais Digitais</div>
+      <div class="guest-head-left">
+        <div class="guest-num">3</div>
+        <div class="guest-meta">
+          <div class="name">Nilo Faber</div>
+          <div class="co">Haskell Cosméticos · Líder de Canais Digitais</div>
+        </div>
       </div>
+      <div class="char-badge">96 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">Como Evitar <span class="accent">Guerra de Preço</span> Entre Loja Física, Distribuidor e E-commerce?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Nilo Faber (Haskell Cosméticos) resolveu o conflito entre canais com uma regra simples: preço nacional único.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>Como Evitar Guerra de Preço Entre Canais?</b> | Nilo Faber | Haskell Cosméticos | Convert Talks #003</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">Zero guerra de preço</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Nilo Faber (Haskell Cosméticos) resolveu o conflito entre loja física, distribuidor e e-commerce com uma regra simples: preço nacional único.</div>
+      </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">4</div>
-      <div class="guest-meta">
-        <div class="name">Allan Romeo</div>
-        <div class="co">Aevi Galeria · Fundador</div>
+      <div class="guest-head-left">
+        <div class="guest-num">4</div>
+        <div class="guest-meta">
+          <div class="name">Allan Romeo</div>
+          <div class="co">Aevi Galeria · Fundador</div>
+        </div>
       </div>
+      <div class="char-badge">95 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">Por Que <span class="accent">Recusar Vender</span> Pode Ser a Melhor Estratégia de Vendas Pro Seu E-commerce?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Allan Romeo (Aevi Galeria) fala sobre verdade, beleza e afeto — os três valores que substituíram desconto e urgência como estratégia comercial.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>Por Que Recusar Vender é a Melhor Estratégia?</b> | Allan Romeo | Aevi Galeria | Convert Talks #004</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">ROAS de 20x sem desconto</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Allan Romeo (Aevi Galeria) fala sobre verdade, beleza e afeto — os três valores que substituíram desconto e urgência como estratégia comercial.</div>
+      </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">5</div>
-      <div class="guest-meta">
-        <div class="name">Yuri Manzolli</div>
-        <div class="co">Lustres Gênesis · CEO</div>
+      <div class="guest-head-left">
+        <div class="guest-num">5</div>
+        <div class="guest-meta">
+          <div class="name">Yuri Manzolli</div>
+          <div class="co">Lustres Gênesis · CEO</div>
+        </div>
       </div>
+      <div class="char-badge">94 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">Como Vender Produto de <span class="accent">Ticket Alto</span> no E-commerce Sem Depender de Mídia Paga?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Yuri Manzolli (Lustres Gênesis) construiu uma operação de ticket médio acima de R$2.500 sem agência nem mídia paga — só SEO e conteúdo.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>Como Vender Ticket Alto Sem Mídia Paga?</b> | Yuri Manzolli | Lustres Gênesis | Convert Talks #005</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">Ticket alto, zero mídia paga</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Yuri Manzolli (Lustres Gênesis) construiu uma operação de ticket médio acima de R$2.500 sem agência nem mídia paga — só SEO e conteúdo.</div>
+      </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">6</div>
-      <div class="guest-meta">
-        <div class="name">Mark Facciolla</div>
-        <div class="co">Neurofood · Cofundador e CEO</div>
+      <div class="guest-head-left">
+        <div class="guest-num">6</div>
+        <div class="guest-meta">
+          <div class="name">Mark Facciolla</div>
+          <div class="co">Neurofood · Cofundador e CEO</div>
+        </div>
       </div>
+      <div class="char-badge">96 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">Como um <span class="accent">Diagnóstico de Câncer</span> Aos 22 Anos Virou a Maior Marca de Longevidade do Brasil?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Mark Facciolla, cofundador e CEO da Neurofood. Um diagnóstico aos 22 anos virou o pilar por trás de uma marca construída com +150 influenciadores e mais de 160 eventos num ano — sem gastar em branding.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>Câncer Aos 22 Anos Virou Marca de Longevidade?</b> | Mark Facciolla | Neurofood | Convert Talks #006</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">Um câncer. Uma marca gigante.</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Mark Facciolla, cofundador e CEO da Neurofood. Um diagnóstico aos 22 anos virou o pilar por trás de uma marca construída com +150 influenciadores e mais de 160 eventos num ano — sem gastar em branding.</div>
+      </div>
     </div>
   </div>
 
   <div class="guest-card">
     <div class="guest-head">
-      <div class="guest-num">7</div>
-      <div class="guest-meta">
-        <div class="name">Eduardo</div>
-        <div class="co">Prax Analytics · Fundador</div>
+      <div class="guest-head-left">
+        <div class="guest-num">7</div>
+        <div class="guest-meta">
+          <div class="name">Eduardo</div>
+          <div class="co">Prax Analytics · Fundador</div>
+        </div>
       </div>
+      <div class="char-badge">98 / 100</div>
     </div>
     <div class="guest-body">
-      <div class="field-label">Título</div>
-      <div class="field-title">O Que os <span class="accent">Dados Escondem</span> Sobre Por Que Sua Loja Virtual Não Converte?</div>
-      <div class="field-label">Legenda</div>
-      <div class="field-subtitle">Eduardo (Prax Analytics), fundador da plataforma de dados usada por mais de 2 mil marcas. Do primeiro protótipo em planilha até a integração com IA que age como copiloto do lojista.</div>
+      <div class="field-block">
+        <div class="field-label">Título completo (YouTube)</div>
+        <div class="yt-title"><b>O Que Dados Escondem Sobre Sua Loja Não Converter?</b> | Eduardo | Prax Analytics | Convert Talks #007</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Frase pra thumbnail</div>
+        <div class="thumb-phrase">O que seus dados escondem</div>
+      </div>
+      <div class="field-block">
+        <div class="field-label">Legenda / descrição</div>
+        <div class="field-subtitle">Eduardo (Prax Analytics), fundador da plataforma de dados usada por mais de 2 mil marcas. Do primeiro protótipo em planilha até a integração com IA que age como copiloto do lojista.</div>
+      </div>
     </div>
   </div>
 
   <div class="doc-footer">
     <div class="label">Nota pra Bia</div>
-    <p>Cada título nasce de uma pergunta real feita no episódio — nenhum resume o conteúdo, o objetivo é abrir curiosidade, não entregar a resposta na capa.</p>
-    <p>Sugestão de capa/thumbnail: nome do convidado + empresa sempre visível (mesmo peso visual em todos os 7, pra reforçar identidade de temporada), e o título em destaque como texto de capa — sem precisar repetir a legenda na arte, ela é mais pro YouTube/descrição.</p>
+    <p>Contagem de caracteres já inclui a cauda fixa " | Convidado | Empresa | Convert Talks #00X" — o número no badge de cada card é o título completo, pronto pra colar direto no YouTube.</p>
+    <p>Frase de thumbnail é só o texto de capa — bem menor e mais gritante que o título, pensada pra ler em thumbnail pequena (mobile). Não precisa repetir a legenda na arte, ela é mais pro campo de descrição do YouTube.</p>
   </div>
 
 </div>
