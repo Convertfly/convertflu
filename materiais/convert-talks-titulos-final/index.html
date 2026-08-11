@@ -93,6 +93,29 @@
     border-radius: 8px; padding: var(--cf-sp-4) var(--cf-sp-6);
   }
 
+  .desc-toggle summary {
+    cursor: pointer; font-weight: 700; font-size: 13px; color: var(--cf-violet);
+    list-style: none; padding: var(--cf-sp-2) 0; display: flex; align-items: center; gap: 6px;
+  }
+  .desc-toggle summary::-webkit-details-marker { display: none; }
+  .desc-toggle summary::before { content: '▸'; font-size: 11px; }
+  .desc-toggle[open] summary::before { content: '▾'; }
+  .desc-wrap { position: relative; margin-top: var(--cf-sp-3); }
+  .desc-box {
+    white-space: pre-wrap; word-break: break-word; font-family: 'Courier New', monospace;
+    font-size: 13px; line-height: 1.65; color: var(--cf-ink-700);
+    background: var(--cf-surface-light-alt); border-radius: 8px;
+    padding: var(--cf-sp-4) var(--cf-sp-6); max-height: 420px; overflow-y: auto;
+  }
+  .copy-btn {
+    position: absolute; top: var(--cf-sp-3); right: var(--cf-sp-3);
+    font-family: var(--cf-font-body); font-size: 12px; font-weight: 700;
+    background: var(--cf-ink-900); color: #fff; border: none; border-radius: var(--cf-r-pill);
+    padding: 5px 12px; cursor: pointer;
+  }
+  .copy-btn:hover { opacity: 0.85; }
+  .handle-flag { color: var(--cf-coral); }
+
   .doc-footer {
     margin-top: var(--cf-sp-12); padding: var(--cf-sp-8);
     background: var(--cf-ink-900); border-radius: var(--cf-r-xl); color: rgba(255,255,255,0.8);
@@ -122,6 +145,7 @@
         <span>7 episódios</span>
         <span>≤ 100 caracteres (título completo)</span>
         <span>1 frase de thumbnail por episódio</span>
+        <span>Descrição completa (YouTube)</span>
         <span>Voz sempre em 3ª pessoa</span>
       </div>
     </div>
@@ -151,6 +175,53 @@
         <div class="field-label">Legenda / descrição</div>
         <div class="field-subtitle">Rafael Melaragno (Nuvemshop) mostra como e-mail marketing e IA evitam pagar duas vezes pelo mesmo cliente — aproveitando ao máximo cada real investido em mídia paga (ROAS de +20x nas campanhas de e-mail).</div>
       </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-1', this)">Copiar</button>
+            <pre class="desc-box" id="desc-1">Por que você está pagando duas vezes pelo mesmo cliente?
+
+Rafael Melaragno, da Nuvemshop, conversa com Breno Villan e Beatriz Helena sobre como e-mail marketing e inteligência artificial evitam que o lojista pague duas vezes pela mesma mídia — recuperando quem já visitou o site mas não comprou. A conversa passa por automações de carrinho abandonado, recuperação de pagamento pendente, o papel da IA no time comercial e os principais gargalos de conversão dentro da página de produto e do checkout.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:02:34 - A carreira de Rafael: da Mandaê à Nuvemshop
+00:06:51 - O ecossistema Nuvemshop (Nuvem Pago, Envio, Marketing, Chat)
+00:10:31 - A cadeira de Nuvem Marketing e a transição da logística
+00:17:45 - Mídia paga e automação de marketing trabalhando juntas
+00:19:23 - O papel da IA no momento certo de falar com o cliente
+00:21:07 - Automações validadas e seus retornos em receita
+00:27:13 - A sequência de boas-vindas
+00:30:08 - Os desafios de montar um time comercial do zero
+00:36:13 - Treinamento, metodologia de vendas e IA no time
+00:41:26 - Cultura de IA interna e a conexão via MCP
+00:43:55 - Lumi, o copiloto de IA da Nuvemshop
+00:49:38 - Pesquisas sobre taxa de conversão: Brasil vs. mundo
+00:52:01 - O checkout como maior ofensor da conversão
+00:55:38 - A jornada de compra e o peso da página de produto
+00:58:36 - O que faz uma boa página de produto
+01:00:10 - Análise ao vivo: de uma página genérica ao case Neurofood
+01:06:22 - A trajetória de Rafael na esgrima
+01:11:39 - Conselho final: não pague duas vezes pelo mesmo cliente
+01:14:42 - Encerramento
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Rafael Melaragno (@handle) · Nuvemshop (@handle)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #EmailMarketing #InteligênciaArtificial #Nuvemshop</pre>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 
@@ -177,6 +248,53 @@
       <div class="field-block">
         <div class="field-label">Legenda / descrição</div>
         <div class="field-subtitle">Mark Facciolla, cofundador e CEO da Neurofood. Um diagnóstico aos 22 anos virou o pilar por trás de uma marca construída com +150 influenciadores e mais de 160 eventos num ano — sem gastar em branding.</div>
+      </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-2', this)">Copiar</button>
+            <pre class="desc-box" id="desc-2">Depois de um susto de saúde aos 22 anos, o que faz alguém trocar o mercado financeiro por uma marca de longevidade?
+
+Mark Facciolla, cofundador e CEO da Neurofood, conversa com Breno Villan e Beatriz Helena sobre como um diagnóstico inesperado aos 22 anos virou o pilar de uma marca de longevidade construída sem investir em branding — com mais de 150 influenciadores e 200 parcerias que vieram até a empresa, e não o contrário. A conversa passa por construção de comunidade, a lógica invertida de patrocínio em eventos (de pagar pra entrar a cobrar pra estar presente), o ciclo de compra de cerca de 90 dias e os bastidores da Neurofood Experience.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:00:45 - A trajetória de Mark: dos 13 anos ao mercado financeiro
+00:02:29 - Como conheceu Lucas Zappia e nasceu o Neurofood
+00:04:58 - Do layoff ao nascimento da Neurofood Shop
+00:07:18 - Dos primeiros produtos à descoberta da banheira de gelo
+00:12:10 - Importação da China e a pré-venda estratégica
+00:14:45 - O mercado de longevidade e a Neurofood Experience
+00:16:23 - Lançamento da banheira de gelo e a expansão para saunas
+00:22:42 - Comunidade e influenciadores sem pagar marketing
+00:26:18 - Logística: da garagem da mãe ao fulfillment
+00:29:19 - Presença em mais de 160 eventos por ano
+00:32:16 - A lógica invertida do patrocínio em eventos
+00:34:33 - O ciclo de compra de cerca de 90 dias
+00:36:31 - Neurofood Experience como negócio próprio
+00:41:22 - Os desafios do site antes do rebranding
+00:47:30 - A ciência por trás dos produtos
+00:50:56 - A virada de chave aos 22 anos
+00:53:25 - Spoilers de novos produtos
+00:56:51 - Novo negócio: marca de wellness para pets
+00:59:19 - Encerramento
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Mark Facciolla (@handle) · Neurofood (@handle)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #Longevidade #Marketing #Neurofood</pre>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -205,6 +323,53 @@
         <div class="field-label">Legenda / descrição</div>
         <div class="field-subtitle">Dener Basilio (O Acessório) descobriu, com +4 mil horas de live, que o canal serve pra reter — não pra conquistar cliente novo.</div>
       </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-3', this)">Copiar</button>
+            <pre class="desc-box" id="desc-3">Um bloqueio na conta de anúncios pode virar a maior alavanca de vendas da sua loja?
+
+Dener Basilio, sócio-gestor da O Acessório, conversa com Breno Villan e Beatriz Helena sobre como um bloqueio na conta de anúncios virou o início de uma operação com mais de 4 mil horas de live — e por que, depois de analisar os dados com IA, perceberam que a live serve pra reter cliente, não pra conquistar cliente novo. A conversa passa por frequência de lives, recorrência de compra, bastidores da curadoria de produtos e o uso de inteligência artificial pra entender o comportamento do público.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:01:03 - Origem da live commerce: bloqueio da conta na Meta
+00:02:43 - Frequência das lives e benefícios oferecidos
+00:06:19 - Grupo de members e gestão do relacionamento com o cliente
+00:11:29 - Recorrência de até 94% e o desafio de renovar a base
+00:12:59 - Live commerce x e-commerce e a entrada no mix de roupas
+00:17:33 - Quem é a persona: por que ela compra tanto
+00:20:33 - Bastidores: sócios, curadoria e criação de peças nas lives
+00:25:32 - Números de público: médias, picos e rotatividade na live
+00:27:50 - Análise de IA revela: a live não é canal de aquisição
+00:29:41 - Live commerce como canal de relacionamento e retenção
+00:32:59 - Perdendo a vergonha: o medo inicial de aparecer nas lives
+00:35:57 - Crise de reclamações e a decisão de manter o chat aberto
+00:39:18 - Parceria com a Nuvemshop e marca de 100 mil pedidos
+00:40:55 - Marketplaces e o desafio de estoque para o TikTok Shop
+00:48:43 - Comunidade de creators para o público 50+
+00:52:16 - Inteligência artificial na operação: o agente Eugênio
+01:01:36 - Próximos passos: mix de produtos e atendimento internacional
+01:04:24 - Taxas de conversão e dicas para melhorar a experiência de compra
+01:10:16 - Encerramento
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Dener Basilio (@handle) · O Acessório (@handle)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #LiveCommerce #Varejo</pre>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 
@@ -231,6 +396,53 @@
       <div class="field-block">
         <div class="field-label">Legenda / descrição</div>
         <div class="field-subtitle">Allan Romeo (Aevi Galeria) fala sobre verdade, beleza e afeto — os três valores que substituíram desconto e urgência como estratégia comercial.</div>
+      </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-4', this)">Copiar</button>
+            <pre class="desc-box" id="desc-4">Por que uma joalheria diria "não" pra um cliente que quer comprar?
+
+Allan Romeo, fundador da Aevi Galeria, conversa com Breno Villan e Beatriz Helena sobre os três valores que sustentam o negócio — verdade, beleza e afeto — e por que desconto, urgência e promoção nunca fizeram parte da estratégia comercial. A conversa passa por atendimento nota 5 estrelas, certificação de joias, o design como investimento e o crescimento da marca com ROAS de até 20.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:01:08 - Crescimento acelerado e as bases filosóficas da empresa
+00:03:31 - Os três valores: verdade, beleza e afeto
+00:05:06 - Por que não usar desconto, urgência ou promoção
+00:07:13 - Atendimento nota 5 estrelas e depoimentos dos clientes
+00:11:41 - Case: quando a noiva diz não ao pedido
+00:14:26 - Produtos, customização e pedidos especiais
+00:17:01 - Novo curso para quem vai noivar
+00:21:41 - Formação de Allan e a complexidade do e-commerce
+00:23:41 - Certificados e laudos: provando a verdade das joias
+00:30:06 - O valor beleza: embalagem e experiência de entrega
+00:32:17 - Levando a beleza para o site: a parceria com a Convertfly
+00:35:05 - Tour ao vivo pelo site institucional e laboratório
+00:39:56 - O anel clássico 3mm e a solução para medir o tamanho online
+00:46:49 - Antes e depois da página de produto
+00:51:37 - Próximos passos: tráfego, influenciadores, ROAS e novas linhas
+00:57:29 - Crescimento de 6x em 12 meses e como gerar desejo com fotos
+01:03:24 - Maturidade empreendedora e conselhos para lojistas
+01:10:38 - O legado: verdade, beleza e afeto para o mundo
+01:14:24 - Encerramento e contatos
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Allan Romeo (@handle) · Aevi Galeria (@handle)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #Joalheria #BrandExperience</pre>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -259,6 +471,53 @@
         <div class="field-label">Legenda / descrição</div>
         <div class="field-subtitle">Nilo Faber (Haskell Cosméticos) resolveu o conflito entre loja física, distribuidor e e-commerce com uma regra simples: preço nacional único.</div>
       </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-5', this)">Copiar</button>
+            <pre class="desc-box" id="desc-5">Distribuidor, loja física e e-commerce podem vender o mesmo produto sem brigar por preço?
+
+Nilo Faber, líder de Canais Digitais da Haskell Cosméticos, conversa com Breno Villan e Beatriz Helena sobre como resolveu o conflito entre mais de 50 distribuidores, lojas físicas e e-commerce com uma regra de preço nacional único. A conversa passa por logística de última milha, taxa de conversão na América Latina, TikTok Shop e o conceito de "loja perfeita" aplicado ao digital.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:01:32 - Trajetória profissional: tecnologia, vendas e o Instituto César
+00:10:17 - Nissin: indústria, logística e dados do Zé Delivery
+00:13:26 - Dois anos na Chiper e a virada para o B2B
+00:14:59 - Chegada à Haskel Cosméticos e o desafio de construir do zero
+00:18:43 - Haskel e MO Cosmetics: duas marcas, dois públicos
+00:21:57 - O maior desafio: conflito entre distribuidores, lojas e e-commerce
+00:24:32 - Quanto realmente vende o e-commerce dos parceiros físicos
+00:27:32 - A origem da estratégia de preço nacional único
+00:30:34 - Desafio logístico: CD em São Paulo e o piloto de entrega em Viçosa
+00:33:59 - Taxa de conversão: Brasil e América Latina abaixo da média global
+00:36:21 - O conceito de "loja perfeita" levado para o digital
+00:39:22 - A história da Sears e a evolução do e-commerce
+00:45:07 - TikTok Shop, influenciadores e vendas por geolocalização
+00:50:50 - Internacionalização e a estrutura da equipe da Haskel
+00:55:00 - Como nasceu a parceria com a Convertfly
+00:57:13 - A página de produto como o "vendedor" do e-commerce
+01:04:20 - Paraquedismo: a paixão que acompanha a carreira
+01:09:57 - Recados finais: para quem vende B2C e para indústrias entrando no B2B
+01:14:30 - Encerramento e agradecimentos
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Nilo Faber (@handle) · Haskell Cosméticos (@handle)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #Multicanal #Cosméticos</pre>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 
@@ -284,7 +543,52 @@
       </div>
       <div class="field-block">
         <div class="field-label">Legenda / descrição</div>
-        <div class="field-subtitle">Eduardo (Prax Analytics), fundador da plataforma de dados usada por mais de 2 mil marcas. Do primeiro protótipo em planilha até a integração com IA que age como copiloto do lojista.</div>
+        <div class="field-subtitle">Eduardo (Prax Analytics), fundador da plataforma de dados usada por mais de 2 mil marcas. De um projeto de organização financeira até um assistente de IA que age como copiloto do lojista.</div>
+      </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-6', this)">Copiar</button>
+            <pre class="desc-box" id="desc-6">Por que um número como "0,7% de taxa de conversão" não significa nada sozinho?
+
+Eduardo, fundador da Prax Analytics, conversa com Breno Villan e Beatriz Helena sobre como transformar dados soltos de e-commerce em decisão real de negócio — até chegar num assistente de IA que age como copiloto do lojista. A conversa passa por funil de conversão, curva ABC de produtos, taxa média de conversão no Brasil e o papel do WhatsApp na recuperação de vendas. Hoje a Prax atende cerca de 2 mil marcas.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:00:16 - Quem é Eduardo e a parceria com a Convertfly
+00:01:22 - A origem da Prax: do projeto financeiro ao produto de dados
+00:03:31 - Captação de investimento e os primeiros passos como startup
+00:06:20 - A parceria com a Nuvemshop e a virada do negócio
+00:09:30 - O que é a Prax, na prática
+00:10:54 - O início da IA embarcada na plataforma
+00:13:46 - Demonstração ao vivo do assistente de IA
+00:16:02 - Insights sobre funil, checkout e atrito na conversão
+00:19:11 - Analisando produtos por sessões e taxa de conversão
+00:22:26 - Curva ABC de produtos e capital de giro parado
+00:23:54 - Quem é o cliente da Prax hoje
+00:25:57 - MCP: conectando a Prax ao ChatGPT e ao Claude
+00:30:08 - De empresa de dados para empresa de IA e CRM
+00:31:43 - O módulo de WhatsApp: disparos, recuperação e ROI
+00:35:06 - Taxa de conversão média do mercado e erros comuns na página de produto
+00:40:49 - Futuro da Prax e conselho final para lojistas escalarem
+00:45:04 - Encerramento
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Eduardo (@handle) · Prax Analytics (@handle)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #DadosDeEcommerce #InteligênciaArtificial</pre>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -313,16 +617,73 @@
         <div class="field-label">Legenda / descrição</div>
         <div class="field-subtitle">Yuri Manzolli (Lustres Gênesis) construiu uma operação de ticket médio acima de R$2.500 sem agência nem mídia paga — só SEO e conteúdo.</div>
       </div>
+      <div class="field-block">
+        <details class="desc-toggle">
+          <summary>Descrição completa (YouTube)</summary>
+          <div class="desc-wrap">
+            <button class="copy-btn" onclick="copyDesc('desc-7', this)">Copiar</button>
+            <pre class="desc-box" id="desc-7">Como você vende pra alguém que nem sabe o nome do que está procurando?
+
+Yuri Manzolli, da Lustres Gênesis, conversa com Breno Villan e Beatriz Helena sobre vender para um público que não domina o vocabulário técnico do produto — e por que a página precisa falar a língua de quem compra, não a de quem fabrica. A conversa passa por SEO na prática, descoberta de produto e como guiar a decisão de quem não sabe pesquisar.
+
+🎙️ Neste episódio:
+00:00:00 - Abertura
+00:01:21 - O brinde e a demonstração do produto
+00:04:13 - 11 anos construindo categorias e títulos
+00:05:38 - Descrição e palavra-chave em 3.400 produtos
+00:09:36 - O que é a Lustres Gênesis
+00:12:43 - Vender, desenvolver, instalar, limpar e reformar
+00:19:25 - Como organiza os produtos pra guiar a escolha
+00:20:45 - O limite da plataforma a partir de 1.000 produtos
+00:21:24 - Como conheceu a Convert
+00:24:19 - Atendimento humanizado e o "lustre do Yuri"
+00:28:08 - O aprendizado com o pai e os showrooms
+00:31:51 - O que é SEO, na prática
+00:42:07 - Estratégias: Black Friday e lâmpadas de brinde
+00:51:53 - A busca no meio da página e as 200 palavras-chave
+00:58:30 - Uma página desenhada pra vender
+01:00:19 - Showroom e a percepção de confiança
+01:07:20 - Link de pagamento e pedidos personalizados
+01:10:28 - O conselho pra quem quer virar um "next"
+
+🎙️Host: Breno Villan (@brenovillan) · Dr. Growth (@doutorgrowth) · Beatriz Helena (@beatrizheelena)
+🎙️Convidado: Yuri Manzolli (@yurimanzolli) · Lustres Gênesis (@lustres_genesis)
+___________________________________________________________________________________________
+
+🎧 Convert Talks, o podcast da Convertfly sobre e-commerce, conversão e crescimento.
+
+🌐 [www.convertfly.com.br](https://www.convertfly.com.br)
+📷 Instagram: @convertfly.app
+🎵 TikTok: @convertfly3
+💼 LinkedIn: linkedin.com/company/convertflyapp
+▶️ Spotify: Convertfly Talks
+
+#ConvertTalks #Ecommerce #Conversão #Copywriting #Decoração #PáginaDeProduto</pre>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 
   <div class="doc-footer">
     <div class="label">Nota pra Bia</div>
     <p>Contagem de caracteres já inclui a cauda fixa " | Convidado | Empresa | Convert Talks #00X" — o número no badge de cada card é o título completo, pronto pra colar direto no YouTube.</p>
-    <p>Frase de thumbnail é só o texto de capa — bem menor e mais gritante que o título, pensada pra ler em thumbnail pequena (mobile). Não precisa repetir a legenda na arte, ela é mais pro campo de descrição do YouTube.</p>
+    <p>Frase de thumbnail é só o texto de capa — bem menor e mais gritante que o título, pensada pra ler em thumbnail pequena (mobile). A "Legenda / descrição" curta é o resumo rápido (pra Spotify, redes, etc). A "Descrição completa (YouTube)", dentro do campo expansível, já vem pronta pra colar direto na aba de descrição do vídeo, com capítulos reais extraídos do áudio de cada episódio.</p>
+    <p><span class="handle-flag">Atenção:</span> os campos "(@handle)" dentro das descrições completas são placeholders — ainda faltam os perfis reais de Instagram de cada convidado, das empresas e (se for o caso) confirmar @doutorgrowth. Preencher antes de publicar.</p>
   </div>
 
 </div>
+
+<script>
+function copyDesc(id, btn) {
+  var text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(function () {
+    var original = btn.textContent;
+    btn.textContent = 'Copiado!';
+    setTimeout(function () { btn.textContent = original; }, 1800);
+  });
+}
+</script>
 
 </body>
 </html>
