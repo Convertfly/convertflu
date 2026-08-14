@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apresentação Master · Convertfly</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<link rel="stylesheet" href="../../slides/deck-stage.css">
+<style>
+  body { margin: 0; font-family: var(--cf-font-body); }
+  .cf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cf-sp-8); }
+  .cf-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cf-sp-6); }
+  .cf-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--cf-sp-4); }
+  .cf-scroll-area { max-height: 62vh; overflow-y: auto; padding-right: var(--cf-sp-2); }
+  .cf-chapter-tag { font-family: var(--cf-font-accent); font-style: italic; font-size: 15px; color: var(--cf-gold); }
+  .cf-stat-row { display: flex; gap: var(--cf-sp-12); flex-wrap: wrap; }
+  .cf-stat-num { font-family: var(--cf-font-accent); font-style: italic; font-weight: 700; font-size: 40px; }
+
+  .cf-compare-row { display: grid; grid-template-columns: 200px 1fr 1fr; gap: var(--cf-sp-4); padding: var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); align-items:center; }
+  .cf-compare-row.cols3 { grid-template-columns: 160px 1fr 1fr 1fr; }
+  .cf-compare-row.head { background:transparent; border:none; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:rgba(255,255,255,0.4); font-weight:700; }
+  .cf-compare-row.head.onlight { color: var(--cf-ink-400); }
+  .cf-compare-row.onlight { background:#fff; border-color: rgba(22,14,51,0.08); }
+  .cf-compare-cell.win { color: var(--cf-positive); font-weight: 700; }
+
+  .cf-book-row { display: grid; grid-template-columns: 220px 1fr; gap: var(--cf-sp-4); padding: var(--cf-sp-3) 0; border-bottom: 1px solid rgba(255,255,255,0.08); align-items: start; }
+  .cf-book-title { font-weight: 700; font-size: 14px; }
+  .cf-book-author { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  .cf-check-row { display: flex; gap: var(--cf-sp-3); padding: var(--cf-sp-3) 0; border-bottom: 1px solid rgba(22,14,51,0.08); }
+  .cf-check-num { font-weight: 800; color: var(--cf-coral); flex-shrink: 0; }
+
+  .cf-row-table { display: flex; flex-direction: column; gap: var(--cf-sp-2); }
+  .cf-row { display: grid; grid-template-columns: 60px 1fr 1.6fr; gap: var(--cf-sp-4); align-items: center; padding: var(--cf-sp-3) var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .cf-row-code { font-weight: 800; color: var(--cf-coral); font-size: 15px; }
+  .cf-row-main { font-size: 14px; font-weight: 700; }
+  .cf-row-sub { font-size: 13px; color: rgba(255,255,255,0.55); }
+
+  .cf-quote-card { border-left: 3px solid var(--cf-gold); padding-left: var(--cf-sp-6); max-width: 760px; }
+  .cf-quote-text { font-family: var(--cf-font-accent); font-style: italic; font-size: 22px; line-height: 1.4; color: #fff; }
+  .cf-quote-attrib { margin-top: var(--cf-sp-4); font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 700; }
+
+  .cf-logo-wall { display: flex; flex-wrap: wrap; gap: var(--cf-sp-3); }
+  .cf-logo-chip { padding: 14px 24px; border-radius: var(--cf-r-md); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); }
+
+  .cf-timeline { display: flex; flex-direction: column; gap: var(--cf-sp-2); }
+  .cf-timeline-row { display: flex; align-items: center; gap: var(--cf-sp-4); padding: var(--cf-sp-3) var(--cf-sp-4); border-radius: var(--cf-r-md); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .cf-timeline-num { width: 28px; height: 28px; border-radius: 50%; background: var(--cf-coral); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+  .cf-timeline-title { font-weight: 700; font-size: 15px; }
+  .cf-timeline-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .cf-timeline-window { font-size: 12px; color: rgba(255,255,255,0.4); white-space: nowrap; margin-left: auto; }
+
+  .cf-role-card { display: flex; flex-direction: column; gap: var(--cf-sp-2); }
+  .cf-role-name { font-weight: 800; font-size: 18px; }
+  .cf-role-person { font-size: 13px; color: var(--cf-coral); font-weight: 700; }
+
+  .cf-part-marker { font-family: var(--cf-font-accent); font-style: italic; font-size: 17px; color: var(--cf-gold); letter-spacing: 0.02em; }
+</style>
+</head>
+<body class="cf-scope">
+
+<div id="cf-deck">
+
+  <!-- 1 · COVER -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Convertfly · Apresentação Master · 2026</div>
+    <h1 class="cf-display-l" style="margin-top: var(--cf-sp-6); color:#fff; max-width: 900px;">
+      A conversão é uma <span class="cf-accent">categoria</span>. Ainda sem dono.
+    </h1>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 680px; color: rgba(255,255,255,0.7);">
+      Como a Convertfly virou tech partner de referência pra e-commerces que levam a sério a página onde a venda acontece.
+    </p>
+    <div class="cf-slide-num">1 / 36</div>
+  </section>
+
+  <!-- 2 · O PONTO CEGO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-part-marker">Parte 0 · Abertura</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 780px;">O mercado vive em silos. E ninguém é dono do meio.</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: var(--cf-ink-500);">
+      Tráfego traz gente pra página. Desenvolvimento constrói o site. Operação cuida de estoque e logística.
+      CRM cuida do pós-venda. No meio, um ponto cego: <strong>a página onde a decisão de compra acontece</strong> —
+      da estratégia ao copy à composição visual à mensuração do que converteu. Ninguém é dono dela de ponta a ponta.
+    </p>
+    <div class="cf-card-light" style="margin-top: var(--cf-sp-8); max-width: 700px;">
+      <p class="cf-body-1" style="margin:0; font-style: italic;">É esse o lugar da Convertfly.</p>
+    </div>
+  </section>
+
+  <!-- 3 · QUEM SOMOS -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Quem somos</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">
+      Não somos uma agência que virou <span class="cf-accent">SaaS</span>.
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      A Convertfly nasceu da junção de duas empresas complementares com histórico comprovado no e-commerce brasileiro:
+      Dr. Growth (metodologia, vendas, design) e BM Marketing (tecnologia, CTO, mensuração). Uma empresa fundada por
+      quem já entregou resultado real em volume — e decidiu sistematizar o que funcionava.
+    </p>
+    <div class="cf-stat-row" style="margin-top: var(--cf-sp-12);">
+      <div><div class="cf-stat-num">R$37M</div><div class="cf-caption" style="color:rgba(255,255,255,0.5);">faturamento gerenciado</div></div>
+      <div><div class="cf-stat-num">+500</div><div class="cf-caption" style="color:rgba(255,255,255,0.5);">clientes atendidos</div></div>
+      <div><div class="cf-stat-num">+10 anos</div><div class="cf-caption" style="color:rgba(255,255,255,0.5);">construindo e-commerces no Brasil</div></div>
+    </div>
+  </section>
+
+  <!-- 4 · A MISSÃO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">A missão</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 780px;">
+      Ser o tech partner de referência para e-commerces — na Nuvemshop, e depois em toda a América Latina.
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: var(--cf-ink-500);">
+      Unindo metodologia proprietária de diagnóstico estratégico com tecnologia de implementação premium.
+      A Convertfly não vende hora de trabalho. <strong>Vende um sistema</strong>: o Conversion Map™ como método
+      de diagnóstico e o App Convertfly como tecnologia de implementação. O cliente ganha autonomia, resultado
+      mensurável e um ativo estratégico que cresce com o tempo.
+    </p>
+  </section>
+
+  <!-- 5 · A CATEGORIA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-part-marker">Parte 1 · A categoria</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 820px;">
+      Não somos agência. Somos <span class="cf-accent">tech partner de conversão</span>.
+    </h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-glass"><div class="cf-h3">Não somos</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Agência de tráfego · dev house · operação de e-commerce · ferramenta de CRM</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Somos</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Metodologia proprietária (Conversion Map™) + tecnologia de implementação (App Convertfly)</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 700px; color: rgba(255,255,255,0.4);">
+      Metodologia sem tecnologia = consultoria que não escala. Tecnologia sem metodologia = ferramenta sem estratégia.
+      Convertfly = os dois, sob a mesma marca, com resultado mensurável.
+    </p>
+  </section>
+
+  <!-- 6 · CENÁRIO COMPETITIVO -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Cenário competitivo 2026</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Quem mais disputa esse espaço — e por que somos diferentes</h2>
+    <div style="margin-top: var(--cf-sp-8); max-width: 980px;">
+      <div class="cf-compare-row head onlight cols3"><div></div><div>O que faz</div><div>Preço</div><div>Diferencial Convertfly</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700;">Descrição Pro</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Melhora texto e SEO — sem diagnóstico</div><div class="cf-body-s" style="color:var(--cf-ink-500);">R$97–297/mês</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Próximo nível quando a ferramenta atinge o limite</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700;">Agências convencionais</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Páginas customizadas sem método</div><div class="cf-body-s" style="color:var(--cf-ink-500);">R$5k–R$50k</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Mesma qualidade visual + método + resultado em menos tempo</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700;">Freelancers de design</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Layouts sem estratégia</div><div class="cf-body-s" style="color:var(--cf-ink-500);">R$500–R$3k/pág</div><div class="cf-body-s" style="color:var(--cf-ink-500);">Metodologia + execução + prova de resultado</div></div>
+    </div>
+  </section>
+
+  <!-- 7 · BENCHMARK PAGEFLY -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">A referência de mercado</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O benchmark mundial: <span class="cf-accent">PageFly</span></h2>
+    <div style="margin-top: var(--cf-sp-8); max-width: 980px;">
+      <div class="cf-compare-row head cols3"><div></div><div>PageFly (Shopify)</div><div colspan="2">Meta Convertfly (Nuvemshop)</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Plataforma</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Shopify — 6,9M lojas globais</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);" colspan="2">Nuvemshop — 180k lojistas Brasil</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Posição</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">#1 page builder — 85% do segmento</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);" colspan="2">Referência premium de implementação</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Modelo</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Freemium + planos mensais, bootstrapped</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);" colspan="2">App + Implementação + Recorrência</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Diferencial</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Sem metodologia proprietária</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);" colspan="2">CM™ garante resultado mensurável — justifica ticket 10x maior</div></div>
+    </div>
+  </section>
+
+  <!-- 8 · OS FUNDADORES -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-part-marker">Parte 2 · O time</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Os quatro sócios-fundadores</h2>
+    <div class="cf-grid-4" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-light"><div class="cf-h3">Breno Villan</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Dr. Growth</p><p class="cf-body-s" style="margin-top:var(--cf-sp-3); font-weight:700;">Metodologia CM™ + Vendas</p><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Estratégia, facilitação, comercial</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Bia Helena</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Dr. Growth</p><p class="cf-body-s" style="margin-top:var(--cf-sp-3); font-weight:700;">Head de Projetos + Design</p><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Execução, qualidade visual, gestão</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Bruno Almeida</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">BM Marketing</p><p class="cf-body-s" style="margin-top:var(--cf-sp-3); font-weight:700;">CTO — App Convertfly</p><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Arquitetura, desenvolvimento, Nuvemshop</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Mauro Rondon</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">BM Marketing</p><p class="cf-body-s" style="margin-top:var(--cf-sp-3); font-weight:700;">CRO Analyst</p><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Tracking, mensuração, GA4, Clarity</p></div>
+    </div>
+  </section>
+
+  <!-- 9 · TIME DE IMPLEMENTAÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">O time que constrói</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">
+      Isabella e Mell — de estratégia a <span class="cf-accent">página real</span>
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      Design sêniores que atuam na ponta de execução: Figma e App Convertfly. São elas que pegam o OPS validado
+      e o design system da Bia e transformam isso em página real, publicada, fiel à estratégia — o elo entre o
+      método e o que o visitante efetivamente vê e vive no site.
+    </p>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 800px;">
+      <div class="cf-card-glass cf-role-card"><div class="cf-role-name">Isabella</div><div class="cf-role-person">Design Sênior — Figma &amp; App Convertfly</div><p class="cf-body-s">Traduz OPS + design system em página publicada, do Figma à implementação.</p></div>
+      <div class="cf-card-glass cf-role-card"><div class="cf-role-name">Mell</div><div class="cf-role-person">Design Sênior — Figma &amp; App Convertfly</div><p class="cf-body-s">Mesma frente de execução — Figma e implementação real no app, lado a lado com Isabella e Bia.</p></div>
+    </div>
+  </section>
+
+  <!-- 10 · AS 15 SKILLS DE IA -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Tecnologia + time</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 780px;">15 skills de IA especializadas, operando junto com o time</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 680px; color: var(--cf-ink-500);">Cada skill é um agente focado numa função específica do método — do research ao design ao CRO.</p>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-6); max-width: 960px;">
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-orchestrator</div><div class="cf-book-author">Transversal</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">PM estratégico. Coordena o time de agentes, priorização e roadmap.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-metodologia-guardian</div><div class="cf-book-author">Pilar 1+2</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Personificação viva do método. Condutor do Canvas PDP, guardião do OPS.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-canvas-pdp-facilitator</div><div class="cf-book-author">Pilar 2</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Prepara e executa sessões. Monta board Miro. Roteiro por arco por cliente.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-conversion-page-builder</div><div class="cf-book-author">Pilar 3</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Constrói páginas HTML de alta conversão a partir do OPS. 17 seções estratégicas.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-conversion-design-director</div><div class="cf-book-author">Pilar 3</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">A Bia como skill. Hierarquia visual aplicada à decisão de compra.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-pdp-copywriter</div><div class="cf-book-author">Pilar 3</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Copy de alta conversão pra hero, diferenciais, FAQ, CTA, microcopy.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-cro-analyst</div><div class="cf-book-author">Pilar 4</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">O Mauro como skill. Tracking, GA4, Clarity, relatório de performance.</div></div>
+      <div class="cf-book-row" style="border-bottom: none;"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">skill-ecommerce-tech-architect</div><div class="cf-book-author">App</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">O Bruno como skill. Viabilidade técnica, performance, Nuvemshop.</div></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-6);">+ 7 skills adicionais: Ecosystem Strategist, Content Strategist, Sales Engineer, PM, Partnership Architect, Russell/Hormozi/GaryVee, Tom de Voz.</p>
+  </section>
+
+  <!-- 11 · A PDP É O VENDEDOR -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-part-marker">Parte 3 · O método — Conversion Map™</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">A página de produto é o <span class="cf-accent">vendedor</span> mais importante da loja.</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 700px; color: rgba(255,255,255,0.7);">
+      Atende 60–70% de todos os visitantes. Trabalha 24h, 7 dias por semana, sem férias e sem pedir aumento. E pode ser treinada — com o método certo.
+    </p>
+    <div style="margin-top: var(--cf-sp-8); max-width: 940px;">
+      <div class="cf-compare-row head cols3"><div></div><div>Vendedor humano</div><div>PDP sem método</div><div>PDP com CM™</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Disponibilidade</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">8h/dia, 5 dias</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">24/7 sem argumento</div><div class="cf-compare-cell win">24/7 com argumento de elite</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Persuasão</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Adaptada ao cliente</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Genérica, igual à concorrência</div><div class="cf-compare-cell win">Baseada em cohorts e objeções reais</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Mensuração</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Difícil de atribuir</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">CVR anônimo, dado perdido</div><div class="cf-compare-cell win">CVR por página, relatório D+90</div></div>
+      <div class="cf-compare-row cols3"><div style="font-weight:700;">Escalabilidade</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Limita com custo fixo</div><div class="cf-body-s" style="color:rgba(255,255,255,0.6);">Escala com tráfego</div><div class="cf-compare-cell win">Escala + melhora com otimização</div></div>
+    </div>
+  </section>
+
+  <!-- 12 · OS 4 PILARES -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Visão geral do método</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Quatro pilares encadeados — cada um entrega pro próximo</h2>
+    <div class="cf-grid-4" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-light"><span class="cf-tag cf-tag--publicado">D+0 a D+22</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Pesquisa e Inteligência</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Facilitador + IA. Output: tripé validado + Miro board.</p></div>
+      <div class="cf-card-light"><span class="cf-tag cf-tag--beta">D+22 a D+25</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Estratégia</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Facilitador + Cliente. Output: OPS versão cliente + time.</p></div>
+      <div class="cf-card-light"><span class="cf-tag cf-tag--category">D+25 a D+60</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Execução</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Bia + Time. Output: páginas publicadas.</p></div>
+      <div class="cf-card-light"><span class="cf-tag cf-tag--rascunho">D+60 a D+90+</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Mensuração</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Mauro + Breno. Output: Relatório de Entrega D+90.</p></div>
+    </div>
+  </section>
+
+  <!-- 13 · PILAR 1 — O TRIPÉ -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Pilar 1 · Pesquisa e Inteligência</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O <span class="cf-accent">tripé</span> de pesquisa</h2>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-4); max-width: 680px; color: rgba(255,255,255,0.6);">O facilitador estuda o negócio do cliente a fundo antes de qualquer sessão — nunca chega com quadro em branco.</p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Produto</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">O que vendo. Papel estratégico de cada produto. Escada de valor: features → benefícios → transformação.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Concorrência</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Contra quem compito. 3-5 concorrentes analisados. Matriz competitiva, provocações preparadas.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Público (Cohorts)</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Pra quem vendo. 3-4 cohorts com 10 campos cada: origem, consciência, JTBD, objeção, motivador.</p></div>
+    </div>
+  </section>
+
+  <!-- 14 · PILAR 2 — CANVAS PDP -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Pilar 2 · Estratégia</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">O Canvas PDP — 6 arcos, 60 minutos de workshop cocriativo</h2>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-6); max-width: 940px;">
+      <div class="cf-book-row"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">1 · Abertura</div><div class="cf-book-author">5–10 min</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Alinhamento de expectativas, argumento econômico, critério de sucesso.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">2 · Público</div><div class="cf-book-author">10 min</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Validação dos cohorts hipótese, priorização e enriquecimento com histórias reais.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">3 · Posicionamento</div><div class="cf-book-author">12 min</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Dinâmica de eliminação, frase guarda-chuva, 3 diferenciais por camada.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">4 · Fricção</div><div class="cf-book-author">15 min</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Mapa de objeções com 7 tipos, priorização crítica/alta/média.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">5 · Forças de Venda</div><div class="cf-book-author">10 min</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Inventário dos 6 motivadores com prova específica.</div></div>
+      <div class="cf-book-row" style="border-bottom:none;"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">6 · Mensagem + Fechamento</div><div class="cf-book-author">8 min</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Exercício da voz, vocabulário SOMOS/NUNCA, frase de 10 segundos.</div></div>
+    </div>
+  </section>
+
+  <!-- 15 · OS 7 TIPOS DE OBJEÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Pilar 2 · Fricção</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Os <span class="cf-accent">7 tipos</span> de objeção</h2>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-4); max-width: 720px; color: rgba(255,255,255,0.6);">3 desses tipos (I, C, P) não existiam no método original — foram identificados pelo Mark Facciolla, CEO da Neurofood, durante o próprio workshop, e viraram parte permanente do Conversion Map™.</p>
+    <div class="cf-row-table" style="margin-top: var(--cf-sp-6);">
+      <div class="cf-row"><div class="cf-row-code">F</div><div class="cf-row-main">Financeira</div><div class="cf-row-sub">"Vale o preço? Estou pagando justo?" — aversão à perda (Kahneman)</div></div>
+      <div class="cf-row"><div class="cf-row-code">FN</div><div class="cf-row-main">Funcional</div><div class="cf-row-sub">"Sei o que vou receber? Funciona pra mim?" — carga cognitiva (Hick)</div></div>
+      <div class="cf-row"><div class="cf-row-code">S</div><div class="cf-row-main">Social</div><div class="cf-row-sub">"Posso confiar? É sério? Não é golpe?" — prova social (Cialdini)</div></div>
+      <div class="cf-row"><div class="cf-row-code">T</div><div class="cf-row-main">Temporal</div><div class="cf-row-sub">"E se der errado? Demora? Tem troca?" — redução de risco</div></div>
+      <div class="cf-row" style="border-color: rgba(153,49,255,0.4);"><div class="cf-row-code" style="color:var(--cf-violet);">I</div><div class="cf-row-main">Informacional</div><div class="cf-row-sub">"Nunca fiz isso. Como funciona?" — literacia técnica zero do comprador</div></div>
+      <div class="cf-row" style="border-color: rgba(153,49,255,0.4);"><div class="cf-row-code" style="color:var(--cf-violet);">C</div><div class="cf-row-main">Comparativa</div><div class="cf-row-sub">"Vi similar mais barato. Por que comprar aqui?" — comparação com alternativa</div></div>
+      <div class="cf-row" style="border-color: rgba(153,49,255,0.4);"><div class="cf-row-code" style="color:var(--cf-violet);">P</div><div class="cf-row-main">Psicológica</div><div class="cf-row-sub">"E se eu não gostar? Estou sendo impulsivo?" — aversão ao arrependimento</div></div>
+    </div>
+  </section>
+
+  <!-- 16 · OS 6 MOTIVADORES -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Pilar 2 · Forças de venda</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Os 6 motivadores de compra</h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-light"><div class="cf-h3">Autoridade</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Fundadores, especialistas, parceiros. Nome + contexto específico — nunca genérico.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Resultado</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Frase exata do cliente + nome + história. Depoimento genérico não convence.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Segurança</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Prazo + processo + o que acontece se der errado. Não apenas "tem garantia".</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Exclusividade</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Deve sobreviver ao teste: "o concorrente também pode dizer isso?"</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Custo-Benefício</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Número concreto. "R$9,58/dia vs. R$150/sessão" é prova; ROI vago não é.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Pertencimento</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">UGC real, número de comunidade, eventos — não "grande comunidade".</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 700px;">Regra de ouro: sem história específica ou número concreto, a força de venda é um desejo — não uma prova.</p>
+  </section>
+
+  <!-- 17 · O OPS -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Pilar 2 · A peça mais importante</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O <span class="cf-accent">OPS</span> — One Page Strategy</h2>
+    <div class="cf-grid-2" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-glass"><div class="cf-h3">Versão Cliente</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">"Vejam o que mapeamos" — gera confiança antes da produção. Visual, 2-3 páginas, compartilhável por WhatsApp. 5 blocos: cohorts, posicionamento, fricções, forças, DNA.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Versão Time</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Briefing de produção absoluto, zero ambiguidade. 8-12 páginas + ficha por página, recebida por Bia, executor, designer e facilitador.</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); max-width: 700px; color: rgba(255,255,255,0.4);">A ficha por página contém: papel estratégico, cohorts-alvo, mensagem-chave, sequência de seções com a objeção que cada uma resolve, cross-sell e materiais necessários.</p>
+  </section>
+
+  <!-- 18 · PILAR 3 — AS 6 SEÇÕES OBRIGATÓRIAS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Pilar 3 · Execução</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">As 6 seções obrigatórias de toda página</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 680px; color: var(--cf-ink-500);">Nenhuma seção existe por estética. Cada bloco visual resolve uma fricção, ativa uma força de venda ou fala com um cohort específico.</p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-light"><div class="cf-h3">Hero / Primeira Dobra</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Captura atenção em 3s, comunica proposta de valor — "isso é pra mim".</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Diferenciais com ícones</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Os 3-5 argumentos principais via escaneamento visual.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Prova Social</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Ativa prova social — pessoas decidem olhando o que outros fizeram.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">FAQ Estratégico</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">O Mapa de Objeções em formato acordeão, elimina as últimas dúvidas.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">Garantia e Trust</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Remove o medo final — sempre perto do CTA.</p></div>
+      <div class="cf-card-light"><div class="cf-h3">CTA Principal</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">O momento de conversão — bloco estratégico, não apenas um botão.</p></div>
+    </div>
+  </section>
+
+  <!-- 19 · PILAR 4 — OS 8 INDICADORES -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Pilar 4 · Mensuração</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Os <span class="cf-accent">8 indicadores</span> que provam resultado</h2>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-6); max-width: 920px;">
+      <div class="cf-book-row"><div><div class="cf-book-title">1º · Faturamento do produto</div><div class="cf-book-author">Threshold: +10% · Nuvemshop</div></div><div class="cf-body-s">Resultado financeiro direto — todo o resto serve a este.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title">2º · Qtd. de vendas</div><div class="cf-book-author">Threshold: +10% · Nuvemshop</div></div><div class="cf-body-s">Volume real, crescimento independente de ticket.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title">3º · Taxa de conversão (CVR)</div><div class="cf-book-author">Threshold: +15% · GA4</div></div><div class="cf-body-s">Prova direta que a página convence mais visitantes.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title">4º · Ticket médio</div><div class="cf-book-author">Threshold: +8% · Nuvemshop</div></div><div class="cf-body-s">Evidência de cross-sell funcionando.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title">5º · Taxa de adição ao carrinho</div><div class="cf-book-author">Threshold: +10pp · GA4</div></div><div class="cf-body-s">Onde está o maior vazamento do funil.</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title">6º · Taxa de engajamento</div><div class="cf-book-author">Threshold: +10pp · GA4</div></div><div class="cf-body-s">% de sessões com engajamento real (≠ bounce).</div></div>
+      <div class="cf-book-row"><div><div class="cf-book-title">7º · Tempo médio de engajamento</div><div class="cf-book-author">Threshold: +20% · GA4</div></div><div class="cf-body-s">Visitante está lendo ou saindo rápido?</div></div>
+      <div class="cf-book-row" style="border-bottom:none;"><div><div class="cf-book-title">8º · Scroll depth</div><div class="cf-book-author">Threshold: +10pp · Clarity</div></div><div class="cf-body-s">Visitante chegou até o CTA ou saiu no hero?</div></div>
+    </div>
+  </section>
+
+  <!-- 20 · FUNDAMENTAÇÃO CIENTÍFICA -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Por que funciona</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Seis bases da ciência do comportamento</h2>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-6); max-width: 940px;">
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">Thinking Fast and Slow</div><div class="cf-book-author">Kahneman — Aversão à perda</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Arco 4 — Fricção: cada objeção não respondida ativa o Sistema 1 a fugir.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">Competing Against Luck</div><div class="cf-book-author">Christensen — Jobs To Be Done</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Arco 2 — Público: mapeia o Job To Be Done de cada cohort.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">Influence</div><div class="cf-book-author">Cialdini — 6 princípios de persuasão</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Arco 5 — Forças de Venda: Autoridade, Prova Social, Segurança, Exclusividade, Custo-Benefício, Pertencimento.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">Positioning</div><div class="cf-book-author">Ries &amp; Trout — Category of One</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Arco 3 — Posicionamento: a eliminação força o irreplicável na marca.</div></div>
+      <div class="cf-book-row" style="border-bottom-color: rgba(22,14,51,0.08);"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">Predictably Irrational</div><div class="cf-book-author">Ariely — Irracionalidade previsível</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Arquitetura de preço: o pacote do meio como âncora.</div></div>
+      <div class="cf-book-row" style="border-bottom: none;"><div><div class="cf-book-title" style="color:var(--cf-ink-900);">Hooked</div><div class="cf-book-author">Nir Eyal — Hook Model</div></div><div class="cf-body-s" style="color:var(--cf-ink-500);">Retenção: cada página nova é investimento crescente.</div></div>
+    </div>
+  </section>
+
+  <!-- 21 · O APP CONVERTFLY -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-part-marker">Parte 4 · A tecnologia</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">O <span class="cf-accent">App Convertfly</span></h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      O editor modular nativo da Nuvemshop, com seções de alta conversão prontas para implementação — o Arsenal
+      de Seções do método materializado em tecnologia. São 40 seções catalogadas (34 seções permanentes + 6 sazonais),
+      cada uma classificada por obrigatoriedade e propósito estratégico, direto no editor da loja.
+    </p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Performance nativa</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Roda dentro da própria Nuvemshop, sem overhead de página externa ou builder genérico.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">40 seções catalogadas</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">34 seções permanentes + 6 sazonais, cada uma com missão estratégica definida pelo método.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Switching cost crescente</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Cada página nova publicada é um ativo que se acumula — não uma licença que expira.</p></div>
+    </div>
+  </section>
+
+  <!-- 22 · OS 3 PLANOS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">O App Convertfly</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Três planos, do essencial ao completo</h2>
+    <div style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-compare-row head onlight cols3"><div></div><div>Start · R$99/mês</div><div>Pro · R$199/mês</div><div>Next · R$299/mês</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700; font-size:13px;">Seções básicas</div><div class="cf-body-s">✓</div><div class="cf-body-s">✓</div><div class="cf-body-s">✓</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700; font-size:13px;">Carrossel de mídia / vídeo commerce</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s">★ Pro+</div><div class="cf-body-s">✓</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700; font-size:13px;">Mídia Full/Grid</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s">★ Pro+</div><div class="cf-body-s">✓</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700; font-size:13px;">Links da Bio (Instagram)</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s">★ Next</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700; font-size:13px;">IA para copy + dashboard de performance</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s">Primeiro acesso</div></div>
+      <div class="cf-compare-row onlight cols3"><div style="font-weight:700; font-size:13px;">Grupo WhatsApp</div><div class="cf-body-s" style="color:var(--cf-ink-300);">—</div><div class="cf-body-s">48h resposta</div><div class="cf-body-s">24h + acesso antecipado</div></div>
+    </div>
+  </section>
+
+  <!-- 23 · PACOTES DE IMPLEMENTAÇÃO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Como o cliente entra</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Pacotes de <span class="cf-accent">implementação</span></h2>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Starter</div><div class="cf-stat-num" style="font-size:28px; margin-top:var(--cf-sp-2);">R$3.500</div><p class="cf-body-s" style="margin-top:var(--cf-sp-3);">3 páginas executadas + 2 bônus = 5 páginas no ar.</p></div>
+      <div class="cf-card-glass" style="border-color: rgba(215,151,47,0.5);"><span class="cf-tag cf-tag--beta">Mais vendido</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Business</div><div class="cf-stat-num" style="font-size:28px; margin-top:var(--cf-sp-2);">R$6.500</div><p class="cf-body-s" style="margin-top:var(--cf-sp-3);">6 páginas executadas + 4 bônus = 10 páginas no ar.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Premium</div><div class="cf-stat-num" style="font-size:28px; margin-top:var(--cf-sp-2);">R$10.500</div><p class="cf-body-s" style="margin-top:var(--cf-sp-3);">9 páginas executadas + 6 bônus = 15 páginas no ar.</p></div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); color: rgba(255,255,255,0.4);">Todos os pacotes incluem: Canvas PDP Full + call de onboarding + configuração inicial de tracking.</p>
+  </section>
+
+  <!-- 24 · SWITCHING COST -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">A lógica de retenção</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 720px;">Não é contrato de fidelidade. É valor acumulado.</h2>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-8); max-width: 780px;">
+      <div class="cf-check-row"><div class="cf-check-num">M1</div><div class="cf-body-s">Setup + páginas do projeto inicial (voltam ao padrão Nuvemshop se cancelar)</div></div>
+      <div class="cf-check-row"><div class="cf-check-num">M6</div><div class="cf-body-s">Tudo acima + todas as páginas criadas + LPs sazonais da Black Friday</div></div>
+      <div class="cf-check-row" style="border-bottom:none;"><div class="cf-check-num">M12</div><div class="cf-body-s">Tudo acima + estrutura acumulada de todo o site + histórico estratégico documentado</div></div>
+    </div>
+  </section>
+
+  <!-- 25 · CASE NEUROFOOD -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-part-marker">Parte 5 · Prova: os cases</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Case fundador: <span class="cf-accent">Neurofood Shop</span></h2>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-4); max-width: 680px; color: rgba(255,255,255,0.6);">Segmento: crioterapia, termoterapia e recovery.</p>
+    <div class="cf-stat-row" style="margin-top: var(--cf-sp-8);">
+      <div><div class="cf-stat-num">R$350-400k</div><div class="cf-caption" style="color:rgba(255,255,255,0.5);">faturamento/mês</div></div>
+      <div><div class="cf-stat-num">1,58%</div><div class="cf-caption" style="color:rgba(255,255,255,0.5);">CVR</div></div>
+      <div><div class="cf-stat-num">34</div><div class="cf-caption" style="color:rgba(255,255,255,0.5);">objeções identificadas</div></div>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-8); max-width: 700px; color: rgba(255,255,255,0.6);">4 cohorts mapeados · workshop Canvas PDP completo · 6 páginas em produção. O case que ensinou o método e validou a Matriz Produto × Cohort — inclusive os 3 novos tipos de objeção (I, C, P) identificados pelo próprio Mark Facciolla.</p>
+  </section>
+
+  <!-- 26 · CASE AEVI -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Case fundador</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">AEVI Galeria</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 680px; color: var(--cf-ink-500);">Segmento: joalheria fina, diamante natural, ouro 18k.</p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8); max-width: 900px;">
+      <div class="cf-card-light"><div class="cf-h3">R$250k</div><p class="cf-body-s" style="color:var(--cf-ink-500);">faturamento/mês</p></div>
+      <div class="cf-card-light"><div class="cf-h3">3 cohorts</div><p class="cf-body-s" style="color:var(--cf-ink-500);">25 objeções mapeadas</p></div>
+      <div class="cf-card-light"><div class="cf-h3">8 páginas</div><p class="cf-body-s" style="color:var(--cf-ink-500);">no escopo do projeto</p></div>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-8); max-width: 700px; color: var(--cf-ink-500);">Ensinou o Modelo B do método (produto técnico, literacia zero do comprador) e confirmou a necessidade de educação integrada à jornada de compra. Junto com a Neurofood, prova que o Conversion Map™ é universal — não específico de nicho.</p>
+  </section>
+
+  <!-- 27 · A VOZ DO MARK -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">A voz do cliente</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">Mark Facciolla, <span class="cf-accent">Neurofood</span></h2>
+    <div class="cf-quote-card" style="margin-top: var(--cf-sp-8);">
+      <p class="cf-quote-text">"De fato a gente construiu para vocês — e não só para vocês, mas com vocês. Tem magia do Bruno, magia da Bia, do time de design."</p>
+      <div class="cf-quote-attrib">Mark Facciolla — Cofundador e CEO, Neurofood</div>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-8); max-width: 700px; color: rgba(255,255,255,0.55); font-style: italic;">
+      "Em pouco tempo, em dois meses, a gente já vê também resultado positivo." · "Eu quero agradecer, não só pelo convite de estar aqui, mas por ter virado a página para sempre do nosso site."
+    </p>
+  </section>
+
+  <!-- 28 · A VOZ DO ALLAN -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">A voz do cliente</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">Allan Romeo, Aevi Galeria</h2>
+    <div class="cf-quote-card" style="margin-top: var(--cf-sp-8); border-left-color: var(--cf-violet);">
+      <p class="cf-quote-text" style="color: var(--cf-ink-900);">"A Convert Fly realmente foi um achado pra gente. A gente cresceu muito, inclusive depois de vocês. Essa beleza que a gente consegue entregar hoje no nosso site faz toda a diferença na conversão."</p>
+      <div class="cf-quote-attrib" style="color: var(--cf-ink-500);">Allan Romeo — Fundador, Aevi Galeria</div>
+    </div>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-8); max-width: 700px; color: var(--cf-ink-500);">
+      Um exemplo concreto: clientes recebiam anéis no tamanho errado por causa de apps de medição de terceiros pouco confiáveis. Allan trouxe a dor pro Bruno, que desenvolveu uma solução de medição própria, direto no site — resolvendo um problema que nenhum app genérico resolvia.
+    </p>
+  </section>
+
+  <!-- 29 · LOGO WALL -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Quem mais confia na Convertfly</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">Marcas que constroem com a gente</h2>
+    <div class="cf-logo-wall" style="margin-top: var(--cf-sp-8); max-width: 940px;">
+      <div class="cf-logo-chip">Lustres Gênesis</div>
+      <div class="cf-logo-chip">Kink Joe</div>
+      <div class="cf-logo-chip">KJ Black</div>
+      <div class="cf-logo-chip">Ferus</div>
+      <div class="cf-logo-chip">Estúdio Bizzu</div>
+      <div class="cf-logo-chip">Lola Joalheria</div>
+      <div class="cf-logo-chip">Regina Rios</div>
+      <div class="cf-logo-chip">Loja Doutor Saúde</div>
+      <div class="cf-logo-chip">Tapete São José</div>
+    </div>
+    <p class="cf-caption" style="margin-top: var(--cf-sp-8); color: rgba(255,255,255,0.4);">Foco declarado: lojistas do tier Next da Nuvemshop.</p>
+  </section>
+
+  <!-- 30 · RELATÓRIO D+90 -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Como provamos resultado</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 760px;">O Relatório de Entrega D+90</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-4); max-width: 680px; color: var(--cf-ink-500); font-style: italic;">"A página que não mede não prova. A prova que não prova não vende o próximo projeto."</p>
+    <div class="cf-scroll-area" style="margin-top: var(--cf-sp-8); max-width: 780px;">
+      <div class="cf-check-row"><div class="cf-check-num">1</div><div class="cf-body-s">O que o método revelou — o que o Canvas PDP descobriu que a página anterior não comunicava</div></div>
+      <div class="cf-check-row"><div class="cf-check-num">2</div><div class="cf-body-s">O que mudamos e por quê — decisões estratégicas conectadas ao Canvas</div></div>
+      <div class="cf-check-row"><div class="cf-check-num">3</div><div class="cf-body-s">O resultado em números — baseline vs. D+90 nos 8 indicadores, por página</div></div>
+      <div class="cf-check-row"><div class="cf-check-num">4</div><div class="cf-body-s">O resultado em reais — ROI: "para cada R$1 investido, a marca gerou R$X em 90 dias"</div></div>
+      <div class="cf-check-row"><div class="cf-check-num">5</div><div class="cf-body-s">O que ainda pode crescer — oportunidades para upsell e próximo projeto</div></div>
+      <div class="cf-check-row" style="border-bottom:none;"><div class="cf-check-num">6</div><div class="cf-body-s">Próximos passos — proposta de continuidade. O relatório é o argumento.</div></div>
+    </div>
+  </section>
+
+  <!-- 31 · CONVERT TALKS -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-part-marker">Parte 6 · O movimento</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">Convert Talks — o <span class="cf-accent">podcast</span> de conversão</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      Temporada 1, 7 episódios, com fundadores e líderes reais de e-commerce falando sobre conversão, dados,
+      comunidade e crescimento. Três dos sete convidados já são clientes Convertfly — o podcast é onde a
+      metodologia vira conversa pública, e a autoridade se constrói junto com a comunidade.
+    </p>
+    <div class="cf-logo-wall" style="margin-top: var(--cf-sp-8); max-width: 940px;">
+      <div class="cf-logo-chip">Rafael Melaragno · Nuvemshop</div>
+      <div class="cf-logo-chip">Mark Facciolla · Neurofood</div>
+      <div class="cf-logo-chip">Dener Basilio · O Acessório</div>
+      <div class="cf-logo-chip">Allan Romeo · Aevi Galeria</div>
+      <div class="cf-logo-chip">Nilo Faber · Haskell Cosméticos</div>
+      <div class="cf-logo-chip">Eduardo · Prax Analytics</div>
+      <div class="cf-logo-chip">Yuri Manzolli · Lustres Gênesis</div>
+    </div>
+  </section>
+
+  <!-- 32 · O CÉREBRO QUE APRENDE -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">O que nos torna não-copiáveis</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 780px;">Um cérebro de conversão que aprende a cada ciclo</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: var(--cf-ink-500);">
+      Implementação medida vira dado. Dado vira padrão. Padrão vira peso na Matriz de Decisão — que sugere,
+      por nicho e por objeção, qual sequência converte mais.
+    </p>
+    <div class="cf-card-light" style="margin-top: var(--cf-sp-8); max-width: 700px;">
+      <p class="cf-body-1" style="margin:0; font-style: italic;">O concorrente imita uma página. Não imita o aprendizado acumulado.</p>
+    </div>
+  </section>
+
+  <!-- 33 · O ARCO DA EMPRESA -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-part-marker">Parte 7 · O horizonte</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff;">O arco da empresa — três capítulos</h2>
+    <div class="cf-timeline" style="margin-top: var(--cf-sp-8); max-width: 820px;">
+      <div class="cf-timeline-row"><div class="cf-timeline-num">1</div><div><div class="cf-timeline-title">A Arena Magalu</div><div class="cf-timeline-meta">Início 2026 — "O padrão de elite da Puravida, agora acessível." Canvas PDP em embrião.</div></div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">2</div><div><div class="cf-timeline-title">O Método</div><div class="cf-timeline-meta">Abril–Maio 2026 — Neurofood e AEVI como cases fundadores. A metodologia ganha nome: Conversion Map™.</div></div></div>
+      <div class="cf-timeline-row"><div class="cf-timeline-num">3</div><div><div class="cf-timeline-title">O Palco</div><div class="cf-timeline-meta">Outubro 2026 — o case que transforma a Convertfly em categoria, com dado real de CVR e receita incremental.</div></div></div>
+    </div>
+  </section>
+
+  <!-- 34 · EXPANSÃO DE PLATAFORMAS -->
+  <section class="cf-slide cf-surface-light">
+    <div class="cf-eyebrow">Horizonte</div>
+    <h2 class="cf-h1" style="margin-top: var(--cf-sp-4); max-width: 780px;">De Nuvemshop a LATAM completo</h2>
+    <div class="cf-grid-4" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-light"><span class="cf-tag cf-tag--publicado">Atual · 2026</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Nuvemshop</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Dominância no segmento premium.</p></div>
+      <div class="cf-card-light"><span class="cf-tag cf-tag--beta">Próxima · 2026</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Shopify Brasil</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Modelo PageFly aplicado ao método.</p></div>
+      <div class="cf-card-light"><span class="cf-tag cf-tag--rascunho">Futura · 2027</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">Loja Integrada · Bagy · Tray</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Metodologia portátil — app precisa de adaptação técnica por plataforma.</p></div>
+      <div class="cf-card-light"><span class="cf-tag cf-tag--neutro">Visão · 2028+</span><div class="cf-h3" style="margin-top:var(--cf-sp-3);">LATAM completo</div><p class="cf-body-s" style="color:var(--cf-ink-500); margin-top:var(--cf-sp-2);">Conversion Map™ como padrão de CRO na América Latina.</p></div>
+    </div>
+  </section>
+
+  <!-- 35 · VISÃO DE PRODUTO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Os próximos passos do app</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 800px;">Além do Page Builder</h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 700px; color: rgba(255,255,255,0.7);">
+      A mensuração de hoje (Relatório D+90) é o primeiro degrau. A visão de produto amplia o que o App Convertfly
+      é capaz de provar e automatizar — evoluindo de "página publicada" pra "sistema de experimentação contínua".
+    </p>
+    <div class="cf-grid-3" style="margin-top: var(--cf-sp-8);">
+      <div class="cf-card-glass"><div class="cf-h3">Teste A/B de páginas</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Mensuração evoluindo de baseline/D+90 pra comparação direta entre variantes, dentro do próprio app.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Variáveis acionáveis por UTM (via MCP)</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Conectar a origem do tráfego a decisões automáticas de página, direto na plataforma.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Biblioteca de landing pages</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">5 a 10 landing pages de alta conversão, prontas pra duplicação e acesso rápido.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Novos elementos</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Quiz e mais recursos em motion, além de tudo que já existe hoje no Arsenal de Seções.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Comunidade</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Convert Talks como base pra uma comunidade de e-commerces focados em conversão.</p></div>
+      <div class="cf-card-glass"><div class="cf-h3">Time especializado</div><p class="cf-body-s" style="margin-top:var(--cf-sp-2);">Crescimento contínuo do time dedicado a conversão — método, design e tecnologia juntos.</p></div>
+    </div>
+  </section>
+
+  <!-- 36 · FECHAMENTO -->
+  <section class="cf-slide cf-surface-dark cf-hero-bg">
+    <div class="cf-eyebrow">Fechamento</div>
+    <h2 class="cf-display-m" style="margin-top: var(--cf-sp-4); color:#fff; max-width: 780px;">
+      Estamos <span class="cf-accent">nomeando</span> uma categoria. Não vendendo um projeto.
+    </h2>
+    <p class="cf-body-1" style="margin-top: var(--cf-sp-6); max-width: 640px; color: rgba(255,255,255,0.7);">
+      Especialista, caro, recorrente. O braço educacional vem depois — quando o método estiver
+      provado por dados, ensinar vira ativo.
+    </p>
+    <p class="cf-body-s" style="margin-top: var(--cf-sp-16); color: rgba(255,255,255,0.4);">www.convertfly.com.br</p>
+  </section>
+
+</div>
+
+<div id="cf-deck-rail"></div>
+<div class="cf-deck-nav">
+  <button id="cf-deck-prev" aria-label="Anterior">←</button>
+  <span id="cf-deck-counter">1 / 36</span>
+  <button id="cf-deck-next" aria-label="Próximo">→</button>
+  <button id="cf-deck-print" aria-label="Imprimir/PDF" title="Imprimir / salvar como PDF">⤓</button>
+</div>
+
+<script src="../../slides/deck-stage.js"></script>
+</body>
+</html>
