@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taxa de conversão média por segmento no e-commerce</title>
+<meta name="description" content="Descubra a taxa de conversão média do seu segmento e da sua faixa de faturamento, e quanto valeria fechar a diferença. Dados Nuvem Commerce 2026 e Statista.">
+<link rel="stylesheet" href="../assets/cf-web.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="../">convert<em>fly</em></a>
+    <div class="nav-links">
+      <a href="../">Home</a><a href="../app/">O app</a><a href="../implementacao/">Implementação</a>
+      <a href="../cases/">Cases</a><a href="../quem-somos/">Quem somos</a><a href="../contato/">Contato</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="../contato/">Agendar diagnóstico</a>
+  </div>
+</nav>
+
+<header class="band band-dark glow" style="padding-top:clamp(40px,5vw,72px); padding-bottom:clamp(40px,5vw,64px);">
+  <div class="wm" aria-hidden="true">convertfly</div>
+  <div class="in stack g8">
+    <span class="badge rise"><i>✦</i> Referência de mercado</span>
+    <h1 class="d1 rise rise-2" style="max-width:16ch;">Qual é a conversão média <span class="k">do seu segmento</span>?</h1>
+    <p class="lede rise rise-3">
+      A média geral do e-commerce esconde mais do que revela: joalheria e comida não convertem no mesmo
+      patamar, e loja de R$ 50 mil não se compara com loja de R$ 500 mil. Escolha o seu recorte e veja o
+      número real — e o que separa ele do que dá para alcançar.
+    </p>
+  </div>
+</header>
+
+<!-- ═══ O SELETOR ═════════════════════════════════════════ -->
+<section class="band band-light" style="padding-top:clamp(40px,5vw,64px);">
+  <div class="in stack g8">
+    <div class="panel stack g8">
+      <form class="seg-form" id="seg" onsubmit="return false;">
+        <div class="field">
+          <label for="segmento">Segmento</label>
+          <select id="segmento">
+            <option value="moda">Moda e Vestuário</option>
+            <option value="saude">Saúde e Beleza</option>
+            <option value="joias">Joias e Semijoias</option>
+            <option value="artesanato">Artesanato</option>
+            <option value="comidas">Comidas e Bebidas</option>
+            <option value="equipamentos">Equipamentos e Máquinas</option>
+            <option value="pet">Pet</option>
+            <option value="eroticos">Produtos Eróticos</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="faixa">Faturamento mensal</label>
+          <select id="faixa">
+            <option value="ate">Até R$ 100 mil/mês</option>
+            <option value="acima" selected>Acima de R$ 100 mil/mês</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fat">Seu faturamento mensal <span style="text-transform:none; letter-spacing:0; font-weight:600;">(opcional)</span></label>
+          <input id="fat" type="text" inputmode="numeric" placeholder="R$ 150.000">
+        </div>
+      </form>
+
+      <div class="seg-out">
+        <div class="bench-card">
+          <div class="bench-n" id="out-seg">1,06%</div>
+          <div class="bench-t" id="out-seg-t">Média de Moda e Vestuário</div>
+          <p class="bench-d" id="out-seg-d">Lojas acima de R$ 100 mil por mês no segmento.</p>
+          <p class="bench-src">Fonte: Nuvem Commerce 2026</p>
+        </div>
+        <div class="bench-card">
+          <div class="bench-n">1,0%</div>
+          <div class="bench-t">Média da América Latina</div>
+          <p class="bench-d">Compradores online na região, 2º trimestre de 2026.</p>
+          <p class="bench-src">Fonte: Statista</p>
+        </div>
+        <div class="bench-card bench-card--ours">
+          <span class="tag" style="align-self:flex-start;">Operações atendidas</span>
+          <div class="bench-n">1,63%</div>
+          <div class="bench-t" id="out-gap">54% acima da média do seu recorte</div>
+          <p class="bench-d">Agregado das operações atendidas pela casa em 2025.</p>
+          <p class="bench-src">Fonte: Prax Analytics</p>
+        </div>
+      </div>
+
+      <div id="calc" hidden>
+        <hr class="rule">
+        <div class="split split--mid" style="margin-top:26px;">
+          <div class="stack g3">
+            <p class="eyebrow">O que a diferença vale</p>
+            <div class="figure-n" id="out-money" style="font-size:clamp(34px,4.4vw,54px);">R$ 0</div>
+            <p class="p" id="out-money-t">por mês, se a sua conversão saísse da média do segmento e
+            chegasse a 1,63%.</p>
+          </div>
+          <p class="seg-note">
+            Conta simples e declarada: mantém o mesmo tráfego e aplica a diferença de taxa sobre o
+            faturamento informado. Não é promessa nem projeção de projeto — é a ordem de grandeza do que
+            está parado na mesa. Conversão real depende de produto, preço, tráfego e operação, e é por
+            isso que a gente mede página por página em vez de prometer média.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TABELA COMPLETA ═══════════════════════════════════ -->
+<section class="band band-deep">
+  <div class="in stack g8">
+    <div class="stack g4">
+      <p class="eyebrow eyebrow--dot">A tabela inteira</p>
+      <h2 class="d2">Conversão por segmento e <span class="k">faixa de faturamento</span>.</h2>
+      <p class="lede">Duas leituras do mesmo mercado. A coluna da direita é onde estão as operações
+      maduras — e é nela que a diferença entre uma loja bem construída e uma loja de tema padrão aparece.</p>
+    </div>
+    <div class="rows scroll-x">
+      <div style="min-width:620px;">
+        <div class="row row-head" style="grid-template-columns:1.4fr 1fr 1fr 1fr;">
+          <div>Segmento</div><div>Até R$ 100 mil/mês</div><div>Acima de R$ 100 mil/mês</div><div>Diferença</div></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Comidas e Bebidas</div><p class="p tabular">1,20%</p><p class="p tabular">2,03%</p><span class="delta delta-up">+69%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Saúde e Beleza</div><p class="p tabular">1,09%</p><p class="p tabular">1,58%</p><span class="delta delta-up">+45%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Equipamentos e Máquinas</div><p class="p tabular">0,32%</p><p class="p tabular">1,57%</p><span class="delta delta-up">+391%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Artesanato</div><p class="p tabular">1,01%</p><p class="p tabular">1,18%</p><span class="delta delta-up">+17%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Produtos Eróticos</div><p class="p tabular">0,66%</p><p class="p tabular">1,18%</p><span class="delta delta-up">+79%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Joias e Semijoias</div><p class="p tabular">0,58%</p><p class="p tabular">1,15%</p><span class="delta delta-up">+98%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Pet</div><p class="p tabular">0,56%</p><p class="p tabular">1,07%</p><span class="delta delta-up">+91%</span></div>
+        <div class="row" style="grid-template-columns:1.4fr 1fr 1fr 1fr;"><div class="h5">Moda e Vestuário</div><p class="p tabular">0,71%</p><p class="p tabular">1,06%</p><span class="delta delta-up">+49%</span></div>
+      </div>
+    </div>
+    <p class="sm" style="max-width:74ch;">
+      Fonte: relatório público <strong>Nuvem Commerce 2026</strong>, com dados de 2025. A coluna
+      “Diferença” é o salto entre as duas faixas dentro do mesmo segmento — em equipamentos, uma loja
+      madura converte quase cinco vezes mais que uma pequena vendendo a mesma coisa.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ O QUE EXPLICA ═════════════════════════════════════ -->
+<section class="band band-light">
+  <div class="in split">
+    <div class="stack g6">
+      <p class="eyebrow">O que a tabela mostra</p>
+      <h2 class="d2">O salto não é <span class="k">só tamanho</span>.</h2>
+      <p class="p">
+        Uma loja acima de R$ 100 mil converte mais que uma abaixo não porque tem mais visitantes — a taxa
+        já é relativa ao tráfego. Converte mais porque, no caminho até ali, alguém resolveu a estrutura:
+        a página passou a responder objeção, a prova social virou real, a garantia saiu do rodapé.
+      </p>
+      <p class="p">
+        É por isso que o salto é maior justamente onde o produto é mais técnico e mais caro. Em
+        equipamentos e máquinas a diferença entre as duas faixas é de quase cinco vezes. Em artesanato,
+        onde a decisão é mais simples, é de 17%.
+      </p>
+    </div>
+    <div class="stack g4">
+      <div class="card">
+        <span class="tag">Ticket alto, decisão longa</span>
+        <h3 class="h4" style="margin-top:6px;">Quanto mais complexa a compra, mais a página pesa</h3>
+        <p class="p">Equipamentos, joias e saúde são os três segmentos onde a página de produto tem mais
+        trabalho a fazer — e onde ela erra mais quando é template.</p>
+      </div>
+      <div class="card">
+        <span class="tag tag--live">O caso da joalheria</span>
+        <h3 class="h4" style="margin-top:6px;">0,58% → 1,15% é a média. Dá pra ir além</h3>
+        <p class="p">Numa página de anel que reconstruímos, a conversão saiu de 0,16% para 0,97% em 55
+        dias — com 55% menos tráfego que o período anterior.</p>
+        <p class="sm"><a href="../cases/" style="color:var(--violet); font-weight:700;">Ver o case com a janela declarada →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="in">
+    <p class="eyebrow">Se o seu número está abaixo</p>
+    <h2 class="d1">A diferença está na página.</h2>
+    <p>Agende um diagnóstico gratuito e a gente olha a sua loja com você — sem call de vendas disfarçada.</p>
+    <div class="row-flex" style="justify-content:center;">
+      <a class="btn btn-white" href="../contato/">Agendar diagnóstico</a>
+      <a class="btn btn-ghost-w" href="../app/#planos">Testar o app grátis</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-cols">
+      <div class="stack g6">
+        <a class="logo" href="../">convert<em>fly</em></a>
+        <p class="sm" style="max-width:32ch;">Tech partner de conversão para e-commerces. Metodologia
+        Conversion Map™ + App Convertfly, nativos da plataforma da sua loja.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="TikTok">♪</a><a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div><h6>Navegação</h6><ul>
+        <li><a href="../">Home</a></li><li><a href="../app/">O app</a></li>
+        <li><a href="../implementacao/">Implementação</a></li><li><a href="../cases/">Cases</a></li>
+      </ul></div>
+      <div><h6>Contato</h6><ul>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="mailto:contato@convertfly.com.br">contato@convertfly.com.br</a></li>
+        <li><a href="../contato/">Formulário de contato</a></li>
+      </ul></div>
+      <div><h6>Convertfly</h6><ul>
+        <li><a href="../convert-talks/">Convert Talks</a></li><li><a href="../cases/">Portfólio</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Convertfly. Todos os direitos reservados.</span>
+      <span>BM Web Marketing + Dr. Growth</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/cf-web.js"></script>
+<script>
+(function () {
+  var CARTEIRA = 1.63;
+  var DADOS = {
+    moda:        { nome: 'Moda e Vestuário',        ate: 0.71, acima: 1.06 },
+    saude:       { nome: 'Saúde e Beleza',          ate: 1.09, acima: 1.58 },
+    joias:       { nome: 'Joias e Semijoias',       ate: 0.58, acima: 1.15 },
+    artesanato:  { nome: 'Artesanato',              ate: 1.01, acima: 1.18 },
+    comidas:     { nome: 'Comidas e Bebidas',       ate: 1.20, acima: 2.03 },
+    equipamentos:{ nome: 'Equipamentos e Máquinas', ate: 0.32, acima: 1.57 },
+    pet:         { nome: 'Pet',                     ate: 0.56, acima: 1.07 },
+    eroticos:    { nome: 'Produtos Eróticos',       ate: 0.66, acima: 1.18 }
+  };
+  var seg = document.getElementById('segmento'), faixa = document.getElementById('faixa'),
+      fat = document.getElementById('fat'), calc = document.getElementById('calc');
+  var pct = function (n) { return n.toFixed(2).replace('.', ',') + '%'; };
+  var brl = function (n) { return 'R$ ' + Math.round(n).toLocaleString('pt-BR'); };
+  var digits = function (s) { return (s || '').replace(/\D/g, ''); };
+
+  function render() {
+    var d = DADOS[seg.value], media = faixa.value === 'ate' ? d.ate : d.acima;
+    document.getElementById('out-seg').textContent = pct(media);
+    document.getElementById('out-seg-t').textContent = 'Média de ' + d.nome;
+    document.getElementById('out-seg-d').textContent = faixa.value === 'ate'
+      ? 'Lojas até R$ 100 mil por mês no segmento.'
+      : 'Lojas acima de R$ 100 mil por mês no segmento.';
+
+    var gap = (CARTEIRA / media - 1) * 100;
+    document.getElementById('out-gap').textContent = gap >= 0
+      ? Math.round(gap) + '% acima da média do seu recorte'
+      : Math.round(-gap) + '% abaixo da média do seu recorte';
+
+    var v = parseInt(digits(fat.value), 10);
+    if (v && v > 0 && CARTEIRA > media) {
+      document.getElementById('out-money').textContent = brl(v * (CARTEIRA / media - 1));
+      document.getElementById('out-money-t').textContent =
+        'por mês, se a conversão saísse de ' + pct(media) + ' para ' + pct(CARTEIRA) +
+        ' mantendo o mesmo tráfego.';
+      calc.hidden = false;
+    } else {
+      calc.hidden = true;
+    }
+  }
+
+  fat.addEventListener('input', function () {
+    var d = digits(fat.value);
+    fat.value = d ? 'R$ ' + parseInt(d, 10).toLocaleString('pt-BR') : '';
+    render();
+  });
+  seg.addEventListener('change', render);
+  faixa.addEventListener('change', render);
+  render();
+})();
+</script>
+</body>
+</html>

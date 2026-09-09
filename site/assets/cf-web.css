@@ -439,3 +439,34 @@ a { color: inherit; }
 .loja-k { font-size: 10.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--on-ground-3); }
 .loja-d { font-size: 13.5px; line-height: 1.5; color: var(--on-ground-2); }
+
+/* ════ SELETOR DE SEGMENTO ═════════════════════════════════ */
+.seg-form { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); align-items: end; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 11px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--on-paper-3); }
+.band-dark .field label, .band-deep .field label { color: var(--on-ground-3); }
+.field select, .field input { font-family: inherit; font-size: 15px; font-weight: 600; padding: 13px 15px;
+  border-radius: var(--r-m); border: 1px solid var(--hair-paper); background: var(--paper-2);
+  color: var(--on-paper); appearance: none; }
+.band-dark .field select, .band-dark .field input,
+.band-deep .field select, .band-deep .field input {
+  background: rgba(255,255,255,0.06); border-color: var(--hair); color: #fff; }
+.field select:focus, .field input:focus { outline: none; border-color: var(--violet);
+  box-shadow: 0 0 0 4px rgba(153,49,255,0.14); }
+.field select { background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+  linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 19px) 22px, calc(100% - 13px) 22px;
+  background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 38px; }
+
+.seg-out { display: grid; gap: clamp(14px,1.8vw,20px); grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+.seg-note { font-size: 12.5px; line-height: 1.55; color: var(--on-paper-3); }
+.band-dark .seg-note, .band-deep .seg-note { color: var(--on-ground-3); }
+
+/* Cartão de feature com print acima */
+.feat { border-radius: var(--r-l); overflow: hidden; background: var(--raise); border: 1px solid var(--hair);
+  display: flex; flex-direction: column; }
+.band-light .feat { background: var(--paper-2); border-color: var(--hair-paper);
+  box-shadow: 0 12px 34px rgba(27,16,54,0.055); }
+.feat .mock-slot { aspect-ratio: 16/11; border-radius: 0; }
+.feat-body { padding: 20px clamp(18px,2vw,22px) 24px; display: flex; flex-direction: column; gap: 9px; }
