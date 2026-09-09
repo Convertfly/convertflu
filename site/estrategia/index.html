@@ -6,8 +6,7 @@
 <title>A Convertfly fechou o ciclo</title>
 <link rel="stylesheet" href="../assets/cf-web.css">
 <style>
-  .map { display:grid; gap:2px; min-width:820px;
-         grid-template-columns: 150px 1fr 1fr 128px; }
+  .map { display:grid; gap:2px; min-width:860px; grid-template-columns:150px 1fr 1fr 118px; }
   .map > div { padding:16px 18px; background:var(--raise); }
   .map .mh { background:transparent; padding:0 18px 10px; font-size:10.5px; font-weight:700;
              letter-spacing:0.14em; text-transform:uppercase; color:var(--on-ground-3); }
@@ -19,23 +18,37 @@
   .map .mod.none { background:none; color:var(--on-ground-3); font-weight:700; }
   .map .desc { font-size:13px; line-height:1.5; color:var(--on-ground-2); }
   .map .st { font-size:11px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; }
-  .st-live { color:#7dc191; } .st-hum { color:var(--gold); }
+  .st-live { color:#7dc191; } .st-hum { color:var(--gold); } .st-soon { color:#8fb4e8; }
 
-  .route-row { display:grid; gap:clamp(12px,2vw,26px); min-width:800px; align-items:start;
-               grid-template-columns: 178px 1fr 1.15fr 96px;
-               padding:15px 0; border-top:1px solid var(--hair); }
-  .band-light .route-row { border-top-color:var(--hair-paper); }
-  .route-row.head { border-top:0; border-bottom:1px solid var(--hair-strong); padding-bottom:9px;
-                    font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase;
-                    color:var(--on-ground-3); }
-  .band-light .route-row.head { color:var(--on-paper-3); border-bottom-color:rgba(22,14,51,0.2); }
+  .grid-row { display:grid; gap:clamp(12px,2vw,26px); min-width:820px; align-items:start;
+              padding:15px 0; border-top:1px solid var(--hair); }
+  .band-light .grid-row { border-top-color:var(--hair-paper); }
+  .grid-row.head { border-top:0; border-bottom:1px solid var(--hair-strong); padding-bottom:9px;
+                   font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase;
+                   color:var(--on-ground-3); }
+  .band-light .grid-row.head { color:var(--on-paper-3); border-bottom-color:rgba(22,14,51,0.2); }
   .path { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13.5px; font-weight:700; color:var(--coral); }
   .fase { display:inline-flex; padding:3px 10px; border-radius:var(--r-pill); font-size:11px; font-weight:800;
-          background:rgba(255,255,255,0.08); color:var(--on-ground-2); }
+          background:rgba(255,255,255,0.08); color:var(--on-ground-2); white-space:nowrap; }
   .band-light .fase { background:rgba(22,14,51,0.06); color:var(--on-paper-2); }
+  .obj { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:800; white-space:nowrap; }
+  .obj i { width:8px; height:8px; border-radius:50%; font-style:normal; flex-shrink:0; }
+  .o-F i{background:var(--coral)} .o-F{color:var(--coral)}
+  .o-S i{background:var(--positive)} .o-S{color:#7dc191}
+  .o-T i{background:var(--gold)} .o-T{color:var(--gold)}
+  .o-P i{background:#8c7ae6} .o-P{color:#a495ef}
+  .o-C i{background:var(--magenta)} .o-C{color:#e06aab}
+  .band-light .o-S{color:#33714a} .band-light .o-P{color:#6b57cf} .band-light .o-C{color:var(--magenta)}
   .callout { border-left:2px solid; border-image:var(--grad) 1; padding-left:clamp(18px,2.6vw,30px); }
-  .neg { border-left:2px solid var(--coral); padding-left:clamp(18px,2.6vw,30px); }
-  .big { font-size:clamp(30px,3.6vw,44px); font-weight:800; letter-spacing:-0.03em; line-height:1.06; margin:0; }
+  .big { font-size:clamp(28px,3.4vw,42px); font-weight:800; letter-spacing:-0.03em; line-height:1.07; margin:0; }
+  .chips { display:flex; flex-wrap:wrap; gap:7px; }
+  .el { padding:6px 12px; border-radius:var(--r-s); background:var(--raise); border:1px solid var(--hair);
+        font-size:12.5px; font-weight:600; color:var(--on-ground-2); }
+  .band-light .el { background:#fff; border-color:var(--hair-paper); color:var(--on-paper-2); }
+  .el-new { background:rgba(153,49,255,0.12); border-color:rgba(153,49,255,0.35); color:#b571ff; font-weight:800; }
+  .band-light .el-new { background:rgba(153,49,255,0.09); color:var(--violet); }
+  .ver { display:inline-flex; padding:4px 12px; border-radius:var(--r-pill); font-size:11.5px; font-weight:800;
+         letter-spacing:0.08em; background:rgba(255,255,255,0.09); border:1px solid var(--hair-strong); }
 </style>
 </head>
 <body>
@@ -43,50 +56,150 @@
 <nav class="nav">
   <div class="nav-in">
     <a class="logo" href="../">convert<em>fly</em></a>
-    <span class="sm" style="margin-left:auto;">Proposta de estratégia · antes do design</span>
+    <span class="sm" style="margin-left:auto;">Estratégia do site · v3 · antes do design</span>
   </div>
 </nav>
 
-<!-- ═══ A TESE ═════════════════════════════════════════════ -->
+<!-- ═══ TESE ═══════════════════════════════════════════════ -->
 <header class="band band-dark glow" style="padding-top:clamp(56px,7vw,92px);">
   <div class="in stack g8">
-    <p class="eyebrow">Zoom out · projeto do site</p>
-    <h1 class="d1" style="max-width:16ch;">O app parou de ser um page builder. E <span class="k">ninguém sabe disso</span>.</h1>
+    <div class="stack g4" style="flex-direction:row; align-items:center; flex-wrap:wrap;">
+      <span class="ver">v3</span>
+      <p class="eyebrow" style="margin:0;">Zoom out · projeto do site</p>
+    </div>
+    <h1 class="d1" style="max-width:17ch;">O site vende um app de página. A empresa construiu <span class="k">uma plataforma</span>.</h1>
     <p class="lede">
-      Com Teste A/B, Métricas e Motions no ar, a Convertfly deixou de vender uma ferramenta de construir
-      página e passou a operar um ciclo fechado: constrói, mede, testa, aprende. É outra categoria — e o
-      site atual não conta isso em lugar nenhum.
+      Editor visual com camadas, colunas flex, CSS global e preview mobile — no nível de um Elementor.
+      Geração por IA. Biblioteca de seções prontas. Galeria de elementos em cinco famílias. Teste A/B.
+      Métricas por página. Motions. E LPs sazonais de um clique chegando. Nada disso aparece em
+      convertfly.com.br hoje.
     </p>
     <div class="callout" style="margin-top:8px;">
-      <p class="big" style="max-width:22ch;">Um page builder publica.<br>A Convertfly publica, mede e <span class="k">testa</span> — no mesmo lugar.</p>
-      <p class="sm" style="margin-top:16px; max-width:60ch;">
-        Essa frase ataca os três concorrentes de uma vez: o PageFly não mede, a agência não tem software,
-        e a ferramenta de CRO não constrói página nativa da plataforma.
+      <p class="big" style="max-width:24ch;">Um page builder publica.<br>A Convertfly publica, mede e <span class="k">testa</span> — no mesmo lugar.</p>
+      <p class="sm" style="margin-top:16px; max-width:62ch;">
+        A frase ataca os três concorrentes de uma vez: o PageFly não mede nem testa, a agência não tem
+        software, e a ferramenta de CRO não constrói página nativa da plataforma. É a única posição do
+        mercado brasileiro que ninguém mais ocupa.
       </p>
     </div>
   </div>
 </header>
 
-<!-- ═══ O MAPEAMENTO ═══════════════════════════════════════ -->
+<!-- ═══ OS TRÊS INVENTÁRIOS ════════════════════════════════ -->
 <section class="band band-light">
   <div class="in stack g12">
     <div class="stack g4">
-      <p class="eyebrow">A descoberta que organiza tudo</p>
-      <h2 class="d2">O app é o Conversion Map™ <span class="k">compilado em software</span>.</h2>
+      <p class="eyebrow">Primeira coisa a arrumar</p>
+      <h2 class="d2">Três inventários diferentes, hoje <span class="k">contados como um só</span>.</h2>
       <p class="lede">
-        Os módulos do app não são features soltas. Cada um é um pilar do método virando produto. Esse
-        mapeamento é a espinha do site inteiro — é o que faz as duas rotas serem duas portas de um sistema
-        só, e não dois produtos concorrentes.
+        O site diz “arsenal de 40 seções”. O app diz “32 elementos”. A proposta comercial diz “+15 módulos”.
+        Não são versões do mesmo número — são três coisas distintas, e chamá-las pelo mesmo nome faz o
+        produto parecer menor e o discurso parecer frouxo.
       </p>
     </div>
 
-    <div class="scroll-x">
-      <div class="map" style="--raise:#fff;">
-        <div class="mh">Pilar do método</div><div class="mh">Módulo no app</div><div class="mh">O que ele faz</div><div class="mh">Estado</div>
+    <div class="cols cols-3">
+      <div class="card">
+        <span class="card-label">Camada 1 · peças</span>
+        <h3 class="h4">Galeria de Elementos</h3>
+        <p class="p">Os widgets de construção, em cinco famílias: Layout interno, Conteúdo, Mídia, Avançados
+        e Conversão. É o vocabulário do editor.</p>
+        <p class="sm" style="margin-top:8px;"><strong>Verificar:</strong> o app anuncia 32, mas a galeria
+        aberta mostra mais que isso. Fixar o número antes de publicar.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Camada 2 · blocos</span>
+        <h3 class="h4">Seções prontas</h3>
+        <p class="p">Blocos já montados e inseríveis: Hero Clássico Dividido, Hero Dark + Vídeo, Hero
+        Urgência, Hero Flex, Imagem + 3 Ícones, Grid 4 Ícones, Texto + Barras de Progresso e por aí.</p>
+        <p class="sm" style="margin-top:8px;">É o atalho entre a peça solta e a página inteira.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Camada 3 · repertório</span>
+        <h3 class="h4">Arsenal do método</h3>
+        <p class="p">As 40 seções catalogadas do Conversion Map™ — 34 permanentes e 6 sazonais — cada uma
+        com obrigatoriedade e propósito estratégico definidos.</p>
+        <p class="sm" style="margin-top:8px;">Não é software: é o repertório que diz <em>qual</em> bloco usar,
+        <em>onde</em> e <em>por quê</em>.</p>
+      </div>
+    </div>
 
-        <div class="pil"><small>Pilar 01</small>Pesquisa e Inteligência</div>
+    <div class="callout">
+      <p class="p" style="color:var(--on-paper); max-width:68ch;">
+        Dito assim, os três números viram um argumento em vez de uma contradição:
+        <strong>peças para montar, blocos para acelerar, e um repertório que decide.</strong>
+        O concorrente tem a primeira camada. Talvez a segunda. Nenhum tem a terceira.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ A PIRÂMIDE DE AUTONOMIA ════════════════════════════ -->
+<section class="band band-dark">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">A estrutura da página do app</p>
+      <h2 class="d2">Três formas de construir. <span class="k k-box">Um produto só</span>.</h2>
+      <p class="lede">
+        O app atende do lojista que nunca abriu um editor até a agência que quer controle de CSS. Em vez
+        de fragmentar a página tentando falar com os dois, a rota /app se organiza por <strong>nível de
+        autonomia</strong> — e cada visitante encontra o seu degrau sem ler o resto.
+      </p>
+    </div>
+
+    <div class="cols cols-3">
+      <div class="panel">
+        <span class="card-label">Nível 1 · mais rápido</span>
+        <h3 class="d3" style="margin:10px 0 12px;">Criar com IA</h3>
+        <p class="p">Você descreve a página em texto livre e a estrutura nasce montada, pronta para editar.
+        Resolve a página em branco — que é onde a maioria desiste.</p>
+        <p class="sm" style="margin-top:12px;">Fala com: lojista sem repertório de layout.</p>
+      </div>
+      <div class="panel">
+        <span class="card-label">Nível 2 · mais seguro</span>
+        <h3 class="d3" style="margin:10px 0 12px;">Seções prontas</h3>
+        <p class="p">Blocos já compostos, inseridos com um clique. Em breve, LPs sazonais completas de Black
+        Friday e Natal importáveis inteiras.</p>
+        <p class="sm" style="margin-top:12px;">Fala com: quem tem pressa e prazo de campanha.</p>
+      </div>
+      <div class="panel">
+        <span class="card-label">Nível 3 · sem teto</span>
+        <h3 class="d3" style="margin:10px 0 12px;">Do zero, como um Elementor</h3>
+        <p class="p">Árvore de camadas, colunas padrão e flex, CSS global, controle de marca, preview
+        desktop e mobile, posicionamento acima ou abaixo do bloco nativo do produto.</p>
+        <p class="sm" style="margin-top:12px;">Fala com: designer, agência, time interno.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p class="p" style="color:#fff; max-width:68ch;">
+        O detalhe que mais prova domínio de plataforma e que hoje não é dito em lugar nenhum:
+        <strong>o editor deixa escolher se a seção entra acima do produto ou abaixo da descrição.</strong>
+        Isso é a regra estrutural do método — nativo primeiro, conteúdo estratégico depois — virando
+        controle de interface. É o tipo de detalhe que faz um comprador técnico entender que tem gente
+        séria do outro lado.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PILAR × MÓDULO ═════════════════════════════════════ -->
+<section class="band band-raise">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">A espinha do site</p>
+      <h2 class="d2">O app é o Conversion Map™ <span class="k">compilado em software</span>.</h2>
+      <p class="lede">Os módulos não são features soltas: cada um é um pilar do método virando produto.
+      É isso que faz as duas rotas serem duas portas de um sistema só.</p>
+    </div>
+
+    <div class="scroll-x">
+      <div class="map">
+        <div class="mh">Pilar</div><div class="mh">Módulo no app</div><div class="mh">O que faz</div><div class="mh">Estado</div>
+
+        <div class="pil"><small>Pilar 01</small>Pesquisa</div>
         <div class="mod none">— humano</div>
-        <div class="desc">Tripé de pesquisa: produto, concorrência, cohorts. Ainda é o facilitador com IA, fora do app.</div>
+        <div class="desc">Tripé de pesquisa: produto, concorrência, cohorts. Facilitador com IA, fora do app.</div>
         <div class="st st-hum">Serviço</div>
 
         <div class="pil"><small>Pilar 02</small>Estratégia</div>
@@ -95,70 +208,168 @@
         <div class="st st-hum">Serviço</div>
 
         <div class="pil"><small>Pilar 03</small>Execução</div>
-        <div class="mod">Minhas Páginas · Motions</div>
-        <div class="desc">Sete tipos de página, arsenal de seções, sistema de slots por plano, e agora animações prontas geradas em código autocontido.</div>
+        <div class="mod">Editor · Elementos · Seções · Motions</div>
+        <div class="desc">Sete tipos de página, galeria de elementos, biblioteca de seções, geração por IA,
+        animações em código autocontido, sistema de slots por plano.</div>
         <div class="st st-live">No ar</div>
 
         <div class="pil"><small>Pilar 04</small>Mensuração</div>
         <div class="mod">Métricas</div>
-        <div class="desc">Visualizações, tempo médio, funil de rolagem em quatro faixas e adição ao carrinho — por página, com série diária.</div>
+        <div class="desc">Visualizações, tempo médio, funil de rolagem em quatro faixas, adição ao carrinho —
+        por página, com série diária e recorte de período.</div>
         <div class="st st-live">No ar</div>
 
         <div class="pil"><small>Pilar 05</small>Aprendizado</div>
         <div class="mod">Teste A/B</div>
-        <div class="desc">Duas variantes do mesmo produto, comparadas por visualização, tempo, rolagem e carrinho. Oficializar a vencedora vira página definitiva.</div>
+        <div class="desc">Duas variantes do mesmo produto comparadas por visualização, tempo, rolagem e
+        carrinho. Oficializar a vencedora a transforma em página definitiva.</div>
         <div class="st st-live">No ar</div>
-      </div>
-    </div>
 
-    <div class="callout">
-      <p class="p" style="max-width:66ch; color:var(--on-paper);">
-        A Apresentação Master coloca “de página publicada para sistema de experimentação contínua” como
-        <em>próximo passo do app</em>. <strong>Já aconteceu.</strong> O material institucional está atrasado
-        em relação ao produto — e o site vai nascer com essa correção.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ O REPOSICIONAMENTO ═════════════════════════════════ -->
-<section class="band band-dark">
-  <div class="in stack g12">
-    <div class="stack g4">
-      <p class="eyebrow">A decisão de posicionamento</p>
-      <h2 class="d2">As duas rotas não são dois produtos. São <span class="k k-box">dois níveis de acompanhamento</span>.</h2>
-      <p class="lede">
-        Essa é a correção mais importante da proposta anterior. Tratar “app” e “implementação” como
-        produtos diferentes cria concorrência interna e transforma o app no “plano barato”. Tratados como
-        dois níveis de acesso ao mesmo sistema, a passagem entre eles vira natural — e o app deixa de ser
-        desconto para virar porta.
-      </p>
-    </div>
-
-    <div class="split">
-      <div class="panel">
-        <span class="card-label">Rota A · autonomia</span>
-        <h3 class="d3" style="margin:10px 0 14px;">Você opera o sistema.</h3>
-        <p class="p">Assina o app, constrói suas páginas, lê suas próprias métricas e roda seus próprios
-        testes. O método está embutido na ferramenta — nos sete tipos de página, no arsenal de seções, na
-        forma como as métricas são organizadas.</p>
-        <p class="sm" style="margin-top:14px;">Conversão: instalar · testar 7 dias.</p>
-      </div>
-      <div class="panel">
-        <span class="card-label">Rota B · acompanhamento</span>
-        <h3 class="d3" style="margin:10px 0 14px;">A gente opera com você.</h3>
-        <p class="p">O mesmo sistema, mais os dois pilares que não cabem em software: a pesquisa e o
-        workshop de estratégia. Você recebe o OPS, as páginas construídas e a leitura do que os dados do
-        app estão dizendo.</p>
-        <p class="sm" style="margin-top:14px;">Conversão: diagnóstico · proposta.</p>
+        <div class="pil"><small>Roadmap</small>Sazonalidade</div>
+        <div class="mod">LPs de campanha</div>
+        <div class="desc">Black Friday e Natal completas, importáveis com um clique. As 6 seções sazonais do
+        arsenal viram produto.</div>
+        <div class="st st-soon">Em breve</div>
       </div>
     </div>
 
     <div class="callout">
       <p class="p" style="color:#fff; max-width:68ch;">
-        O argumento de upgrade fica óbvio e não-agressivo: <strong>“os dados já estão no seu painel.
-        Quer que a gente leia com você?”</strong> Nenhuma outra empresa do mercado pode dizer essa frase,
-        porque nenhuma tem o dado e o método na mesma mão.
+        A Apresentação Master coloca “de página publicada para sistema de experimentação contínua” como
+        <em>próximo passo do app</em>. Já aconteceu — e o material institucional ficou atrasado em relação
+        ao produto. O site nasce com essa correção.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVISÃO DA GALERIA ═════════════════════════════════ -->
+<section class="band band-light">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">Você perguntou se falta elemento</p>
+      <h2 class="d2">Falta. E o que falta é <span class="k">exatamente o que ninguém mais tem</span>.</h2>
+      <p class="lede">
+        Cruzei a galeria com os sete tipos de objeção e as seis seções obrigatórias do método. A cobertura
+        é boa em Funcional e Informacional — e tem buracos justamente onde o Conversion Map™ é mais forte.
+        Cada buraco abaixo é um elemento que só a Convertfly teria motivo para construir.
+      </p>
+    </div>
+
+    <div class="scroll-x">
+      <div>
+        <div class="grid-row head" style="grid-template-columns:112px 1fr 1.25fr;">
+          <div>Objeção</div><div>O que a galeria já resolve</div><div>O que falta</div></div>
+
+        <div class="grid-row" style="grid-template-columns:112px 1fr 1.25fr;">
+          <div><span class="obj o-P"><i></i>P · Psicológica</span></div>
+          <div class="sm">Depoimento, Perfil. Nada que enderece cohort.</div>
+          <div><div class="h5" style="margin-bottom:5px;">Seletor de perfil</div>
+            <p class="sm">O método mapeia 3 a 4 cohorts por cliente e <strong>a página não tem como falar
+            com cada um</strong>. Um elemento de abas ou cards que troca conteúdo por perfil — “compro para
+            mim” / “compro de presente” — é o elemento mais Convertfly possível. Nenhum builder tem, porque
+            nenhum builder tem método de cohort.</p></div>
+        </div>
+
+        <div class="grid-row" style="grid-template-columns:112px 1fr 1.25fr;">
+          <div><span class="obj o-T"><i></i>T · Temporal</span></div>
+          <div class="sm">Contagem Regressiva. Garantia hoje se monta na unha, com Ícone + Texto.</div>
+          <div><div class="h5" style="margin-bottom:5px;">Bloco de Garantia</div>
+            <p class="sm">Garantia é <strong>seção obrigatória</strong> do método e sempre perto do CTA. Merece
+            elemento próprio, com os três campos que o método exige: prazo, processo, e o que acontece se der
+            errado. Hoje cada cliente monta de um jeito.</p></div>
+        </div>
+
+        <div class="grid-row" style="grid-template-columns:112px 1fr 1.25fr;">
+          <div><span class="obj o-F"><i></i>F · Financeira</span></div>
+          <div class="sm">Tabela Pro, Planos, Box de Produto.</div>
+          <div><div class="h5" style="margin-bottom:5px;">Custo por uso</div>
+            <p class="sm">O método é literal: <em>“R$ 9,58/dia contra R$ 150/sessão é prova; ROI vago não é.”</em>
+            Um elemento que quebra o preço em custo diário ou por uso, contra uma alternativa, transforma
+            ticket alto em decisão fácil. Vale para joalheria, recovery, moda premium — todos os nichos da casa.</p></div>
+        </div>
+
+        <div class="grid-row" style="grid-template-columns:112px 1fr 1.25fr;">
+          <div><span class="obj o-S"><i></i>S · Social</span></div>
+          <div class="sm">Depoimento e Perfil, unitários.</div>
+          <div><div class="h5" style="margin-bottom:5px;">Muro de prova · UGC</div>
+            <p class="sm">O método exige “UGC real, número de comunidade” e rejeita depoimento genérico. Falta
+            um <strong>grid de prova com foto real</strong> e um contador verificável. Um depoimento isolado é
+            argumento; vinte com rosto é evidência.</p></div>
+        </div>
+
+        <div class="grid-row" style="grid-template-columns:112px 1fr 1.25fr;">
+          <div><span class="obj o-C"><i></i>C · Comparativa</span></div>
+          <div class="sm">Tabela Pro, Antes/Depois. Boa base.</div>
+          <div><div class="h5" style="margin-bottom:5px;">Guia de escolha</div>
+            <p class="sm">É a <strong>seção âncora das páginas Global</strong> — a página que existe para
+            resolver uma dimensão de escolha que atravessa o catálogo (material, tecnologia, tamanho). Existe
+            no método, existe como tipo de página, mas não existe como elemento.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:8px;">
+      <div class="stack g4">
+        <p class="eyebrow">A recomendação que vale mais que os cinco elementos</p>
+        <h3 class="d3">Organize a galeria por <span class="k">função</span>, não por widget.</h3>
+        <p class="p">Hoje as famílias são formais — Conteúdo, Mídia, Avançados. O lojista não acorda querendo
+        um “Accordion”: ele quer <em>parar de perder venda por dúvida não respondida</em>. Uma segunda visão
+        da galeria, agrupada pelas sete objeções, seria a materialização do método dentro do editor — e
+        transformaria a escolha de widget em decisão estratégica.</p>
+        <p class="sm">É também exatamente como a página <span class="path">/app/paginas</span> deve
+        apresentar os elementos no site, independente do que o app faça.</p>
+      </div>
+      <div class="stack g4">
+        <p class="eyebrow">Os cinco elementos propostos</p>
+        <div class="chips">
+          <span class="el el-new">Seletor de perfil</span>
+          <span class="el el-new">Bloco de Garantia</span>
+          <span class="el el-new">Custo por uso</span>
+          <span class="el el-new">Muro de prova · UGC</span>
+          <span class="el el-new">Guia de escolha</span>
+        </div>
+        <p class="sm" style="margin-top:10px;">Nenhum é caro de construir perto do que já existe. Os cinco
+        saem direto do método, o que significa que <strong>o roadmap do produto passa a ser derivado da
+        metodologia</strong> — e não de olhar o que o concorrente lançou.</p>
+        <p class="sm">Prioridade sugerida: <strong>Garantia</strong> (é seção obrigatória e hoje é gambiarra),
+        depois <strong>Seletor de perfil</strong> (é o mais diferenciado), depois <strong>Custo por uso</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AS DUAS ROTAS ══════════════════════════════════════ -->
+<section class="band band-dark">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">Posicionamento</p>
+      <h2 class="d2">As duas rotas não são dois produtos. São <span class="k k-box">dois níveis de acompanhamento</span>.</h2>
+      <p class="lede">
+        Tratar “app” e “implementação” como produtos diferentes cria concorrência interna e transforma o
+        app no plano barato. Como níveis de acesso ao mesmo sistema, a passagem entre eles vira natural.
+      </p>
+    </div>
+    <div class="split">
+      <div class="panel">
+        <span class="card-label">Rota A · autonomia</span>
+        <h3 class="d3" style="margin:10px 0 14px;">Você opera o sistema.</h3>
+        <p class="p">Constrói com IA, com seção pronta ou do zero. Lê as próprias métricas. Roda os próprios
+        testes. O método está embutido na ferramenta — nos sete tipos de página, na galeria, na forma como a
+        métrica é organizada.</p>
+      </div>
+      <div class="panel">
+        <span class="card-label">Rota B · acompanhamento</span>
+        <h3 class="d3" style="margin:10px 0 14px;">A gente opera com você.</h3>
+        <p class="p">O mesmo sistema, mais os dois pilares que não cabem em software: a pesquisa e o
+        workshop. Você recebe o OPS, as páginas construídas e a leitura do que os seus dados estão dizendo.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p class="p" style="color:#fff; max-width:68ch;">
+        O argumento de upgrade fica óbvio e nada agressivo: <strong>“os dados já estão no seu painel.
+        Quer que a gente leia com você?”</strong> Nenhum concorrente pode dizer essa frase, porque nenhum
+        tem o dado e o método na mesma mão.
       </p>
     </div>
   </div>
@@ -168,129 +379,125 @@
 <section class="band band-raise">
   <div class="in stack g8">
     <div class="stack g4">
-      <p class="eyebrow">Arquitetura proposta</p>
-      <h2 class="d2">Dez páginas, em cinco fases.</h2>
+      <p class="eyebrow">Arquitetura</p>
+      <h2 class="d2">Onze páginas, em cinco fases.</h2>
       <p class="lede">
-        Home explicando tudo, LP própria por módulo, cases estruturados. Construído em fases para que o
-        site entre no ar antes de estar completo e cresça a cada release do app — que foi exatamente o que
-        você pediu.
+        Home explicando tudo, LP própria por módulo, cases estruturados. Em fases, para o site entrar no ar
+        antes de estar completo e crescer a cada release do app.
       </p>
     </div>
 
     <div class="scroll-x">
       <div>
-        <div class="route-row head"><div>Rota</div><div>Pergunta central</div><div>O que sustenta</div><div>Fase</div></div>
+        <div class="grid-row head" style="grid-template-columns:186px 1fr 1.15fr 96px;">
+          <div>Rota</div><div>Pergunta central</div><div>O que sustenta</div><div>Fase</div></div>
 
-        <div class="route-row">
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/implementacao</span></div>
           <div class="p">“Por que pagar por isso em vez de uma agência?”</div>
-          <div class="sm">Método, os 7 tipos de objeção, o OPS, os cases da AEVI com número, o time.</div>
-          <div><span class="fase">Fase 1</span></div>
-        </div>
-        <div class="route-row">
+          <div class="sm">Método, 7 objeções, OPS, os cases da AEVI com número, o time, o D+90.</div>
+          <div><span class="fase">Fase 1</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/app</span></div>
           <div class="p">“O que eu consigo fazer sozinho?”</div>
-          <div class="sm">Hub do produto: os 5 módulos, o sistema de slots, arquitetura, planos.</div>
-          <div><span class="fase">Fase 1</span></div>
-        </div>
-        <div class="route-row">
+          <div class="sm">Hub: os três níveis de autonomia, os cinco módulos, slots, arquitetura, planos.</div>
+          <div><span class="fase">Fase 1</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/cases</span></div>
           <div class="p">“Funcionou com alguém de verdade?”</div>
           <div class="sm">Ficha de resultado por case, com janela declarada. Nasce parcial e enche.</div>
-          <div><span class="fase">Fase 2</span></div>
-        </div>
-        <div class="route-row">
+          <div><span class="fase">Fase 2</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/quem-somos</span></div>
           <div class="p">“Posso confiar nessa empresa?”</div>
           <div class="sm">Origem, sócios, missão, e a autoridade datada — D2C Summit entra aqui.</div>
-          <div><span class="fase">Fase 2</span></div>
-        </div>
-        <div class="route-row">
+          <div><span class="fase">Fase 2</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
+          <div><span class="path">/app/editor</span></div>
+          <div class="p">“Isso é flexível mesmo, ou é template?”</div>
+          <div class="sm">Camadas, colunas flex, CSS global, mobile, acima/abaixo do nativo. O argumento Elementor.</div>
+          <div><span class="fase">Fase 3</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
+          <div><span class="path">/app/elementos</span></div>
+          <div class="p">“Tem o que eu preciso?”</div>
+          <div class="sm">A galeria inteira, agrupada por objeção que resolve. Mais o Showroom como prova viva.</div>
+          <div><span class="fase">Fase 3</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/app/teste-ab</span></div>
           <div class="p">“Dá pra testar antes de decidir?”</div>
-          <div class="sm">Duas variantes, UTM, funil de rolagem, oficializar a vencedora. O diferencial mais novo.</div>
-          <div><span class="fase">Fase 3</span></div>
-        </div>
-        <div class="route-row">
+          <div class="sm">Duas variantes, UTM, funil de rolagem, oficializar a vencedora.</div>
+          <div><span class="fase">Fase 3</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/app/metricas</span></div>
-          <div class="p">“Como eu sei se a página funcionou?”</div>
-          <div class="sm">Métrica por página, série diária, funil em quatro faixas. É o que separa da agência.</div>
-          <div><span class="fase">Fase 3</span></div>
-        </div>
-        <div class="route-row">
+          <div class="p">“Como sei se a página funcionou?”</div>
+          <div class="sm">Métrica por página, série diária, funil em quatro faixas. O que separa da agência.</div>
+          <div><span class="fase">Fase 3</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/app/paginas</span></div>
-          <div class="p">“Cobre a minha loja inteira?”</div>
-          <div class="sm">Os 7 tipos, o arsenal de seções, as Globais Inteligentes, o modelo de slots.</div>
-          <div><span class="fase">Fase 3</span></div>
-        </div>
-        <div class="route-row">
-          <div><span class="path">/app/motions</span></div>
-          <div class="p">“Consigo deixar com cara de marca grande?”</div>
-          <div class="sm">Biblioteca de animações, código autocontido, zero chamada de rede.</div>
-          <div><span class="fase">Fase 3</span></div>
-        </div>
-        <div class="route-row">
+          <div class="p">“Cobre minha loja inteira?”</div>
+          <div class="sm">Os 7 tipos, as Globais Inteligentes, o modelo de slots, as LPs sazonais.</div>
+          <div><span class="fase">Fase 3</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/convert-talks</span></div>
           <div class="p">“Vocês são referência ou fornecedor?”</div>
           <div class="sm">7 episódios, 3 convidados que viraram clientes. Autoridade e SEO no mesmo ativo.</div>
-          <div><span class="fase">Fase 4</span></div>
-        </div>
-        <div class="route-row">
+          <div><span class="fase">Fase 4</span></div></div>
+
+        <div class="grid-row" style="grid-template-columns:186px 1fr 1.15fr 96px;">
           <div><span class="path">/</span></div>
           <div class="p">“O que é a Convertfly, e por onde eu entro?”</div>
-          <div class="sm">Tese, o ciclo fechado, e o roteamento para as duas rotas.</div>
-          <div><span class="fase">Fase 5</span></div>
-        </div>
-        <div class="route-row">
-          <div><span class="path">/contato</span></div>
-          <div class="p">“Como falo com vocês?”</div>
-          <div class="sm">O formulário atual já é bom — tem qualificação de faturamento embutida. Mantém.</div>
-          <div><span class="fase">Mantém</span></div>
-        </div>
+          <div class="sm">Tese, o ciclo fechado, o roteamento para as duas rotas.</div>
+          <div><span class="fase">Fase 5</span></div></div>
       </div>
     </div>
 
-    <p class="sm" style="max-width:70ch;">
-      Nav principal fica em seis itens: <strong>Home · O app · Implementação · Cases · Quem somos · Contato</strong>.
-      As LPs de módulo penduram em /app. Convert Talks fica no rodapé e ganha nav se virar motor de conteúdo.
+    <p class="sm" style="max-width:72ch;">
+      Nav em seis itens: <strong>Home · O app · Implementação · Cases · Quem somos · Contato</strong>.
+      As cinco LPs de módulo penduram em /app. Convert Talks no rodapé, ganhando nav se virar motor de
+      conteúdo. Contato mantém o formulário atual, que já tem qualificação de faturamento embutida.
       Home por último — regra do método aplicada ao próprio site.
     </p>
   </div>
 </section>
 
-<!-- ═══ O SITE COMO PRODUTO VIVO ═══════════════════════════ -->
+<!-- ═══ ENCAIXES ═══════════════════════════════════════════ -->
 <section class="band band-light">
   <div class="in split">
     <div class="stack g6">
       <p class="eyebrow">O mecanismo</p>
       <h2 class="d2">O site precisa ter <span class="k">encaixe</span>, não só conteúdo.</h2>
       <p class="p">
-        Você disse que quer ir implementando o site a cada atualização. Isso não é um cronograma — é um
-        requisito de arquitetura. Cada coisa nova precisa ter um lugar pronto pra cair, senão toda
-        novidade vira reformulação.
-      </p>
-      <p class="p">
-        São três encaixes, e eles precisam existir desde a primeira linha de código.
+        Você quer ir implementando o site a cada atualização. Isso não é cronograma — é requisito de
+        arquitetura. Cada coisa nova precisa de um lugar pronto para cair, senão toda novidade vira
+        reformulação. São quatro encaixes, e existem desde a primeira linha de código.
       </p>
     </div>
     <div class="rows">
       <div class="row" style="grid-template-columns:44px 1fr;">
         <div class="code code-hot">01</div>
-        <div><div class="h5">Ficha de resultado</div><p class="sm">Componente de case que aceita dado parcial:
-        janela, sessões, CVR, ticket, veredito. Um case entra no site antes de ter número fechado, e o número
-        aparece depois. Alimentado pelo módulo Métricas.</p></div>
-      </div>
+        <div><div class="h5">Ficha de resultado</div><p class="sm">Componente de case que aceita dado
+        parcial: janela, sessões, CVR, ticket, veredito. Alimentado pelo módulo Métricas.</p></div></div>
       <div class="row" style="grid-template-columns:44px 1fr;">
         <div class="code code-hot">02</div>
-        <div><div class="h5">Card de módulo</div><p class="sm">Cada feature nova do app é um card no hub
-        /app mais, quando amadurece, uma LP. Motions entrou assim; a próxima entra igual, sem redesenhar nada.</p></div>
-      </div>
+        <div><div class="h5">Card de elemento</div><p class="sm">Cada elemento novo da galeria entra como
+        card em /app/elementos, com a objeção que resolve. Os cinco propostos entram por aqui.</p></div></div>
       <div class="row" style="grid-template-columns:44px 1fr;">
         <div class="code code-hot">03</div>
-        <div><div class="h5">Novidades do produto</div><p class="sm">Uma faixa de changelog público. Empresa
-        de software tem; agência não. É o sinal mais barato e mais convincente de que o produto está vivo —
-        e o motivo pra alguém voltar ao site.</p></div>
-      </div>
+        <div><div class="h5">Card de módulo</div><p class="sm">Feature nova vira card no hub /app e, quando
+        amadurece, LP própria. Motions entrou assim; a sazonal entra igual.</p></div></div>
+      <div class="row" style="grid-template-columns:44px 1fr;">
+        <div class="code code-hot">04</div>
+        <div><div class="h5">Novidades do produto</div><p class="sm">Changelog público. Empresa de software
+        tem; agência não. É o sinal mais barato de que o produto está vivo — e o motivo de alguém voltar.</p></div></div>
     </div>
   </div>
 </section>
@@ -300,41 +507,51 @@
   <div class="in stack g12">
     <div class="stack g4">
       <p class="eyebrow">O que pode dar errado</p>
-      <h2 class="d2">Cinco riscos, com a decisão de cada um.</h2>
+      <h2 class="d2">Sete riscos, com a decisão de cada um.</h2>
     </div>
-
     <div class="cols cols-2">
       <div class="card">
         <span class="card-label">Risco 01 · posicionamento</span>
-        <h3 class="h4">Apresentar A/B e Métricas como “features novas”</h3>
-        <p class="p">Assim eles leem como corrida atrás do PageFly. Apresentados como o método virando
-        software, viram categoria. <strong>Decisão: nunca listar como feature — sempre como pilar.</strong></p>
+        <h3 class="h4">Virar lista de features</h3>
+        <p class="p">Com tanto módulo novo, a tentação é listar. Listado, vira corrida atrás do PageFly.
+        <strong>Decisão: nada entra como feature — tudo entra como pilar do método.</strong></p>
       </div>
       <div class="card">
-        <span class="card-label">Risco 02 · técnico</span>
-        <h3 class="h4">O Teste A/B é por UTM, não split automático</h3>
-        <p class="p">Quem já usou VWO vai perguntar. Descrito como “split de tráfego” vira objeção na call.
-        <strong>Decisão: descrever exatamente como é — comparação de variantes por UTM, sem chamada extra à plataforma.</strong>
-        A honestidade técnica é parte do posicionamento.</p>
+        <span class="card-label">Risco 02 · números</span>
+        <h3 class="h4">32, 40 ou 15</h3>
+        <p class="p">Três inventários com o mesmo nome. <strong>Decisão: separar em elementos, seções prontas
+        e arsenal — e conferir a contagem real da galeria antes de publicar qualquer um.</strong></p>
       </div>
       <div class="card">
-        <span class="card-label">Risco 03 · mensuração</span>
-        <h3 class="h4">“Adicionou ao carrinho” depende do NubeSDK</h3>
-        <p class="p">No motor legado da Nuvemshop o número fica incompleto. O próprio app já avisa isso na
-        tela. <strong>Decisão: o site repete a nota. Prometer cobertura total gera disputa de número com o cliente.</strong></p>
+        <span class="card-label">Risco 03 · técnico</span>
+        <h3 class="h4">O Teste A/B é por UTM</h3>
+        <p class="p">Não é split automático de tráfego. Quem já usou VWO vai perguntar. <strong>Decisão:
+        descrever exatamente como é — e vender o que isso tem de bom: nenhuma chamada extra à plataforma.</strong></p>
       </div>
       <div class="card">
-        <span class="card-label">Risco 04 · prova</span>
+        <span class="card-label">Risco 04 · mensuração</span>
+        <h3 class="h4">Carrinho depende do NubeSDK</h3>
+        <p class="p">No motor legado o número fica incompleto — o próprio app já avisa na tela.
+        <strong>Decisão: o site repete a nota, na mesma altura em que mostra a métrica.</strong></p>
+      </div>
+      <div class="card">
+        <span class="card-label">Risco 05 · prova</span>
         <h3 class="h4">Nenhuma página fechou D+90</h3>
-        <p class="p">O termo “Relatório D+90” não pode aparecer como entrega já realizada. <strong>Decisão:
-        resultado sempre com a janela declarada — “em 55 dias” — até o primeiro ciclo fechar de verdade.</strong></p>
+        <p class="p">O termo não pode aparecer como entrega realizada. <strong>Decisão: resultado sempre com
+        a janela declarada — “em 55 dias” — até o primeiro ciclo fechar.</strong></p>
       </div>
       <div class="card">
-        <span class="card-label">Risco 05 · comercial</span>
+        <span class="card-label">Risco 06 · comercial</span>
         <h3 class="h4">Preço invisível</h3>
-        <p class="p">Hoje o site não tem preço em lugar nenhum, e o único CTA é o trial. <strong>Decisão:
-        publicar os planos do app (já públicos na loja de apps) e a faixa da implementação.</strong> Preço
-        qualifica lead e sustenta posicionamento premium; ausência de preço faz o ticket alto parecer negociável.</p>
+        <p class="p">Hoje não há preço em lugar nenhum e o único CTA é o trial. <strong>Decisão: publicar os
+        planos do app e a faixa da implementação.</strong> Preço qualifica lead e sustenta premium.</p>
+      </div>
+      <div class="card">
+        <span class="card-label">Risco 07 · roadmap</span>
+        <h3 class="h4">Anunciar o que ainda não existe</h3>
+        <p class="p">As LPs de Black Friday e Natal são forte argumento sazonal, mas ainda não estão no ar.
+        <strong>Decisão: aparecem marcadas como “em breve”, com data se houver.</strong> Roadmap declarado
+        é confiança; roadmap disfarçado de presente é dano.</p>
       </div>
       <div class="card" style="border-color:var(--hair-strong);">
         <span class="card-label">O risco que não é risco</span>
@@ -346,40 +563,42 @@
   </div>
 </section>
 
-<!-- ═══ O QUE FALTA ════════════════════════════════════════ -->
+<!-- ═══ COMEÇAR ════════════════════════════════════════════ -->
 <section class="band band-light">
   <div class="in stack g8">
     <div class="stack g4">
       <p class="eyebrow">Para começar a Fase 1</p>
-      <h2 class="d2">O que eu preciso, e o que já tenho.</h2>
+      <h2 class="d2">O que eu tenho, e o que preciso.</h2>
     </div>
     <div class="split">
       <div class="stack g4">
-        <span class="cf-eyebrow eyebrow" style="color:#33714a;">Já tenho — dá pra começar</span>
+        <span class="eyebrow" style="color:#33714a;">Já tenho — dá pra começar hoje</span>
         <ul class="p" style="margin:0; padding-left:1.1em; line-height:1.95;">
           <li>Design system completo, extraído do site real.</li>
           <li>Voz de marca, das quatro rotas no ar.</li>
           <li>Arquitetura técnica do app, dos dois documentos.</li>
-          <li>Os cinco módulos, dos prints do painel.</li>
+          <li>Os cinco módulos, o editor e a galeria inteira, dos prints.</li>
           <li>Números defensáveis da AEVI e da Neurofood.</li>
-          <li>Dados de contato reais e campos do formulário.</li>
+          <li>Dados de contato reais e os campos do formulário.</li>
         </ul>
       </div>
       <div class="stack g4">
         <span class="eyebrow" style="color:#c23a2c;">Preciso — não bloqueia, mas limita</span>
         <ul class="p" style="margin:0; padding-left:1.1em; line-height:1.95;">
-          <li>Prints em <strong>mobile</strong> — é onde nav e acordeão mudam de verdade.</li>
-          <li>A <strong>Home atual abaixo do bloco de tecnologia</strong>, que vi só pela metade.</li>
+          <li>A <strong>contagem real</strong> da galeria de elementos.</li>
+          <li>Prints em <strong>mobile</strong> — nav e acordeão mudam de verdade ali.</li>
+          <li>A <strong>Home atual</strong> abaixo do bloco de tecnologia.</li>
           <li><strong>Autorização</strong> da Juliana Leme e das marcas citadas.</li>
           <li>Logo em <strong>SVG</strong> e os mockups em alta.</li>
-          <li>Destino real dos CTAs: link de instalação e agenda de diagnóstico.</li>
+          <li>Destino real dos CTAs: instalação e agenda de diagnóstico.</li>
         </ul>
       </div>
     </div>
     <div class="callout" style="margin-top:8px;">
-      <p class="p" style="color:var(--on-paper); max-width:64ch;">
+      <p class="p" style="color:var(--on-paper); max-width:66ch;">
         Proposta: <strong>Fase 1 começa agora</strong> — camada web do design system refeita sobre o sistema
-        do site real, mais /implementacao e /app. São as duas portas comerciais, e são o que hoje não existe.
+        do site real, mais <span class="path">/implementacao</span> e <span class="path">/app</span>.
+        São as duas portas comerciais, e são o que hoje não existe.
       </p>
     </div>
   </div>
@@ -388,7 +607,7 @@
 <footer class="foot">
   <div class="foot-in">
     <div class="foot-meta">
-      <span>Convertfly · proposta de estratégia do site · setembro 2026</span>
+      <span>Convertfly · estratégia do site · v3 · setembro 2026</span>
       <span>Antes do design · antes do código</span>
     </div>
   </div>
