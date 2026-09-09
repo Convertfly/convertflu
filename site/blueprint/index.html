@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blueprint do Site Convertfly</title>
+<link rel="stylesheet" href="../../design-system/colors_and_type.css">
+<link rel="stylesheet" href="../../design-system/components.css">
+<style>
+  body { margin: 0; background: var(--cf-surface-dark); font-family: var(--cf-font-body); }
+
+  /* ── RITMO DE SEÇÃO ─────────────────────────────────────── */
+  .band { padding: var(--cf-sp-24) var(--cf-sp-8); }
+  .band > .wrap { max-width: 1120px; margin: 0 auto; }
+  .band--dark { background: var(--cf-ink-900); color: #fff; }
+  .band--ink  { background: var(--cf-ink-800); color: #fff; }
+  .band--light{ background: var(--cf-surface-light); color: var(--cf-ink-900); }
+  .band--light .cf-body, .band--light .cf-body-1, .band--light .cf-body-s { color: var(--cf-ink-500); }
+
+  .lede { max-width: 66ch; }
+  .stack-2 { display: flex; flex-direction: column; gap: var(--cf-sp-2); }
+  .stack-3 { display: flex; flex-direction: column; gap: var(--cf-sp-3); }
+  .stack-4 { display: flex; flex-direction: column; gap: var(--cf-sp-4); }
+  .stack-6 { display: flex; flex-direction: column; gap: var(--cf-sp-6); }
+  .stack-8 { display: flex; flex-direction: column; gap: var(--cf-sp-8); }
+  .stack-12{ display: flex; flex-direction: column; gap: var(--cf-sp-12); }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: var(--cf-sp-8); }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: var(--cf-sp-6); }
+
+  /* ── NAV ─────────────────────────────────────────────────── */
+  .topnav { position: sticky; top: 0; z-index: 20; background: rgba(22,14,51,0.88); backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .topnav-in { max-width: 1120px; margin: 0 auto; padding: 12px var(--cf-sp-8); display: flex; align-items: center;
+               gap: var(--cf-sp-6); overflow-x: auto; }
+  .topnav a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .topnav a:hover, .topnav a:focus-visible { color: #fff; }
+  .topnav .mark { font-weight: 800; color: #fff; font-size: 14px; letter-spacing: -0.01em; margin-right: auto; }
+
+  /* ── HERO ────────────────────────────────────────────────── */
+  .hero { padding: 120px var(--cf-sp-8) var(--cf-sp-24); }
+  .hero .wrap { max-width: 1120px; margin: 0 auto; }
+
+  /* ── MAPA DE SEÇÕES (linha, não card) ───────────────────── */
+  .maptable { overflow-x: auto; }
+  .maprow { display: grid; grid-template-columns: 38px 1.15fr 1.5fr 0.85fr 1fr; gap: var(--cf-sp-4);
+            min-width: 860px; padding: 14px var(--cf-sp-4); align-items: start;
+            border-bottom: 1px solid rgba(255,255,255,0.09); }
+  .band--light .maprow { border-bottom-color: rgba(22,14,51,0.09); }
+  .maprow.head { border-bottom-width: 2px; padding-bottom: 8px; font-size: 11px; font-weight: 700;
+                 letter-spacing: 0.10em; text-transform: uppercase; color: rgba(255,255,255,0.42); }
+  .band--light .maprow.head { color: var(--cf-ink-400); border-bottom-color: rgba(22,14,51,0.18); }
+  .maprow .n { font-family: var(--cf-font-accent); font-style: italic; font-weight: 700; font-size: 19px; color: var(--cf-gold); }
+  .maprow .s { font-weight: 700; font-size: 14.5px; line-height: 1.3; }
+  .maprow .t { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.62); }
+  .band--light .maprow .t { color: var(--cf-ink-500); }
+  .maprow .src { font-size: 12px; line-height: 1.4; color: rgba(255,255,255,0.38); }
+  .band--light .maprow .src { color: var(--cf-ink-400); }
+  .obj { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; }
+  .obj i { width: 8px; height: 8px; border-radius: 50%; font-style: normal; flex-shrink: 0; }
+  .obj--F  i { background: var(--cf-coral); }   .obj--F  { color: var(--cf-coral); }
+  .obj--FN i { background: var(--cf-violet); }  .obj--FN { color: #b571ff; }
+  .obj--S  i { background: var(--cf-positive); }.obj--S  { color: #7bb98c; }
+  .obj--T  i { background: var(--cf-gold); }    .obj--T  { color: var(--cf-gold); }
+  .obj--I  i { background: #4aa3d4; }           .obj--I  { color: #6fb8e2; }
+  .obj--C  i { background: var(--cf-magenta); } .obj--C  { color: #e06aab; }
+  .obj--P  i { background: #8c7ae6; }           .obj--P  { color: #a495ef; }
+  .band--light .obj--FN { color: var(--cf-violet); }
+  .band--light .obj--S  { color: var(--cf-positive); }
+  .band--light .obj--C  { color: var(--cf-magenta); }
+  .band--light .obj--I  { color: #2f7fae; }
+  .band--light .obj--P  { color: #6b57cf; }
+
+  /* ── LINHA SIMPLES (inventário, lacunas) ────────────────── */
+  .rowlist { display: flex; flex-direction: column; }
+  .row2 { display: grid; grid-template-columns: 1fr 1.7fr; gap: var(--cf-sp-6); padding: 14px 0;
+          border-bottom: 1px solid rgba(22,14,51,0.09); align-items: baseline; }
+  .band--dark .row2, .band--ink .row2 { border-bottom-color: rgba(255,255,255,0.09); }
+  @media (max-width: 680px) { .row2 { grid-template-columns: 1fr; gap: var(--cf-sp-2); } }
+
+  /* ── CARDS DE ROTA ───────────────────────────────────────── */
+  .route { border-radius: var(--cf-r-xl); padding: var(--cf-sp-8); background: rgba(255,255,255,0.045);
+           border: 1px solid rgba(255,255,255,0.11); display: flex; flex-direction: column; gap: var(--cf-sp-4); }
+  .route h3 { margin: 0; }
+  .route .path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--cf-coral); font-weight: 700; }
+  .kv { display: grid; grid-template-columns: 132px 1fr; gap: var(--cf-sp-3); font-size: 13.5px; line-height: 1.5; }
+  .kv dt { color: rgba(255,255,255,0.42); font-weight: 700; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 3px; }
+  .kv dd { margin: 0; color: rgba(255,255,255,0.82); }
+  .band--light .kv dt { color: var(--cf-ink-400); }
+  .band--light .kv dd { color: var(--cf-ink-700); }
+
+  /* ── FLAGS DE LACUNA ─────────────────────────────────────── */
+  .flag { display: inline-flex; align-items: center; padding: 4px 11px; border-radius: var(--cf-r-pill);
+          font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; }
+  .flag--block { background: rgba(244,89,74,0.14); color: var(--cf-coral); }
+  .flag--check { background: rgba(215,151,47,0.16); color: var(--cf-gold); }
+  .flag--ok    { background: rgba(90,158,109,0.16); color: var(--cf-positive); }
+  .band--light .flag--ok { color: #3f7a51; }
+
+  .marker { font-family: var(--cf-font-accent); font-style: italic; font-size: 16px; color: var(--cf-gold); }
+  .note { border-left: 3px solid var(--cf-coral); padding-left: var(--cf-sp-6); max-width: 62ch; }
+  .foot { padding: var(--cf-sp-16) var(--cf-sp-8); text-align: center; }
+  table, .maprow, .row2 { font-variant-numeric: tabular-nums; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--cf-coral); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body class="cf-scope">
+
+<nav class="topnav">
+  <div class="topnav-in">
+    <span class="mark">Blueprint do Site · Convertfly</span>
+    <a href="#inventario">Inventário</a>
+    <a href="#tese">A tese</a>
+    <a href="#rota-a">Rota A · App</a>
+    <a href="#rota-b">Rota B · Implementação</a>
+    <a href="#paginas">7 tipos</a>
+    <a href="#ds">Design system</a>
+    <a href="#lacunas">Lacunas</a>
+    <a href="#decisoes">Decisões</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<header class="hero cf-hero-bg cf-surface-dark">
+  <div class="wrap stack-8">
+    <span class="cf-eyebrow">Projeto Site · Etapa 1 · Blueprint</span>
+    <h1 class="cf-display-1" style="max-width: 17ch;">O site atual vende o app.<br>Deveria vender <span class="cf-accent">a prova</span>.</h1>
+    <p class="cf-body-1 lede" style="color: rgba(255,255,255,0.72);">
+      Este documento consolida o que os materiais internos já provam, mapeia as duas rotas do novo site —
+      a Tecnologia (App Convertfly) e a Implementação (Conversion Map™) — e trava as decisões que
+      precisam ser validadas antes de qualquer pixel. Nenhum número aqui foi inventado: cada um aponta
+      para o material de origem, e o que está em conflito está marcado como conflito.
+    </p>
+    <div class="cf-stat-row" style="gap: var(--cf-sp-12); display:flex; flex-wrap:wrap;">
+      <div><div class="cf-h1" style="color:var(--cf-gold)">11</div><div class="cf-caption" style="color:rgba(255,255,255,0.5)">materiais lidos</div></div>
+      <div><div class="cf-h1" style="color:var(--cf-gold)">2</div><div class="cf-caption" style="color:rgba(255,255,255,0.5)">rotas de página</div></div>
+      <div><div class="cf-h1" style="color:var(--cf-gold)">7</div><div class="cf-caption" style="color:rgba(255,255,255,0.5)">tipos de página do app</div></div>
+      <div><div class="cf-h1" style="color:var(--cf-coral)">6</div><div class="cf-caption" style="color:rgba(255,255,255,0.5)">lacunas que travam o go-live</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ INVENTÁRIO ════════════════════════════════════════════ -->
+<section id="inventario" class="band band--light">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 1 · O que já existe</span>
+      <h2 class="cf-display-m">Não partimos do zero. Partimos de 11 materiais e um design system.</h2>
+      <p class="cf-body-1 lede">O repositório já carrega a argumentação inteira da empresa em formato de deck.
+      O trabalho do site não é escrever conteúdo novo — é escolher, hierarquizar e provar o que já existe.</p>
+    </div>
+
+    <div class="rowlist">
+      <div class="row2"><div class="cf-h3">Apresentação Master · 36 slides</div><div class="cf-body-s">A constituição narrativa: categoria, time, os 4 pilares, o app, os cases, o horizonte. É a fonte primária do site inteiro.</div></div>
+      <div class="row2"><div class="cf-h3">Institucional · D2C Summit</div><div class="cf-body-s">A versão curta e afiada da tese de categoria. É o roteiro natural do hero da Home.</div></div>
+      <div class="row2"><div class="cf-h3">Proposta Grupo LF8</div><div class="cf-body-s">O argumento comercial completo: 0,9% LATAM · 0,75% Nuvemshop, as 7 fricções com base científica, as 8 etapas, os 6 tipos de página do app.</div></div>
+      <div class="row2"><div class="cf-h3">Apresentação Comercial</div><div class="cf-body-s">O ângulo "dor do lojista" e os planos de página avulsa. <span class="flag flag--check">contém dados a validar</span></div></div>
+      <div class="row2"><div class="cf-h3">Laboratório de Precificação</div><div class="cf-body-s">Três lógicas de preço por volume. Material interno — define o que <em>pode</em> aparecer publicamente na página de investimento.</div></div>
+      <div class="row2"><div class="cf-h3">Onboarding · Jornada do Cliente · Etapas 6–8 · Mapa de papéis</div><div class="cf-body-s">A cadência operacional. Vira a seção "como o projeto acontece" da Rota B — o que tranquiliza quem vai assinar.</div></div>
+      <div class="row2"><div class="cf-h3">Convert Talks · projeto completo + títulos</div><div class="cf-body-s">7 episódios, 3 convidados que já são clientes. É prova social e é conteúdo — sustenta um bloco de comunidade no rodapé das duas rotas.</div></div>
+      <div class="row2"><div class="cf-h3">Design system · tokens + componentes</div><div class="cf-body-s">Mulish + Times italic, ink #160e33, gradiente-assinatura, glass capsule. Já validado em 11 peças — o site herda, não reinventa. <span class="flag flag--ok">pronto</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESE ══════════════════════════════════════════════════ -->
+<section id="tese" class="band band--dark">
+  <div class="wrap stack-12">
+    <div class="stack-3">
+      <span class="marker">Parte 2 · A tese</span>
+      <h2 class="cf-display-m">Uma marca. Duas portas. Duas objeções âncora diferentes.</h2>
+      <p class="cf-body-1 lede" style="color:rgba(255,255,255,0.7);">
+        O site atual tem um problema de endereço: fala de método para quem quer ferramenta, e vende app para
+        quem quer resultado. São dois compradores com perguntas centrais opostas — e uma página não responde
+        as duas sem diluir as duas. A solução não é dois sites: é um site com duas rotas explícitas e uma
+        Home que roteia.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="route">
+        <span class="path">/app</span>
+        <h3 class="cf-h1">Rota A · A Tecnologia</h3>
+        <dl class="kv">
+          <dt>Para quem</dt><dd>Lojista Nuvemshop que já sabe o que quer construir e precisa da ferramenta. Entrada de ticket baixo (R$99–299/mês).</dd>
+          <dt>Pergunta central</dt><dd>“Eu consigo construir páginas assim na minha loja, sem depender de dev?”</dd>
+          <dt>Objeção âncora</dt><dd><span class="obj obj--FN"><i></i>FN · Funcional</span> — “funciona no meu tema? o que exatamente eu recebo?”</dd>
+          <dt>Objeção nº 2</dt><dd><span class="obj obj--C"><i></i>C · Comparativa</span> — “por que não a Descrição Pro por R$97?”</dd>
+          <dt>Prova dominante</dt><dd>Demonstração. Os 7 tipos de página, o arsenal de seções, página real rodando.</dd>
+          <dt>Conversão</dt><dd>Instalar o app · testar um plano.</dd>
+        </dl>
+      </div>
+      <div class="route">
+        <span class="path">/implementacao</span>
+        <h3 class="cf-h1">Rota B · A Implementação</h3>
+        <dl class="kv">
+          <dt>Para quem</dt><dd>Lojista tier Next que não quer ferramenta — quer resultado medido. Ticket R$3.500–10.500+ e recorrência.</dd>
+          <dt>Pergunta central</dt><dd>“Por que pagar isso em vez de contratar uma agência ou um freela de design?”</dd>
+          <dt>Objeção âncora</dt><dd><span class="obj obj--F"><i></i>F · Financeira</span> — “vale o preço? é caro frente ao mercado.”</dd>
+          <dt>Objeção nº 2</dt><dd><span class="obj obj--S"><i></i>S · Social</span> — “vocês já fizeram isso com alguém do meu porte?”</dd>
+          <dt>Prova dominante</dt><dd>Case + método + mensuração. O Relatório D+90 é o argumento que nenhuma agência entrega.</dd>
+          <dt>Conversão</dt><dd>Agendar diagnóstico · receber proposta.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="note">
+      <p class="cf-body-1" style="color:#fff; margin:0;">
+        As duas rotas compartilham exatamente três blocos: o header, o rodapé e o bloco dos 7 tipos de página.
+        Todo o resto é específico — porque a objeção âncora é específica.
+      </p>
+      <p class="cf-body-s" style="color:rgba(255,255,255,0.5); margin-top: var(--cf-sp-3);">
+        Regra do método aplicada ao nosso próprio site: <strong>a Home vem por último</strong>. Ela só sabe rotear
+        depois que as duas rotas existirem.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROTA A ════════════════════════════════════════════════ -->
+<section id="rota-a" class="band band--ink">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 3 · Rota A</span>
+      <h2 class="cf-display-m">/app — a tecnologia, mostrada em vez de descrita.</h2>
+      <p class="cf-body-1 lede" style="color:rgba(255,255,255,0.7);">
+        O erro a evitar aqui é o mesmo da TSJ: listar recurso. Ninguém compra “40 seções” — compra
+        “consigo fazer a minha PDP ficar assim”. Cada seção abaixo existe para responder uma pergunta
+        funcional concreta.
+      </p>
+    </div>
+
+    <div class="maptable">
+      <div class="maprow head"><div></div><div>Seção</div><div>Pergunta que responde</div><div>Objeção</div><div>Prova / fonte</div></div>
+
+      <div class="maprow"><div class="n">1</div>
+        <div class="s">Hero com página real em movimento</div>
+        <div class="t">“O que dá pra construir com isso?” — a resposta é visual, em 3 segundos.</div>
+        <div><span class="obj obj--FN"><i></i>FN</span></div>
+        <div class="src">Captura real de PDP de cliente publicado</div></div>
+
+      <div class="maprow"><div class="n">2</div>
+        <div class="s">Os 7 tipos de página</div>
+        <div class="t">“Serve só pra página de produto?” — não: PDP, Categoria, as duas Globais, Institucional, LP e Home.</div>
+        <div><span class="obj obj--FN"><i></i>FN</span></div>
+        <div class="src">Proposta LF8 · skill pagina-conversao-nuvemshop</div></div>
+
+      <div class="maprow"><div class="n">3</div>
+        <div class="s">Arsenal de seções</div>
+        <div class="t">“Tem o elemento que eu preciso?” — cada elemento mostrado pela função que resolve, não pelo nome.</div>
+        <div><span class="obj obj--I"><i></i>I</span></div>
+        <div class="src">Master (40 seções) <span class="flag flag--check">conflito com LF8: +15 módulos</span></div></div>
+
+      <div class="maprow"><div class="n">4</div>
+        <div class="s">Antes / depois de página real</div>
+        <div class="t">“Muda mesmo, ou é só bonito?” — o elemento Antes/Depois do próprio app, usado no próprio site.</div>
+        <div><span class="obj obj--C"><i></i>C</span></div>
+        <div class="src"><span class="flag flag--block">precisa de par autorizado</span></div></div>
+
+      <div class="maprow"><div class="n">5</div>
+        <div class="s">Tecnologia por baixo</div>
+        <div class="t">“Vai pesar minha loja? Quebra meu tema? E quando a Nuvemshop atualizar?”</div>
+        <div><span class="obj obj--T"><i></i>T</span></div>
+        <div class="src">Master: performance nativa · LF8: compatível com qualquer tema, atualização automática</div></div>
+
+      <div class="maprow"><div class="n">6</div>
+        <div class="s">Autonomia do time do lojista</div>
+        <div class="t">“Depois que estiver no ar, eu consigo editar sozinho?”</div>
+        <div><span class="obj obj--FN"><i></i>FN</span></div>
+        <div class="src">LF8: “seu time edita sem depender de desenvolvedor”</div></div>
+
+      <div class="maprow"><div class="n">7</div>
+        <div class="s">Quem já usa</div>
+        <div class="t">“Marca séria usa isso?” — logos reais, com o segmento ao lado do nome.</div>
+        <div><span class="obj obj--S"><i></i>S</span></div>
+        <div class="src">Master: 9 marcas · <span class="flag flag--check">corrigir “Kink Joe” → King &amp; Joe</span></div></div>
+
+      <div class="maprow"><div class="n">8</div>
+        <div class="s">Planos Start · Pro · Next</div>
+        <div class="t">“Qual plano é o meu?” — tabela comparativa por recurso, com o Pro ancorado como padrão.</div>
+        <div><span class="obj obj--F"><i></i>F</span></div>
+        <div class="src">Master: R$99 · R$199 · R$299</div></div>
+
+      <div class="maprow"><div class="n">9</div>
+        <div class="s">Ponte para a Rota B</div>
+        <div class="t">“E se eu não quiser fazer sozinho?” — a única passagem entre as rotas, e ela mora aqui.</div>
+        <div><span class="obj obj--P"><i></i>P</span></div>
+        <div class="src">Estratégia: app é a porta de entrada do ticket alto</div></div>
+
+      <div class="maprow"><div class="n">10</div>
+        <div class="s">FAQ funcional + CTA final ilustrado</div>
+        <div class="t">Instalação, migração, cancelamento, suporte. CTA com foto — nunca banner vazio.</div>
+        <div><span class="obj obj--T"><i></i>T</span></div>
+        <div class="src">Regra 6 da skill pagina-conversao-nuvemshop</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROTA B ════════════════════════════════════════════════ -->
+<section id="rota-b" class="band band--light">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 4 · Rota B</span>
+      <h2 class="cf-display-m">/implementacao — o case na frente, o método como explicação.</h2>
+      <p class="cf-body-1 lede">
+        Aqui a ordem importa mais que o conteúdo. O erro do site atual é abrir pelo método: quem tem
+        R$6.500 para gastar não compra metodologia, compra resultado — e só depois quer saber como foi feito.
+        O método entra como a <em>razão</em> pela qual o resultado é repetível, não como a promessa inicial.
+      </p>
+    </div>
+
+    <div class="maptable">
+      <div class="maprow head"><div></div><div>Seção</div><div>Pergunta que responde</div><div>Objeção</div><div>Prova / fonte</div></div>
+
+      <div class="maprow"><div class="n">1</div>
+        <div class="s">Hero: o número do problema</div>
+        <div class="t">“Isso é um problema meu?” — 0,9% de conversão na LATAM, 0,75% na Nuvemshop. Para cada R$1.000 em tráfego, R$991 saem sem retorno.</div>
+        <div><span class="obj obj--P"><i></i>P</span></div>
+        <div class="src">Proposta LF8</div></div>
+
+      <div class="maprow"><div class="n">2</div>
+        <div class="s">As 7 fricções</div>
+        <div class="t">“Por que a minha página não converte?” — o diagnóstico nomeado, com a base científica de cada tipo.</div>
+        <div><span class="obj obj--I"><i></i>I</span></div>
+        <div class="src">LF8: tabela completa · Master: 3 tipos vieram do Mark, da Neurofood</div></div>
+
+      <div class="maprow"><div class="n">3</div>
+        <div class="s">Case fundador em profundidade</div>
+        <div class="t">“Funcionou com alguém de verdade?” — um case por vez, com voz do cliente, não carrossel de logos.</div>
+        <div><span class="obj obj--S"><i></i>S</span></div>
+        <div class="src">Neurofood · AEVI · citações de Mark e Allan <span class="flag flag--block">falta delta D+90</span></div></div>
+
+      <div class="maprow"><div class="n">4</div>
+        <div class="s">O Conversion Map™ em 4 pilares</div>
+        <div class="t">“Como vocês chegaram nesse resultado?” — Research → Estratégia → Execução → Mensuração, com a janela de dias.</div>
+        <div><span class="obj obj--FN"><i></i>FN</span></div>
+        <div class="src">Master: D+0 → D+90+</div></div>
+
+      <div class="maprow"><div class="n">5</div>
+        <div class="s">O que você recebe, em objetos</div>
+        <div class="t">“O que eu levo pra casa?” — Canvas PDP, OPS versão cliente, Figma aprovado, páginas no ar, Relatório D+90.</div>
+        <div><span class="obj obj--FN"><i></i>FN</span></div>
+        <div class="src">Master · Onboarding · Etapas 6–8</div></div>
+
+      <div class="maprow"><div class="n">6</div>
+        <div class="s">O Relatório D+90</div>
+        <div class="t">“Como eu sei que funcionou?” — os 8 indicadores com threshold declarado. É o bloco que nenhuma agência consegue copiar.</div>
+        <div><span class="obj obj--T"><i></i>T</span></div>
+        <div class="src">Master: 8 indicadores · Nuvemshop, GA4, Clarity</div></div>
+
+      <div class="maprow"><div class="n">7</div>
+        <div class="s">Nós vs. as alternativas</div>
+        <div class="t">“Por que não uma agência, um freela ou a Descrição Pro?” — a comparação explícita, com preço na mesa.</div>
+        <div><span class="obj obj--C"><i></i>C</span></div>
+        <div class="src">Master: cenário competitivo 2026</div></div>
+
+      <div class="maprow"><div class="n">8</div>
+        <div class="s">O time com rosto</div>
+        <div class="t">“Quem vai tocar o meu projeto?” — 4 sócios + Bia, Isabella e Mell. Nome, função e o que cada um decide.</div>
+        <div><span class="obj obj--S"><i></i>S</span></div>
+        <div class="src">Master · Mapa de papéis <span class="flag flag--check">precisa de fotos reais</span></div></div>
+
+      <div class="maprow"><div class="n">9</div>
+        <div class="s">Pacotes e investimento</div>
+        <div class="t">“Quanto custa e o que cabe em cada faixa?” — Starter, Business (âncora), Premium.</div>
+        <div><span class="obj obj--F"><i></i>F</span></div>
+        <div class="src">Master: R$3.500 · R$6.500 · R$10.500 <span class="flag flag--check">lógica de preço não decidida</span></div></div>
+
+      <div class="maprow"><div class="n">10</div>
+        <div class="s">Convert Talks</div>
+        <div class="t">“Vocês são referência ou só mais um fornecedor?” — 7 episódios, 3 convidados que viraram clientes.</div>
+        <div><span class="obj obj--S"><i></i>S</span></div>
+        <div class="src">Projeto Convert Talks · temporada 1</div></div>
+
+      <div class="maprow"><div class="n">11</div>
+        <div class="s">FAQ estratégico + CTA de diagnóstico</div>
+        <div class="t">Prazo, escopo, plataforma, o que acontece se não der certo. CTA = conversa, não formulário longo.</div>
+        <div><span class="obj obj--T"><i></i>T</span></div>
+        <div class="src">Mapa de objeções · padrão de página do método</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7 TIPOS ═══════════════════════════════════════════════ -->
+<section id="paginas" class="band band--dark">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 5 · O bloco compartilhado</span>
+      <h2 class="cf-display-m">Os 7 tipos de página — o mesmo bloco, dois papéis.</h2>
+      <p class="cf-body-1 lede" style="color:rgba(255,255,255,0.7);">
+        Na Rota A é catálogo de capacidade (“o app constrói isso”). Na Rota B é escopo de projeto
+        (“seu pacote cobre estas”). Mesmo componente, duas legendas — e é o bloco que mais precisa de
+        arte real, porque é onde o visitante decide se a Convertfly sabe o que está fazendo.
+      </p>
+      <p class="cf-body-s" style="color:rgba(255,255,255,0.45);">
+        A proposta LF8 lista 6 tipos. O 7º abaixo (Home) está marcado como hipótese até você confirmar.
+      </p>
+    </div>
+
+    <div class="maptable">
+      <div class="maprow head" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div></div><div>Tipo</div><div>Missão da página</div><div>Regra estrutural do método</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">1</div>
+        <div class="s">Produto · PDP</div>
+        <div class="t">Converter quem já escolheu. Atende 60–70% dos visitantes da loja.</div>
+        <div class="t">Conteúdo estratégico vem <strong>depois</strong> do bloco nativo de compra. Avaliações e Similares colados ao rodapé.</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">2</div>
+        <div class="s">Categoria</div>
+        <div class="t">Dar contexto para escolher. O visitante ainda não decidiu o produto.</div>
+        <div class="t">Conteúdo estratégico vem <strong>antes</strong> do grid nativo. Duas camadas de navegação visual, não uma.</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">3</div>
+        <div class="s">Prod. Global</div>
+        <div class="t">Resolver uma dimensão de escolha que atravessa vários produtos — material, tecnologia, técnica.</div>
+        <div class="t">Módulo injetado em cada PDP do escopo. Não tem URL própria nem bloco de compra.</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">4</div>
+        <div class="s">Cat. Global</div>
+        <div class="t">O mesmo argumento de ecossistema, injetado no nível de categoria.</div>
+        <div class="t">Seção âncora é o próprio guia de escolha — única exceção à regra de não repetir âncora.</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">5</div>
+        <div class="s">Institucional</div>
+        <div class="t">Construir confiança de marca — sobre nós, garantia, trocas, contato.</div>
+        <div class="t">Alimenta a objeção Social e Temporal das PDPs. Raramente é destino direto de tráfego.</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">6</div>
+        <div class="s">Landing Page</div>
+        <div class="t">Campanha, lançamento, sazonal. Tráfego pago cai aqui.</div>
+        <div class="t">Argumento completo em página única — inclui o que a PDP delega ao resto do site.</div></div>
+
+      <div class="maprow" style="grid-template-columns: 38px 1.1fr 1.6fr 1.3fr;"><div class="n">7</div>
+        <div class="s">Home <span class="flag flag--check" style="margin-left:6px;">a confirmar</span></div>
+        <div class="t">Rotear e posicionar. Não vende produto — decide para onde o visitante vai.</div>
+        <div class="t">Regra do método: <strong>sempre construída por último</strong>, depois que todas as outras existirem.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DESIGN SYSTEM ═════════════════════════════════════════ -->
+<section id="ds" class="band band--light">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 6 · Design system</span>
+      <h2 class="cf-display-m">O sistema já existe. Falta a camada web.</h2>
+      <p class="cf-body-1 lede">Os tokens estão validados em 11 peças. O que o site pede é a extensão para
+      um contexto que o deck nunca teve: navegação persistente, rolagem longa e mobile real.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="cf-card-light stack-4">
+        <span class="cf-eyebrow">Herdado — não se discute</span>
+        <ul class="cf-body-s" style="margin:0; padding-left: 1.1em; line-height:1.9;">
+          <li>Mulish 300–800 como face única de texto e display.</li>
+          <li>Times New Roman <em>bold italic</em> só na palavra-chave, com o gradiente-assinatura.</li>
+          <li>Ink #160e33 como preto de marca — nunca #000.</li>
+          <li>Papel quente #fafaf7 como claro — nunca #fff puro de fundo.</li>
+          <li>Gradiente ouro → coral → magenta → violeta, sempre no mesmo sentido.</li>
+          <li>Coral #f4594a como única cor de ação.</li>
+          <li>Glass capsule como componente-assinatura em superfície escura.</li>
+          <li>Piso de seção 96px · raio 28px em card · pill só em tag e toggle.</li>
+        </ul>
+      </div>
+      <div class="cf-card-light stack-4">
+        <span class="cf-eyebrow">A criar para o site</span>
+        <ul class="cf-body-s" style="margin:0; padding-left: 1.1em; line-height:1.9;">
+          <li><strong>Header persistente</strong> com as duas rotas visíveis o tempo todo — é ele que faz a bifurcação existir.</li>
+          <li><strong>Escala tipográfica responsiva:</strong> display 60px trava em ~34px no mobile; hoje o DS não define breakpoint.</li>
+          <li><strong>Ritmo de banda alternada</strong> escuro/claro como substituto do corte de slide.</li>
+          <li><strong>Componente de case</strong> — foto, número, citação e link, em um objeto só.</li>
+          <li><strong>Tabela comparativa</strong> em versão mobile (hoje toda tabela do deck quebra abaixo de 860px).</li>
+          <li><strong>Estados de formulário</strong> completos: sucesso, erro, envio — o DS só cobre foco e erro.</li>
+          <li><strong>Rodapé institucional</strong> com as duas rotas, Convert Talks, contato e legal.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <p class="cf-body" style="margin:0;">
+        Decisão de composição, não de token: o site inteiro alterna banda escura e banda clara em ritmo
+        previsível — escuro para tese e argumento, claro para prova e detalhe. É o que impede o erro nº 3 da
+        TSJ (design system correto, composição ausente).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LACUNAS ═══════════════════════════════════════════════ -->
+<section id="lacunas" class="band band--dark">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 7 · Lacunas</span>
+      <h2 class="cf-display-m">Seis coisas que não podem ir pro ar sem validação.</h2>
+      <p class="cf-body-1 lede" style="color:rgba(255,255,255,0.7);">
+        Encontradas lendo os materiais lado a lado. Não são detalhes de copy — são dados que se contradizem
+        entre peças. Num deck interno passa; num site público, não.
+      </p>
+    </div>
+
+    <div class="rowlist">
+      <div class="row2"><div class="stack-2"><div class="cf-h3">Juleme Hair — dois depoimentos incompatíveis</div><span class="flag flag--block" style="align-self:start;">bloqueia</span></div>
+        <div class="cf-body-s" style="color:rgba(255,255,255,0.62);">A Apresentação Comercial atribui a fala a <strong>Ana Cardoso, Founder</strong>, com “1,9% → 4,3% em 60 dias”. A proposta LF8 atribui a <strong>Juliana Leme, Fundadora, +5M seguidores</strong>, com “média de 3,5% no primeiro ano”. Pessoa, número e janela divergem. Só uma versão pode existir no site — e ela precisa de autorização escrita da cliente.</div></div>
+
+      <div class="row2"><div class="stack-2"><div class="cf-h3">A pesquisa dos 1.200 lojistas</div><span class="flag flag--block" style="align-self:start;">bloqueia</span></div>
+        <div class="cf-body-s" style="color:rgba(255,255,255,0.62);">“82% dos lojistas perdem vendas na página de produto” aparece como Pesquisa Convertfly · 1.200 lojistas Nuvemshop · 2025. Se a metodologia existir e for publicável, é o melhor número do site inteiro. Se não existir documentada, sai — princípio nº 5 do Master.</div></div>
+
+      <div class="row2"><div class="stack-2"><div class="cf-h3">Nenhum delta de D+90 fechado</div><span class="flag flag--block" style="align-self:start;">bloqueia</span></div>
+        <div class="cf-body-s" style="color:rgba(255,255,255,0.62);">Neurofood tem 1,58% de CVR como <em>baseline</em>, não como resultado. O site não pode prometer uplift antes do primeiro D+90 fechar. Até lá, a prova é o processo e a voz do cliente — e o bloco de resultado nasce com estrutura pronta e conteúdo em aberto.</div></div>
+
+      <div class="row2"><div class="stack-2"><div class="cf-h3">40 seções ou 15 módulos?</div><span class="flag flag--check" style="align-self:start;">resolver</span></div>
+        <div class="cf-body-s" style="color:rgba(255,255,255,0.62);">A Master fala em 40 seções catalogadas (34 permanentes + 6 sazonais). A proposta LF8 fala em “+15 módulos”. Provavelmente contagens diferentes — seções vs. elementos do builder. Precisa de um número único e auditável antes de virar headline.</div></div>
+
+      <div class="row2"><div class="stack-2"><div class="cf-h3">Preço público na Rota B</div><span class="flag flag--check" style="align-self:start;">decidir</span></div>
+        <div class="cf-body-s" style="color:rgba(255,255,255,0.62);">O Laboratório de Precificação diz explicitamente que nada está decidido. Publicar pacote fechado (R$3.500/6.500/10.500) ou faixa por página muda a conversa comercial inteira. Enquanto não decidir, a seção existe com âncora de faixa e CTA de diagnóstico.</div></div>
+
+      <div class="row2"><div class="stack-2"><div class="cf-h3">Autorização de logo e nome</div><span class="flag flag--check" style="align-self:start;">resolver</span></div>
+        <div class="cf-body-s" style="color:rgba(255,255,255,0.62);">9 marcas citadas na Master. Um deck interno pode citar; um site público precisa de aval. Inclui corrigir “Kink Joe” para King &amp; Joe e confirmar o par correto King &amp; Joe / KJ Black.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DECISÕES ══════════════════════════════════════════════ -->
+<section id="decisoes" class="band band--light">
+  <div class="wrap stack-8">
+    <div class="stack-3">
+      <span class="marker">Parte 8 · Próximo passo</span>
+      <h2 class="cf-display-m">Quatro decisões destravam a construção.</h2>
+      <p class="cf-body-1 lede">Nenhuma delas depende de dado novo — todas dependem de você. Respondidas,
+      a próxima etapa é o HTML da Rota B, seção por seção, com a Rota A em seguida e a Home por último.</p>
+    </div>
+
+    <div class="rowlist">
+      <div class="row2"><div class="cf-h3">1 · Um site ou dois?</div><div class="cf-body-s">Recomendação: <strong>um domínio, duas rotas</strong> (/app e /implementacao) com Home roteadora. Dois sites separados dobram manutenção e quebram a passagem app → implementação, que é justamente onde o ticket sobe.</div></div>
+      <div class="row2"><div class="cf-h3">2 · O 7º tipo de página é a Home?</div><div class="cf-body-s">A LF8 lista 6. Se o 7º não for a Home, precisa nomear qual é — o bloco inteiro dos tipos depende disso.</div></div>
+      <div class="row2"><div class="cf-h3">3 · Onde a Rota B abre?</div><div class="cf-body-s">Recomendação: <strong>no case</strong>, não no método. Se a preferência for abrir pelo problema (0,9%), a ordem das seções 1 a 3 inverte — e vale decidir antes de escrever copy.</div></div>
+      <div class="row2"><div class="cf-h3">4 · Preço visível?</div><div class="cf-body-s">Recomendação: <strong>faixa visível, valor fechado no diagnóstico.</strong> Preço público qualifica o lead e sustenta o posicionamento premium; valor fechado sem contexto vira comparação de planilha.</div></div>
+    </div>
+
+    <div class="note" style="border-left-color: var(--cf-violet);">
+      <p class="cf-body" style="margin:0; color: var(--cf-ink-700);">
+        Falta ainda uma fonte que este blueprint não conseguiu ler: <strong>o site atual</strong>. A rede desta
+        sessão bloqueia convertfly.com.br. O mapa acima parte da sua descrição do problema e dos materiais —
+        para auditar a página atual seção por seção, basta colar o conteúdo dela aqui.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="band--dark foot">
+  <p class="cf-body-s" style="color:rgba(255,255,255,0.4); margin:0;">
+    Conversion Map™ by Convertfly · Blueprint do Site · Etapa 1 de 4 · Setembro 2026<br>
+    Documento vivo — evolui com dados reais e decisões validadas, nunca com hipóteses.
+  </p>
+</footer>
+
+</body>
+</html>
