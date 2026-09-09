@@ -1,0 +1,18 @@
+{
+  "_comentario": "Preencha as URLs e rode: python3 site/apply-links.py. Deixe vazio o que ainda não existe — o script mantém o placeholder.",
+
+  "instagram": "",
+  "youtube": "",
+  "tiktok": "",
+  "linkedin": "",
+  "whatsapp": "",
+  "spotify": "",
+  "instalar-app": "",
+
+  "loja-lustres-genesis": "",
+  "loja-neurofood": "",
+  "loja-winona": "",
+  "loja-adel": "",
+  "loja-cactario": "",
+  "loja-nutricao-total": ""
+}
