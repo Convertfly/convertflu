@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste A/B · App Convertfly</title>
+<meta name="description" content="Duas variantes de layout para o mesmo produto, comparadas por visualização, tempo, rolagem e carrinho — sem chamada extra à plataforma.">
+<link rel="stylesheet" href="../../assets/cf-web.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="../../">convert<em>fly</em></a>
+    <div class="nav-links">
+      <a href="../../">Home</a><a href="../" aria-current="page">O app</a>
+      <a href="../../implementacao/">Implementação</a><a href="../../cases/">Cases</a>
+      <a href="../../quem-somos/">Quem somos</a><a href="../../contato/">Contato</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="../#planos">Testar grátis (7 dias)</a>
+  </div>
+</nav>
+<div class="subnav">
+  <div class="subnav-in">
+      <a href="../">Visão geral</a>
+      <a href="../editor/">Editor</a>
+      <a href="../elementos/">Elementos</a>
+      <a href="../paginas/">Tipos de página</a>
+      <a href="../metricas/">Métricas</a>
+      <a href="../teste-ab/" aria-current="page">Teste A/B</a>
+  </div>
+</div>
+
+<header class="band band-dark glow" style="padding-top:clamp(28px,4vw,56px);">
+  <div class="wm" aria-hidden="true">convertfly</div>
+  <div class="in stack g8">
+    <span class="badge rise"><i>✦</i> Teste A/B</span>
+    <h1 class="d1 rise rise-2" style="max-width:16ch;">Pare de discutir qual versão é melhor. <span class="k">Descubra</span>.</h1>
+    <p class="lede rise rise-3">Duas variantes de layout para o mesmo produto, rodando lado a lado e comparadas pelos mesmos indicadores. Quando uma ganha, você a oficializa — e ela vira a página definitiva, com o histórico preservado.</p>
+
+  </div>
+</header>
+
+<section class="band band-light">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">Como funciona</p>
+      <h2 class="d2">Três passos, <span class="k">nenhum deles técnico</span>.</h2>
+    </div>
+    <div class="cols cols-3">
+      <div class="card"><span class="card-label">01</span><h3 class="h4">Monte duas versões</h3>
+        <p class="p">Mesmo produto, dois layouts diferentes, construídos no editor como qualquer página.</p></div>
+      <div class="card"><span class="card-label">02</span><h3 class="h4">Defina uma UTM por variante</h3>
+        <p class="p">Quem chegar com aquela UTM na URL vê a variante certa. Sem UTM reconhecida, vê sempre
+        a Variante 1 — então nenhum visitante fica sem página.</p></div>
+      <div class="card"><span class="card-label">03</span><h3 class="h4">Compare e oficialize</h3>
+        <p class="p">A vencedora vira uma página de produto normal com o conteúdo daquela variante, e o
+        teste é travado. O histórico de visualizações continua salvo em Métricas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-deep">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow eyebrow--dot">O que é comparado</p>
+      <h2 class="d2">Os mesmos indicadores, <span class="k">lado a lado</span>.</h2>
+    </div>
+    <div class="cols cols-2">
+      <div class="ficha">
+        <div class="ficha-top"><span class="ficha-name">Variante 1</span><span class="ficha-win">exemplo ilustrativo</span></div>
+        <div class="ficha-grid">
+          <div class="ficha-cell"><span class="ficha-k">Visualizações</span><span class="ficha-v">—</span></div>
+          <div class="ficha-cell"><span class="ficha-k">Tempo médio</span><span class="ficha-v">—</span></div>
+          <div class="ficha-cell"><span class="ficha-k">Rolagem 25 · 50 · 75 · 100%</span><span class="ficha-v">—</span></div>
+          <div class="ficha-cell"><span class="ficha-k">Add. ao carrinho</span><span class="ficha-v">—</span></div>
+        </div>
+        <p class="ficha-foot">Formato do painel. Os valores aparecem conforme o tráfego chega.</p>
+      </div>
+      <div class="ficha">
+        <div class="ficha-top"><span class="ficha-name">Variante 2</span><span class="ficha-win">exemplo ilustrativo</span></div>
+        <div class="ficha-grid">
+          <div class="ficha-cell"><span class="ficha-k">Visualizações</span><span class="ficha-v">—</span></div>
+          <div class="ficha-cell"><span class="ficha-k">Tempo médio</span><span class="ficha-v">—</span></div>
+          <div class="ficha-cell"><span class="ficha-k">Rolagem 25 · 50 · 75 · 100%</span><span class="ficha-v">—</span></div>
+          <div class="ficha-cell"><span class="ficha-k">Add. ao carrinho</span><span class="ficha-v">—</span></div>
+        </div>
+        <p class="ficha-foot">Mesma régua nas duas. É o que torna a comparação uma comparação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-light">
+  <div class="in split">
+    <div class="stack g6">
+      <p class="eyebrow">Sem eufemismo</p>
+      <h2 class="d2">O que este teste <span class="k">é e não é</span>.</h2>
+      <p class="p">Se você já usou uma ferramenta de CRO dedicada, vale saber a diferença antes de assinar
+      — e não descobrir depois.</p>
+    </div>
+    <div class="stack g4">
+      <div class="card">
+        <h3 class="h4">Não é split automático de tráfego</h3>
+        <p class="p">A variante é escolhida pela UTM da URL, não por divisão aleatória de visitantes. Na
+        prática, isso amarra o teste à campanha que você já está rodando: cada criativo, cada canal ou
+        cada anúncio pode apontar para a versão que você quer avaliar.</p>
+      </div>
+      <div class="card">
+        <h3 class="h4">Em compensação, não pesa na sua loja</h3>
+        <p class="p">As visualizações de cada variante são contadas pelo próprio app,
+        <strong>sem gerar nenhuma chamada extra à plataforma</strong>. Nada de script de terceiro
+        atravessado no carregamento, nada de flicker de página trocando de versão na frente do visitante.</p>
+      </div>
+      <div class="card">
+        <h3 class="h4">A vencedora vira página, não configuração</h3>
+        <p class="p">Oficializar cria uma página de produto específico normal com aquele conteúdo. O teste
+        se encerra e a página segue editável como qualquer outra — você não fica preso a uma ferramenta
+        para manter o resultado no ar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="in">
+    <p class="eyebrow">Comece hoje</p>
+    <h2 class="d1">Conecte a loja e monte a primeira página.</h2>
+    <p>Sete dias grátis, sem cadastro novo. Ou fale com o time e receba um diagnóstico gratuito.</p>
+    <div class="row-flex" style="justify-content:center;">
+      <a class="btn btn-white" href="../#planos">🚀 Testar grátis por 7 dias</a>
+      <a class="btn btn-ghost-w" href="../../contato/">Falar com a gente</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-cols">
+      <div class="stack g6">
+        <a class="logo" href="../../">convert<em>fly</em></a>
+        <p class="sm" style="max-width:32ch;">Tech partner de conversão para e-commerces. Metodologia
+        Conversion Map™ + App Convertfly, nativos da plataforma da sua loja.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="TikTok">♪</a><a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div><h6>O app</h6><ul>
+        <li><a href="../editor/">Editor</a></li><li><a href="../elementos/">Elementos</a></li>
+        <li><a href="../paginas/">Tipos de página</a></li><li><a href="../metricas/">Métricas</a></li>
+        <li><a href="../teste-ab/">Teste A/B</a></li><li><a href="../#planos">Planos</a></li>
+      </ul></div>
+      <div><h6>Navegação</h6><ul>
+        <li><a href="../../">Home</a></li><li><a href="../../cases/">Cases</a></li>
+        <li><a href="../../quem-somos/">Quem somos</a></li><li><a href="../../implementacao/">Implementação</a></li>
+      </ul></div>
+      <div><h6>Contato</h6><ul>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="mailto:contato@convertfly.com.br">contato@convertfly.com.br</a></li>
+        <li><a href="../../contato/">Formulário de contato</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Convertfly. Todos os direitos reservados.</span>
+      <span>BM Web Marketing + Dr. Growth</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/cf-web.js"></script>
+</body>
+</html>

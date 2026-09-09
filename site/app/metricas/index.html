@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Métricas por página · App Convertfly</title>
+<meta name="description" content="Visualizações, tempo médio, funil de rolagem em quatro faixas e adição ao carrinho — por página, com série diária.">
+<link rel="stylesheet" href="../../assets/cf-web.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="../../">convert<em>fly</em></a>
+    <div class="nav-links">
+      <a href="../../">Home</a><a href="../" aria-current="page">O app</a>
+      <a href="../../implementacao/">Implementação</a><a href="../../cases/">Cases</a>
+      <a href="../../quem-somos/">Quem somos</a><a href="../../contato/">Contato</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="../#planos">Testar grátis (7 dias)</a>
+  </div>
+</nav>
+<div class="subnav">
+  <div class="subnav-in">
+      <a href="../">Visão geral</a>
+      <a href="../editor/">Editor</a>
+      <a href="../elementos/">Elementos</a>
+      <a href="../paginas/">Tipos de página</a>
+      <a href="../metricas/" aria-current="page">Métricas</a>
+      <a href="../teste-ab/">Teste A/B</a>
+  </div>
+</div>
+
+<header class="band band-dark glow" style="padding-top:clamp(28px,4vw,56px);">
+  <div class="wm" aria-hidden="true">convertfly</div>
+  <div class="in stack g8">
+    <span class="badge rise"><i>✦</i> Métricas</span>
+    <h1 class="d1 rise rise-2" style="max-width:16ch;">A página que não mede <span class="k">não prova</span>.</h1>
+    <p class="lede rise rise-3">Todo page builder publica. Poucos contam o que aconteceu depois. Cada página construída no Convertfly tem o próprio painel — sem sair do app, sem depender de relatório de terceiro, sem esperar alguém exportar nada.</p>
+    <div class="mock rise rise-4" style="margin-top:14px;">
+      <div class="mock-bar"><i></i><i></i><i></i></div>
+      <div class="mock-slot" style="aspect-ratio:16/8;">PRINT DE MÉTRICAS · página de cliente com curva preenchida</div>
+    </div>
+  </div>
+</header>
+
+<section class="band band-light">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">O que é medido</p>
+      <h2 class="d2">Cinco leituras, <span class="k">por página</span>.</h2>
+      <p class="lede">Não é a métrica da loja inteira diluída. É o que aquela página específica fez.</p>
+    </div>
+    <div class="rows">
+      <div class="row" style="grid-template-columns:1fr 1.2fr;">
+        <div class="h5">Visualizações</div>
+        <p class="p">Vida toda da página e no período que você escolher — 7, 30, 90 dias ou datas próprias.</p></div>
+      <div class="row" style="grid-template-columns:1fr 1.2fr;">
+        <div class="h5">Tempo médio</div>
+        <p class="p">Quanto a página segura a atenção antes do próximo passo.</p></div>
+      <div class="row" style="grid-template-columns:1fr 1.2fr;">
+        <div class="h5">Funil de rolagem</div>
+        <p class="p">Quantos chegaram a 25%, 50%, 75% e 100%. É a leitura que aponta a seção exata onde o
+        visitante desiste — e ela vale mais que qualquer média.</p></div>
+      <div class="row" style="grid-template-columns:1fr 1.2fr;">
+        <div class="h5">Adição ao carrinho</div>
+        <p class="p">O evento que antecede a venda, atribuído à página, não só ao total da loja.</p></div>
+      <div class="row" style="grid-template-columns:1fr 1.2fr;">
+        <div class="h5">Série diária</div>
+        <p class="p">A curva dia a dia — o que separa efeito de página de efeito de campanha.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-deep">
+  <div class="in split">
+    <div class="stack g6">
+      <p class="eyebrow eyebrow--dot">O que a gente prefere dizer antes</p>
+      <h2 class="d2">Onde a medição <span class="k">tem limite</span>.</h2>
+      <p class="p">Preferimos explicar a limitação a defender um número que não se sustenta numa call.</p>
+    </div>
+    <div class="stack g4">
+      <div class="card">
+        <h3 class="h4">Adição ao carrinho depende do motor</h3>
+        <p class="p">Em lojas Nuvemshop rodando no <strong>NubeSDK</strong>, a cobertura é completa. No motor
+        legado, alguns temas adicionam ao carrinho via AJAX sem enviar o formulário tradicional, e esses
+        casos não são capturados — o número fica 100% preciso depois que a loja migra.</p>
+      </div>
+      <div class="card">
+        <h3 class="h4">Tempo e rolagem contam quem navegou depois</h3>
+        <p class="p">O tempo médio e o funil só computam visitas em que a pessoa seguiu para outra página.
+        Quem sai direto continua somando em visualizações — então as duas leituras não têm a mesma base,
+        e é bom saber disso antes de comparar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-light">
+  <div class="in split split--mid">
+    <div class="stack g6">
+      <p class="eyebrow">De métrica para decisão</p>
+      <h2 class="d2">O número só vale se <span class="k">virar a próxima versão</span>.</h2>
+      <p class="p">Funil de rolagem travando em 50% é uma seção que não segura. Tempo alto com carrinho
+      baixo é uma página que informa e não convence. Cada leitura aponta uma hipótese — e a hipótese vira
+      variante no teste A/B.</p>
+      <div><a class="btn btn-primary" href="../teste-ab/">Ver como funciona o teste</a></div>
+    </div>
+    <div class="figure-panel" style="background:linear-gradient(120deg, rgba(153,49,255,0.12), rgba(217,55,155,0.06) 70%); border-color:rgba(153,49,255,0.2);">
+      <div class="figure-n">4</div>
+      <p class="p" style="color:var(--on-paper);">faixas de rolagem medidas — 25%, 50%, 75% e 100% — porque
+      “a pessoa rolou a página” não é informação, e “parou antes da prova social” é.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="in">
+    <p class="eyebrow">Comece hoje</p>
+    <h2 class="d1">Conecte a loja e monte a primeira página.</h2>
+    <p>Sete dias grátis, sem cadastro novo. Ou fale com o time e receba um diagnóstico gratuito.</p>
+    <div class="row-flex" style="justify-content:center;">
+      <a class="btn btn-white" href="../#planos">🚀 Testar grátis por 7 dias</a>
+      <a class="btn btn-ghost-w" href="../../contato/">Falar com a gente</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-cols">
+      <div class="stack g6">
+        <a class="logo" href="../../">convert<em>fly</em></a>
+        <p class="sm" style="max-width:32ch;">Tech partner de conversão para e-commerces. Metodologia
+        Conversion Map™ + App Convertfly, nativos da plataforma da sua loja.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="TikTok">♪</a><a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div><h6>O app</h6><ul>
+        <li><a href="../editor/">Editor</a></li><li><a href="../elementos/">Elementos</a></li>
+        <li><a href="../paginas/">Tipos de página</a></li><li><a href="../metricas/">Métricas</a></li>
+        <li><a href="../teste-ab/">Teste A/B</a></li><li><a href="../#planos">Planos</a></li>
+      </ul></div>
+      <div><h6>Navegação</h6><ul>
+        <li><a href="../../">Home</a></li><li><a href="../../cases/">Cases</a></li>
+        <li><a href="../../quem-somos/">Quem somos</a></li><li><a href="../../implementacao/">Implementação</a></li>
+      </ul></div>
+      <div><h6>Contato</h6><ul>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="mailto:contato@convertfly.com.br">contato@convertfly.com.br</a></li>
+        <li><a href="../../contato/">Formulário de contato</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Convertfly. Todos os direitos reservados.</span>
+      <span>BM Web Marketing + Dr. Growth</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../assets/cf-web.js"></script>
+</body>
+</html>
