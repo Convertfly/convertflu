@@ -470,3 +470,50 @@ a { color: inherit; }
   box-shadow: 0 12px 34px rgba(27,16,54,0.055); }
 .feat .mock-slot { aspect-ratio: 16/11; border-radius: 0; }
 .feat-body { padding: 20px clamp(18px,2vw,22px) 24px; display: flex; flex-direction: column; gap: 9px; }
+
+/* ════ ACESSIBILIDADE ══════════════════════════════════════ */
+.skip { position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: #fff; color: var(--on-paper); padding: 14px 22px; border-radius: 0 0 var(--r-m) 0;
+  font-weight: 700; font-size: 15px; text-decoration: none; }
+.skip:focus { left: 0; }
+
+/* ════ MENU MOBILE ═════════════════════════════════════════ */
+.nav-toggle { display: none; width: 42px; height: 42px; border-radius: var(--r-m);
+  border: 1px solid var(--hair-2); background: rgba(255,255,255,0.06); cursor: pointer;
+  padding: 0; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+.nav-toggle span { display: block; width: 17px; height: 2px; border-radius: 2px; background: #fff;
+  transition: transform .2s var(--ease), opacity .2s var(--ease); }
+.nav.is-stuck .nav-toggle { border-color: var(--hair-paper); background: rgba(27,16,54,0.05); }
+.nav.is-stuck .nav-toggle span { background: var(--on-paper); }
+.nav.is-open .nav-toggle span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.nav.is-open .nav-toggle span:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; margin-left: auto; }
+  .nav-in { gap: 12px; }
+  .nav-links {
+    display: flex; flex-direction: column; gap: 0; margin: 0;
+    position: absolute; left: var(--gut); right: var(--gut); top: calc(100% - 6px);
+    background: #fff; border-radius: var(--r-l); padding: 8px;
+    box-shadow: 0 20px 50px rgba(27,16,54,0.24);
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s;
+  }
+  .nav.is-open .nav-links { opacity: 1; visibility: visible; transform: none; }
+  .nav-links a, .nav.is-stuck .nav-links a { color: var(--on-paper); font-size: 16px;
+    padding: 13px 16px; border-radius: var(--r-s); }
+  .nav-links a:hover { background: rgba(27,16,54,0.05); }
+  .nav-links a[aria-current="page"] { background: rgba(153,49,255,0.10); color: var(--violet); }
+  .nav-links a[aria-current="page"]::after { display: none; }
+  .nav-in > .btn { display: none; }
+  .subnav-in { padding-top: 2px; }
+}
+
+/* ════ ESTADOS DE FORMULÁRIO ═══════════════════════════════ */
+.field--erro input, .field--erro select, .field--erro textarea { border-color: var(--coral); }
+.field-msg { font-size: 12.5px; font-weight: 600; color: var(--coral); }
+.form-ok { border-radius: var(--r-l); padding: 22px 26px; background: rgba(51,179,123,0.10);
+  border: 1px solid rgba(51,179,123,0.35); display: flex; flex-direction: column; gap: 8px; }
+.form-ok h3 { margin: 0; font-size: 17px; font-weight: 800; color: #1f8058; }
+.form-ok p { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--on-paper-2); }
+.btn[aria-busy="true"] { opacity: .7; pointer-events: none; }
