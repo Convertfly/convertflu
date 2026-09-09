@@ -325,3 +325,54 @@ a { color: inherit; }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .rise { animation: rise .6s var(--ease) both; }
 .rise-2{animation-delay:.08s} .rise-3{animation-delay:.16s} .rise-4{animation-delay:.24s}
+
+/* ════ FICHA DE RESULTADO ══════════════════════════════════
+   O encaixe do site: nasce parcial e enche conforme a
+   medição amadurece. Estado declarado, janela sempre visível.
+   ════════════════════════════════════════════════════════ */
+.ficha { border-radius: var(--r-l); border: 1px solid var(--hair-paper); background: var(--paper-2);
+  overflow: hidden; box-shadow: 0 12px 34px rgba(27,16,54,0.055); }
+.band-dark .ficha, .band-deep .ficha { background: var(--raise); border-color: var(--hair); box-shadow: none; }
+.ficha-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 18px clamp(18px,2.2vw,26px); border-bottom: 1px solid var(--hair-paper); }
+.band-dark .ficha-top, .band-deep .ficha-top { border-bottom-color: var(--hair); }
+.ficha-name { font-size: 15px; font-weight: 800; letter-spacing: -0.01em; }
+.ficha-win { margin-left: auto; font-size: 12px; font-weight: 700; color: var(--on-paper-3);
+  font-variant-numeric: tabular-nums; }
+.band-dark .ficha-win, .band-deep .ficha-win { color: var(--on-ground-3); }
+.ficha-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px,1fr)); }
+.ficha-cell { padding: 18px clamp(18px,2.2vw,26px); border-right: 1px solid var(--hair-paper);
+  border-top: 1px solid var(--hair-paper); display: flex; flex-direction: column; gap: 6px; }
+.band-dark .ficha-cell, .band-deep .ficha-cell { border-color: var(--hair); }
+.ficha-cell:last-child { border-right: 0; }
+.ficha-k { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--on-paper-3); }
+.band-dark .ficha-k, .band-deep .ficha-k { color: var(--on-ground-3); }
+.ficha-v { font-size: 15.5px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.015em; }
+.ficha-foot { padding: 14px clamp(18px,2.2vw,26px); border-top: 1px solid var(--hair-paper);
+  font-size: 12.5px; line-height: 1.5; color: var(--on-paper-3); }
+.band-dark .ficha-foot, .band-deep .ficha-foot { border-top-color: var(--hair); color: var(--on-ground-3); }
+
+.delta { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: var(--r-pill);
+  font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.delta-up   { background: rgba(51,179,123,0.15); color: #1f8058; }
+.delta-down { background: rgba(244,89,74,0.13); color: #c23a2c; }
+.delta-flat { background: rgba(27,16,54,0.06); color: var(--on-paper-3); }
+.band-dark .delta-up, .band-deep .delta-up { background: rgba(51,179,123,0.18); color: #57cf9a; }
+.band-dark .delta-down, .band-deep .delta-down { background: rgba(244,89,74,0.16); color: #f4796d; }
+.band-dark .delta-flat, .band-deep .delta-flat { background: rgba(255,255,255,0.08); color: var(--on-ground-3); }
+
+/* Case alternado: o mockup troca de lado a cada bloco */
+.case { display: grid; gap: clamp(28px,4vw,64px); align-items: center;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); }
+.case--flip > *:first-child { order: 2; }
+@media (max-width: 900px) { .case { grid-template-columns: 1fr; } .case--flip > *:first-child { order: 0; } }
+.mock--tablet { border-radius: var(--r-xl); }
+.mock--tablet .mock-slot { aspect-ratio: 4/3.1; }
+
+/* Números pequenos em linha dentro de um case: grid apertado e cor sólida.
+   Gradiente em texto estreito amostra só o início da rampa e sai laranja —
+   por isso o gradiente fica reservado ao numeral grande. */
+.mini-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px,1fr)); gap: 18px; }
+.mini-stats .stat-n { font-size: 30px; background: none; color: var(--on-paper); }
+.band-dark .mini-stats .stat-n, .band-deep .mini-stats .stat-n { color: #fff; }
