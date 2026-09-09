@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O que os dados já provam</title>
+<link rel="stylesheet" href="../assets/cf-web.css">
+<style>
+  .pill { display:inline-flex; align-items:center; gap:5px; padding:3px 9px; border-radius:var(--r-pill);
+          font-size:12px; font-weight:800; letter-spacing:0.01em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .pill-up   { background:rgba(90,158,109,0.18); color:#7dc191; }
+  .pill-down { background:rgba(244,89,74,0.16); color:#f4796d; }
+  .pill-flat { background:rgba(255,255,255,0.07); color:var(--on-ground-3); }
+  .band-light .pill-up { background:rgba(90,158,109,0.15); color:#33714a; }
+  .band-light .pill-down { background:rgba(244,89,74,0.13); color:#c23a2c; }
+  .band-light .pill-flat { background:rgba(22,14,51,0.06); color:var(--on-paper-3); }
+
+  .verdict { font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; }
+  .v-ok   { color:#7dc191; } .band-light .v-ok { color:#33714a; }
+  .v-dil  { color:var(--gold); }
+  .v-inc  { color:var(--on-ground-3); } .band-light .v-inc { color:var(--on-paper-3); }
+  .v-bad  { color:#f4796d; } .band-light .v-bad { color:#c23a2c; }
+
+  .hero-fig { border-radius:var(--r-xl); padding:clamp(22px,2.6vw,32px);
+              background:linear-gradient(150deg, rgba(153,49,255,0.14), rgba(244,89,74,0.07) 70%);
+              border:1px solid var(--hair-strong); display:flex; flex-direction:column; gap:12px; }
+  .hero-n { font-size:clamp(38px,4.6vw,58px); font-weight:800; letter-spacing:-0.04em; line-height:0.95;
+            background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+            font-variant-numeric:tabular-nums; }
+  .from-to { font-size:13.5px; color:var(--on-ground-2); font-variant-numeric:tabular-nums; }
+
+  .r-tab { display:grid; gap:clamp(10px,1.4vw,20px); min-width:940px; align-items:center;
+           grid-template-columns: 1.6fr 52px 118px 96px 104px 104px 128px;
+           padding:13px 0; border-top:1px solid var(--hair); }
+  .band-light .r-tab { border-top-color:var(--hair-paper); }
+  .r-tab.head { border-top:0; border-bottom:1px solid var(--hair-strong); padding-bottom:8px;
+                font-size:10.5px; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--on-ground-3); }
+  .band-light .r-tab.head { color:var(--on-paper-3); border-bottom-color:rgba(22,14,51,0.2); }
+  .r-name { font-weight:700; font-size:14px; line-height:1.3; }
+  .r-sub { font-size:11.5px; color:var(--on-ground-3); margin-top:3px; }
+  .band-light .r-sub { color:var(--on-paper-3); }
+  .num { font-variant-numeric:tabular-nums; font-size:13px; }
+  .callout { border-left:2px solid; border-image:var(--grad) 1; padding-left:clamp(18px,2.6vw,30px); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="../">convert<em>fly</em></a>
+    <span class="sm" style="margin-left:auto;">Leitura interna · backup de 23/08/2026</span>
+  </div>
+</nav>
+
+<!-- ═══ ABERTURA ═══════════════════════════════════════════ -->
+<header class="band band-dark glow" style="padding-top:clamp(56px,7vw,88px);">
+  <div class="in stack g8">
+    <p class="eyebrow">Mensuração · 16 páginas · 7 clientes</p>
+    <h1 class="d1" style="max-width:18ch;">Tem resultado aqui. Só não é <span class="k">onde parece</span>.</h1>
+    <p class="lede">
+      A leitura direta do backup mostra queda em quase tudo. A leitura correta mostra o contrário —
+      porque a comparação embutida na base é injusta com o lado novo: baseline de 90 dias contra uma
+      coleta de 20 a 81 dias. Normalizando por dia e olhando sessão, aparecem três resultados fortes
+      e um problema de método que precisa ser corrigido antes do primeiro D+90 sair.
+    </p>
+    <div class="callout">
+      <p class="p" style="color:#fff; max-width:64ch;">
+        <strong>Nenhuma página fechou D+90 até 23/08.</strong> A mais antiga — a Home da Neurofood, no ar
+        desde 03/06 — tinha 81 dias. Então nada aqui pode ser publicado como “Relatório D+90”. O que dá para
+        publicar é resultado por página, com a janela declarada.
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ OS TRÊS QUE VALEM ══════════════════════════════════ -->
+<section class="band band-light">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">O que já é argumento de venda</p>
+      <h2 class="d2">Três páginas venderam mais <span class="k">recebendo menos gente</span>.</h2>
+      <p class="lede">
+        É o tipo de evidência mais difícil de contestar: o tráfego caiu ou ficou igual, e a receita subiu.
+        Não dá para atribuir a campanha, a sazonalidade ou a sorte — sobra a página.
+      </p>
+    </div>
+
+    <div class="cols cols-3">
+      <div class="hero-fig">
+        <span class="card-label" style="color:var(--on-paper-3);">AEVI Galeria · Anel Clássico · PDP · 55 dias</span>
+        <div class="hero-n">6,1×</div>
+        <p class="p" style="margin:0;">a taxa de conversão da página, com <strong>55% menos sessões por dia</strong>.</p>
+        <div class="stack g2" style="margin-top:4px;">
+          <div class="from-to" style="color:var(--on-paper-2);">CVR 0,16% → 0,97% <span class="pill pill-up">+506%</span></div>
+          <div class="from-to" style="color:var(--on-paper-2);">Receita/dia R$ 95 → R$ 343 <span class="pill pill-up">+260%</span></div>
+          <div class="from-to" style="color:var(--on-paper-2);">Ticket R$ 2.859 → R$ 3.774 <span class="pill pill-up">+32%</span></div>
+        </div>
+      </div>
+
+      <div class="hero-fig">
+        <span class="card-label" style="color:var(--on-paper-3);">AEVI Galeria · Anel 3 Marias · PDP · 26 dias</span>
+        <div class="hero-n">2,7×</div>
+        <p class="p" style="margin:0;">a taxa de conversão, com o <strong>tráfego praticamente idêntico</strong> (−3%).</p>
+        <div class="stack g2" style="margin-top:4px;">
+          <div class="from-to" style="color:var(--on-paper-2);">CVR 0,56% → 1,50% <span class="pill pill-up">+168%</span></div>
+          <div class="from-to" style="color:var(--on-paper-2);">Receita/dia R$ 85 → R$ 275 <span class="pill pill-up">+225%</span></div>
+          <div class="from-to" style="color:var(--on-paper-2);">Tempo na página 49s → 78s <span class="pill pill-up">+59%</span></div>
+        </div>
+      </div>
+
+      <div class="hero-fig">
+        <span class="card-label" style="color:var(--on-paper-3);">Neurofood · Banheira de Gelo II PRO · 44 dias</span>
+        <div class="hero-n">3,0×</div>
+        <p class="p" style="margin:0;">o ticket médio da página, com <strong>52% menos sessões por dia</strong>.</p>
+        <div class="stack g2" style="margin-top:4px;">
+          <div class="from-to" style="color:var(--on-paper-2);">Ticket R$ 1.627 → R$ 4.913 <span class="pill pill-up">+202%</span></div>
+          <div class="from-to" style="color:var(--on-paper-2);">CVR 1,25% → 2,14% <span class="pill pill-up">+71%</span></div>
+          <div class="from-to" style="color:var(--on-paper-2);">Receita/dia R$ 181 → R$ 447 <span class="pill pill-up">+147%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p class="quote-t" style="font-size:clamp(19px,2.2vw,26px); max-width:26ch;">A AEVI é o case.<br>Não a Neurofood.</p>
+      <p class="p" style="margin-top:14px;">
+        A Neurofood é o case fundador da história do método — foi lá que nasceram três dos sete tipos de
+        objeção. Mas o <strong>número</strong> hoje está na AEVI: duas PDPs de anel convertendo 3× e 6× mais
+        com tráfego igual ou menor. É essa a página de Cases que precisa liderar.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ A TABELA COMPLETA ══════════════════════════════════ -->
+<section class="band band-dark">
+  <div class="in stack g8">
+    <div class="stack g4">
+      <p class="eyebrow">Todas as páginas medidas</p>
+      <h2 class="d2">A base inteira, com veredito.</h2>
+      <p class="lede">
+        Tudo normalizado por dia desde o go-live, contra a média diária dos 90 dias de baseline.
+        Sessões/dia é a coluna que decide: sem ela, qualquer variação de CVR é indefensável.
+      </p>
+    </div>
+
+    <div class="scroll-x">
+      <div>
+        <div class="r-tab head">
+          <div>Página</div><div>Dias</div><div>CVR</div><div>Sessões/dia</div>
+          <div>Vendas/dia</div><div>Receita/dia</div><div>Veredito</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">AEVI · Anel Clássico</div><div class="r-sub">PDP específica · go-live 29/06</div></div>
+          <div class="num">55</div>
+          <div class="num">0,16 → 0,97 <span class="pill pill-up">+506%</span></div>
+          <div class="num"><span class="pill pill-down">−55%</span></div>
+          <div class="num"><span class="pill pill-up">+173%</span></div>
+          <div class="num"><span class="pill pill-up">+260%</span></div>
+          <div class="verdict v-ok">Válido · forte</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">AEVI · Anel 3 Marias</div><div class="r-sub">PDP específica · go-live 28/07</div></div>
+          <div class="num">26</div>
+          <div class="num">0,56 → 1,50 <span class="pill pill-up">+168%</span></div>
+          <div class="num"><span class="pill pill-flat">−3%</span></div>
+          <div class="num"><span class="pill pill-up">+160%</span></div>
+          <div class="num"><span class="pill pill-up">+225%</span></div>
+          <div class="verdict v-ok">Válido · janela curta</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Neurofood · Banheira de Gelo II PRO</div><div class="r-sub">PDP específica · go-live 10/07</div></div>
+          <div class="num">44</div>
+          <div class="num">1,25 → 2,14 <span class="pill pill-up">+71%</span></div>
+          <div class="num"><span class="pill pill-down">−52%</span></div>
+          <div class="num"><span class="pill pill-down">−18%</span></div>
+          <div class="num"><span class="pill pill-up">+147%</span></div>
+          <div class="verdict v-ok">Válido · via ticket</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Neurofood · Combo Banheira 1 + Sauna 3</div><div class="r-sub">PDP específica · go-live 10/07</div></div>
+          <div class="num">44</div>
+          <div class="num">1,44 → 0,25 <span class="pill pill-down">−83%</span></div>
+          <div class="num"><span class="pill pill-up">+1078%</span></div>
+          <div class="num"><span class="pill pill-up">+105%</span></div>
+          <div class="num"><span class="pill pill-up">+69%</span></div>
+          <div class="verdict v-dil">CVR diluído por tráfego</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Neurofood · Sauna 3 + Red Light</div><div class="r-sub">PDP específica · go-live 25/06</div></div>
+          <div class="num">59</div>
+          <div class="num">1,47 → 0,37 <span class="pill pill-down">−75%</span></div>
+          <div class="num"><span class="pill pill-up">+549%</span></div>
+          <div class="num"><span class="pill pill-up">+63%</span></div>
+          <div class="num"><span class="pill pill-up">+51%</span></div>
+          <div class="verdict v-dil">CVR diluído por tráfego</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Neurofood · Sauna 3 Plus + Red Light</div><div class="r-sub">PDP específica · go-live 22/07</div></div>
+          <div class="num">32</div>
+          <div class="num">2,08 → 0,40 <span class="pill pill-down">−81%</span></div>
+          <div class="num"><span class="pill pill-up">+670%</span></div>
+          <div class="num"><span class="pill pill-up">+48%</span></div>
+          <div class="num"><span class="pill pill-up">+19%</span></div>
+          <div class="verdict v-dil">CVR diluído por tráfego</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Regina Rios · Global PDP/Categoria</div><div class="r-sub">Módulo global · go-live 03/07</div></div>
+          <div class="num">51</div>
+          <div class="num">0,45 → 0,91 <span class="pill pill-up">+102%</span></div>
+          <div class="num"><span class="pill pill-down">−87%</span></div>
+          <div class="num"><span class="pill pill-down">−74%</span></div>
+          <div class="num"><span class="pill pill-down">−77%</span></div>
+          <div class="verdict v-inc">Inconclusivo</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Neurofood · Banheira de Gelo</div><div class="r-sub">PDP específica · go-live 22/06</div></div>
+          <div class="num">62</div>
+          <div class="num">2,75 → 2,32 <span class="pill pill-down">−16%</span></div>
+          <div class="num"><span class="pill pill-down">−49%</span></div>
+          <div class="num"><span class="pill pill-down">−57%</span></div>
+          <div class="num"><span class="pill pill-down">−49%</span></div>
+          <div class="verdict v-inc">Inconclusivo</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">Neurofood · Home</div><div class="r-sub">Home · go-live 03/06</div></div>
+          <div class="num">81</div>
+          <div class="num">1,06 → 0,79 <span class="pill pill-down">−25%</span></div>
+          <div class="num"><span class="pill pill-flat">−5%</span></div>
+          <div class="num"><span class="pill pill-down">−29%</span></div>
+          <div class="num"><span class="pill pill-down">−19%</span></div>
+          <div class="verdict v-bad">Queda real</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">King &amp; Joe · Camiseta Básica Bordado</div><div class="r-sub">PDP específica · go-live 03/08</div></div>
+          <div class="num">20</div>
+          <div class="num">0,33 → 0,44</div>
+          <div class="num"><span class="pill pill-down">−79%</span></div>
+          <div class="num"><span class="pill pill-down">−72%</span></div>
+          <div class="num"><span class="pill pill-down">−86%</span></div>
+          <div class="verdict v-inc">Cedo demais · 1 venda</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">AEVI · Galeria é Confiável? · Selena · Quem somos</div><div class="r-sub">Institucionais e PDP sem venda no período</div></div>
+          <div class="num">26–44</div>
+          <div class="num">—</div>
+          <div class="num">—</div>
+          <div class="num">—</div>
+          <div class="num">—</div>
+          <div class="verdict v-inc">Ler por tempo, não por CVR</div>
+        </div>
+
+        <div class="r-tab">
+          <div><div class="r-name">AEVI · Minicursos · Anéis Pronta-Entrega · Anéis de Noivado</div><div class="r-sub">Sem coleta ou sem go-live registrado</div></div>
+          <div class="num">—</div><div class="num">—</div><div class="num">—</div><div class="num">—</div><div class="num">—</div>
+          <div class="verdict v-inc">Sem dado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AS INSTITUCIONAIS ══════════════════════════════════ -->
+<section class="band band-raise">
+  <div class="in split">
+    <div class="stack g6">
+      <p class="eyebrow">O que quase se perdeu na leitura</p>
+      <h2 class="d2">Página institucional não se mede por <span class="k">CVR</span>.</h2>
+      <p class="p">
+        Três páginas da AEVI aparecem como “−100%” na leitura ingênua, porque não vendem — e nunca
+        deveriam vender. O trabalho delas é comprar tempo e derrubar a objeção Social antes que o
+        visitante chegue na PDP. Medidas pelo indicador certo, elas funcionaram.
+      </p>
+      <p class="sm">
+        Isso tem consequência de método: o Relatório D+90 precisa de <strong>régua por tipo de página</strong>.
+        Cobrar CVR de uma institucional é declarar fracasso onde houve resultado.
+      </p>
+    </div>
+    <div class="rows">
+      <div class="row row-head" style="grid-template-columns:1.4fr 1fr;"><div>Página</div><div>Tempo de permanência</div></div>
+      <div class="row" style="grid-template-columns:1.4fr 1fr;">
+        <div><div class="h5">AEVI Galeria é Confiável?</div><p class="sm">Institucional · a página que responde a objeção Social.</p></div>
+        <div class="num">78s → 95s <span class="pill pill-up">+22%</span></div>
+      </div>
+      <div class="row" style="grid-template-columns:1.4fr 1fr;">
+        <div><div class="h5">AEVI · Anel Selena</div><p class="sm">PDP de alta complexidade · sem venda no período.</p></div>
+        <div class="num">19s → 113s <span class="pill pill-up">+495%</span></div>
+      </div>
+      <div class="row" style="grid-template-columns:1.4fr 1fr;">
+        <div><div class="h5">AEVI · Quem somos</div><p class="sm">Institucional · caiu, e vale investigar.</p></div>
+        <div class="num">69s → 30s <span class="pill pill-down">−57%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ O PROBLEMA DE MÉTODO ═══════════════════════════════ -->
+<section class="band band-light">
+  <div class="in stack g8">
+    <div class="stack g4">
+      <p class="eyebrow">Antes do primeiro D+90 sair</p>
+      <h2 class="d2">Cinco correções na mensuração.</h2>
+      <p class="lede">Não são detalhes de planilha. Cada uma dessas, hoje, produz um número que a gente
+      não conseguiria defender numa call com o cliente.</p>
+    </div>
+    <div class="rows">
+      <div class="row" style="grid-template-columns:44px 1fr 1.5fr;">
+        <div class="code code-hot">01</div>
+        <div class="h5">Comparar por dia, nunca por total</div>
+        <p class="p">Baseline tem 90 dias; a coleta tem de 20 a 81. Todo total de faturamento e quantidade
+        aparece em queda por construção. Receita/dia e vendas/dia resolvem — e mudam o sinal de quase metade das páginas.</p>
+      </div>
+      <div class="row" style="grid-template-columns:44px 1fr 1.5fr;">
+        <div class="code code-hot">02</div>
+        <div class="h5">Registrar sessões explicitamente</div>
+        <p class="p">Hoje sessão só existe implícita, deduzida de vendas ÷ CVR. É a variável que explica quase
+        toda a variação da base: nas saunas da Neurofood o tráfego subiu de 5 a 11 vezes, o que derruba o CVR
+        mesmo com a página vendendo mais por dia.</p>
+      </div>
+      <div class="row" style="grid-template-columns:44px 1fr 1.5fr;">
+        <div class="code code-hot">03</div>
+        <div class="h5">Marcar coleta parcial como parcial</div>
+        <p class="p">Em seis páginas o d30, o d60 e o d90 da coleta são o mesmo número repetido — é um snapshot
+        único parecendo série fechada. Quem ler sem saber disso conclui coisa errada.</p>
+      </div>
+      <div class="row" style="grid-template-columns:44px 1fr 1.5fr;">
+        <div class="code code-hot">04</div>
+        <div class="h5">Régua por tipo de página</div>
+        <p class="p">Institucional e Global se medem por tempo, engajamento e scroll — não por CVR e ticket.
+        Os oito indicadores continuam, mas com meta declarada só onde fazem sentido.</p>
+      </div>
+      <div class="row" style="grid-template-columns:44px 1fr 1.5fr;">
+        <div class="code code-hot">05</div>
+        <div class="h5">Separar tráfego pago de orgânico</div>
+        <p class="p">Sem isso não dá para distinguir “a página melhorou” de “entrou campanha”. É a diferença
+        entre um relatório que vende o próximo projeto e um que abre uma discussão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ O QUE VAI PRO SITE ═════════════════════════════════ -->
+<section class="band band-dark glow">
+  <div class="in stack g12">
+    <div class="stack g4">
+      <p class="eyebrow">Tradução para o site</p>
+      <h2 class="d2">O que pode ser publicado <span class="k k-box">hoje</span>.</h2>
+    </div>
+    <div class="split">
+      <div class="stack g6">
+        <div class="panel">
+          <p class="eyebrow" style="margin-bottom:12px;">Pode ir pro ar</p>
+          <ul class="p" style="margin:0; padding-left:1.1em; line-height:2;">
+            <li>AEVI · Anel Clássico: <strong>CVR 6,1× com 55% menos tráfego</strong>, em 55 dias.</li>
+            <li>AEVI · 3 Marias: <strong>CVR 2,7× com tráfego estável</strong>, em 26 dias.</li>
+            <li>Neurofood · Banheira II PRO: <strong>ticket médio 3×</strong>, em 44 dias.</li>
+            <li>AEVI · Galeria é Confiável?: <strong>95 segundos</strong> de permanência numa institucional.</li>
+            <li>Sempre com a janela declarada ao lado do número — “em 55 dias”, nunca “D+90”.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stack g6">
+        <div class="panel" style="background:rgba(244,89,74,0.07); border-color:rgba(244,89,74,0.28);">
+          <p class="eyebrow" style="margin-bottom:12px; color:#f4796d;">Não pode ir pro ar</p>
+          <ul class="p" style="margin:0; padding-left:1.1em; line-height:2;">
+            <li>Qualquer coisa chamada <strong>“Relatório D+90”</strong> — nenhuma página fechou 90 dias.</li>
+            <li><strong>Faturamento e quantidade em total</strong> — a janela desigual inverte o sinal.</li>
+            <li><strong>Neurofood como case de número</strong> — a Home caiu 19% em receita/dia com tráfego estável.</li>
+            <li><strong>Regina Rios e King &amp; Joe</strong> — tráfego despencou e a janela é curta demais.</li>
+            <li>Média agregada de CVR da carteira — as janelas não são comparáveis entre si.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <p class="p" style="color:#fff; max-width:66ch;">
+        A frase que sustenta a Rota de Implementação inteira, e que é defensável linha a linha:
+        <strong>“Na AEVI Galeria, duas páginas de produto passaram a converter três e seis vezes mais —
+        recebendo o mesmo tráfego ou menos.”</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-meta">
+      <span>Convertfly · leitura de mensuração · backup 23/08/2026</span>
+      <span>16 páginas · 7 clientes · nenhuma com D+90 fechado</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
