@@ -1,7 +1,23 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1200, "h": 1000, "title": "Bloco de preços · versão B", "print": "fixed" },
-    { "file": "Nomes.dc.html", "x": 1320, "y": 0, "w": 720, "h": 620, "title": "Arquitetura de nomes", "print": "fixed" }
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 1000,
+      "title": "Bloco de preços · versão B",
+      "print": "fixed"
+    },
+    {
+      "file": "Nomes.dc.html",
+      "x": 1320,
+      "y": 0,
+      "w": 720,
+      "h": 620,
+      "title": "Arquitetura de nomes",
+      "print": "fixed"
+    }
   ],
   "annotations": [
     {
@@ -9,8 +25,10 @@
       "x": 1320,
       "y": 700,
       "w": 720,
-      "text": "CONFIRMAR ANTES DE PUBLICAR\n\n1. Os preços (99/199/299 e 3.500/6.500/10.500) vieram da tela do Stitch — confirmar se são os reais.\n2. [R$ /mês] do acompanhamento: é o que falta para vender recorrência, e não projeto avulso.\n3. [N] páginas do tier de R$ 10.500.\n\nSAIU DE PROPÓSITO\n\n\"Garantia de lift\" — promessa de resultado que o próprio método proíbe.\n\"90 dias\" como janela — nenhuma página fechou D+90.\n\"40 seções\" — número ainda não conferido na galeria.\n\"Esquadrão sênior turnkey\", \"altíssimo luxo\" — hype, contra a voz da marca.\n\"NubeSDK Telemetry\" — jargão; o lojista quer saber que não fica lento."
+      "text": "CONFIRMAR ANTES DE PUBLICAR\n\n1. Os preços (99/199/299 e 3.500/6.500/10.500) vieram da tela do Stitch — confirmar se são os reais.\n2. [R$ /mês] do acompanhamento: é o que separa recorrência de projeto avulso.\n3. [N] páginas do tier de R$ 10.500.\n\nSAIU DE PROPÓSITO\n\n\"Garantia de lift\" — promessa de resultado que o próprio método proíbe.\n\"90 dias\" como janela — nenhuma página fechou D+90.\n\"40 seções\" — número ainda não conferido na galeria (o app fala em 32).\n\"Turnkey\" e \"altíssimo luxo\" — hype.\n\"NubeSDK Telemetry\" — jargão; o lojista quer saber que não fica lento.\n\nFICOU, POR DECISÃO SUA\n\n\"Esquadrão sênior de conversão\" — na descrição do card, não no selo. O selo mantém a simetria \"você implementa / a gente implementa\", que é o que faz a escada funcionar."
     }
   ],
-  "launch": { "view": "canvas" }
+  "launch": {
+    "view": "canvas"
+  }
 }

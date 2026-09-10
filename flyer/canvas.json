@@ -9,14 +9,14 @@
       "x": 0,
       "y": 866,
       "w": 559,
-      "text": "TROCAR ANTES DE IMPRIMIR\n\n1. Os 10 nomes na base são texto — entram os logos vetoriais reais.\n2. [FONTE DO BENCHMARK] — confirmar a fonte de 0,75% e 1,17%.\n3. [WHATSAPP] e [@INSTAGRAM] no rodapé do verso.\n4. O quadrado QR é marcação — colar o QR real da instalação do app.\n5. As três miniaturas de página são vetores estilizados. Podem virar prints reais de PDP no ar."
+      "text": "TROCAR ANTES DE IMPRIMIR\n\n1. Os 10 nomes na base da frente são texto — entram os logos vetoriais reais. As células já têm 26 px de altura e 20 px de respiro entre linhas para caber logo de qualquer proporção.\n2. [FONTE DO BENCHMARK] — a fonte de 0,75% e 1,17%. É a linha que sustenta o 1,63%.\n3. [WHATSAPP] e [@INSTAGRAM] no rodapé do verso.\n4. O quadrado QR é marcação. O real precisa ter no mínimo 20 mm — o espaço já está nessa medida.\n5. As três miniaturas são vetores estilizados. Podem virar prints reais de PDP no ar."
     },
     {
-      "id": "print",
+      "id": "evento",
       "x": 679,
       "y": 866,
       "w": 559,
-      "text": "ESPECIFICAÇÃO\n\nA5 · 148 × 210 mm · frente e verso.\nDesenhado a 96 px/pol (559 × 794 px).\nCorpo de texto nunca abaixo de 12 pt.\n\nFrente em fundo escuro, verso em fundo claro: o QR lê melhor sobre branco e a peça gasta menos tinta.\n\nAo exportar PDF: a fonte Tinos cai para Times New Roman, que é metricamente equivalente."
+      "text": "PARA O EVENTO\n\nA5 · 148 × 210 mm · frente e verso · 96 px/pol (559 × 794 px).\nCorpo de texto nunca abaixo de 12 pt.\n\nFrente escura e verso claro: o QR lê melhor sobre branco, a peça gasta menos tinta e o verso — que é onde a pessoa age — fica mais legível na luz dura de pavilhão.\n\nSe houver estande, o lugar é a faixa escura do verso, entre \"Fale com o esquadrão\" e o contato: uma linha do tipo \"Estande [N] · [EVENTO]\". Me passa os dados e eu encaixo.\n\nAo exportar PDF, a fonte Tinos cai para Times New Roman, que é metricamente equivalente."
     }
   ],
   "launch": { "view": "canvas" }
