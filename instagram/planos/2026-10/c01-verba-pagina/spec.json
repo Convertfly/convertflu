@@ -1,0 +1,97 @@
+{
+  "marca": { "handle": "@convertfly.app", "selo": "Conversion Map" },
+  "slides": [
+    {
+      "capa": true,
+      "superficie": "dark",
+      "headline": "Você aumentou a verba.<br>E a loja ficou mais *pobre*."
+    },
+    {
+      "superficie": "dark",
+      "virada": true,
+      "eyebrow": "Onde a conta não fecha",
+      "headline": "A campanha melhorou.<br>O faturamento não.",
+      "blocos": [
+        { "tipo": "texto", "txt": "O custo por clique caiu, o CTR subiu, o tráfego cresceu, e no fim do mês o faturamento está exatamente no mesmo lugar." },
+        { "tipo": "texto", "txt": "Aí vem a decisão automática: **subir a verba**. Só que ela acelera o problema em vez de resolver, porque o dinheiro vai para o mesmo lugar de antes." }
+      ]
+    },
+    {
+      "superficie": "light",
+      "eyebrow": "O caminho do seu tráfego",
+      "eyebrow_cor": "violet",
+      "headline": "Todo o tráfego termina no mesmo lugar.",
+      "blocos": [
+        { "tipo": "texto", "txt": "Entre **60 e 70%** das visitas de um e-commerce param na página de produto. É lá que a decisão de compra de fato acontece." },
+        { "tipo": "texto", "txt": "Breno Villan levantou esse número no primeiro episódio do Convert Talks, e ele reordena as prioridades de quem investe em mídia." }
+      ]
+    },
+    {
+      "superficie": "dark",
+      "eyebrow": "O que a verba compra",
+      "headline": "Verba compra visita.<br>Não compra *convencimento*.",
+      "blocos": [
+        { "tipo": "texto", "txt": "Quando a página tem só foto e descrição, ela não quebra objeção nem cria desejo. O visitante chega, olha e vai embora." },
+        { "tipo": "texto", "txt": "Cada real a mais em mídia leva mais gente para o mesmo ponto onde a decisão já travava. O gasto sobe com o tráfego, e a receita depende da página, que continua igual." }
+      ]
+    },
+    {
+      "superficie": "light",
+      "eyebrow": "Os números",
+      "eyebrow_cor": "coral",
+      "headline": "O que já está medido.",
+      "blocos": [
+        { "tipo": "tabela", "cabecalho": ["Indicador", "Número"], "linhas": [
+          { "rotulo": "Tráfego que termina na página de produto", "valor": "60 a 70%" },
+          { "rotulo": "Neurofood, CVR antes do método", "valor": "1,58%" },
+          { "rotulo": "Neurofood, CVR em D+90", "valor": "*em medição*", "cor": "gold" }
+        ]},
+        { "tipo": "espaco", "px": 30 },
+        { "tipo": "texto", "txt": "O terceiro número fecha em D+90. Até lá ele fica em aberto, porque dado estimado não vira argumento." }
+      ]
+    },
+    {
+      "superficie": "dark",
+      "virada": true,
+      "eyebrow": "O ponto cego do mercado",
+      "headline": "Todo mundo opera em silos.",
+      "blocos": [
+        { "tipo": "texto", "txt": "Tráfego tem dono. Desenvolvimento tem dono. Operação e logística têm dono. O CRM tem dono. A página onde a venda acontece **não tem**." },
+        { "tipo": "texto", "txt": "Esse é o ponto cego: da estratégia ao copy à composição visual à mensuração, ninguém responde pela página de ponta a ponta." }
+      ]
+    },
+    {
+      "superficie": "light",
+      "eyebrow": "Antes de subir a verba",
+      "eyebrow_cor": "positive",
+      "headline": "Três perguntas sobre a sua página.",
+      "blocos": [
+        { "tipo": "card", "titulo": "Ela responde a objeção?", "txt": "Se existe uma dúvida que trava a compra, ela precisa estar respondida antes do botão, não depois." },
+        { "tipo": "card", "titulo": "Ela cria desejo?", "txt": "Foto e descrição informam. Desejo nasce de contexto de uso, prova real e comparação honesta." },
+        { "tipo": "card", "titulo": "Você sabe o que converteu?", "txt": "Sem medir seção por seção, a decisão do mês que vem volta a ser achismo." }
+      ]
+    },
+    {
+      "superficie": "grad",
+      "eyebrow": "A ordem certa",
+      "headline": "Primeiro a página.",
+      "blocos": [
+        { "tipo": "linhas", "itens": [
+          "Descubra a **pergunta central** da sua página de produto",
+          "Mapeie as objeções na **frase real** do seu cliente",
+          "Meça **seção por seção** antes de escalar a mídia"
+        ]}
+      ]
+    },
+    {
+      "cta": true,
+      "superficie": "light",
+      "ponte": "Enquanto a página não convence, a mídia é o jeito mais caro de descobrir isso.",
+      "headline": "Quer o *mapa* completo?",
+      "instrucao": "Comenta a palavra abaixo",
+      "palavra": "MAPA",
+      "beneficio": "e a gente manda o diagnóstico de página de produto que aplicamos em cliente novo, direto na sua DM.",
+      "rodape": "Envio via DM"
+    }
+  ]
+}

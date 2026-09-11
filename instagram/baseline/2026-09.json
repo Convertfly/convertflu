@@ -1,0 +1,28 @@
+{
+  "periodo": { "de": "2026-08-12", "ate": "2026-09-10", "dias": 30 },
+  "conta": { "handle": "convertfly.app", "id": "17841401011859596" },
+  "perfil": { "seguidores": 418, "seguindo": 307, "posts_total": 60 },
+  "funil": {
+    "alcance_somado": 16024,
+    "novos_seguidores": 32,
+    "cliques_link_bio": 0,
+    "contas_engajadas_somadas": 1136,
+    "views": 36183
+  },
+  "interacao": { "likes": 1244, "saves": 16, "shares": 171, "comentarios": 164 },
+  "taxas": {
+    "saves_sobre_alcance_pct": 0.10,
+    "shares_sobre_alcance_pct": 1.07,
+    "novos_sobre_alcance_pct": 0.20,
+    "crescimento_base_pct": 7.7
+  },
+  "publicacoes": { "total": 29, "reels": 22, "imagem": 7, "carrossel": 0 },
+  "ressalvas": [
+    "alcance_somado soma o alcance diario, entao conta a mesma pessoa em dias diferentes: nao e alcance unico do mes",
+    "profile_views e website_clicks estao depreciados na API no nivel de conta",
+    "profile_links_taps retornou zero em todos os 30 dias",
+    "media_follows e media_profile_visits vem nulos em Reels, so existem em feed e carrossel",
+    "follower_count so tem historico de 30 dias na API: este arquivo e o unico registro deste mes"
+  ],
+  "fonte": "Windsor.ai connector instagram, puxado em 2026-09-11"
+}
