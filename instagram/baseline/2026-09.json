@@ -13,7 +13,9 @@
     "seguindo": 307,
     "posts_total": 60,
     "bio": "Tecnologia, metodologia e layouts de alta conversao. Convert Talks: o podcast de conversao. Fale com a gente",
-    "link": "https://bio.convertfly.com.br/"
+    "link": "https://bio.convertfly.com.br/",
+    "destaques": 0,
+    "feed_fixado": "nenhum ate 2026-09-11"
   },
   "funil": {
     "alcance_somado": 16024,
@@ -78,5 +80,12 @@
       "Florianopolis": 7
     },
     "alerta": "Rio tem quase o dobro de Sao Paulo, que e onde se concentra a operacao de e-commerce do pais. Validar se a base carrega rede pessoal do time ou audiencia dos convidados do podcast."
-  }
+  },
+  "mudancas_estruturais": [
+    {
+      "data": "2026-09-11",
+      "mudanca": "posts fixados no feed pela primeira vez",
+      "efeito": "janelas antes e depois desta data nao sao diretamente comparaveis na taxa de visitas para seguidores"
+    }
+  ]
 }

@@ -45,7 +45,7 @@ Escopo: carrossel e post único. Os Reels do Convert Talks seguem fora deste flu
 | 5 | CTA | 🟡 | "Fale com a gente" é contato, não é oferta. Não diz o que tem do outro lado |
 | 6 | Organização visual | 🟢 | Três linhas, dentro de 150 caracteres, emojis com lógica |
 | 7 | Coerência com o conteúdo | 🟡 | A linha 1 promete método e os 29 posts do mês são podcast. A BIO promete uma coisa e o feed entrega outra |
-| 8 | Link coerente com a BIO | ⬜ | Não auditável, ver abaixo |
+| 8 | Link coerente com a BIO | ⬜ | Não auditável neste ambiente, ver abaixo |
 
 **Leitura:** a BIO é o pitch de 2 segundos e hoje ela não nomeia o público nem entrega prova. Isso ataca direto a taxa de Visitas para Seguidores, que é a mais sensível do funil. Quem chega pelo Reels do podcast não descobre por que deveria seguir.
 
@@ -59,15 +59,40 @@ Escopo: carrossel e post único. Os Reels do Convert Talks seguem fora deste flu
 
 As três nomeiam o público (e-commerce), carregam prova (4 nichos, nome do método) e trocam "fale com a gente" por uma oferta concreta.
 
-### O que não consegui auditar
+### Destaques: não existem
 
-| Elemento | Motivo |
-|---|---|
-| **Link da bio** | `bio.convertfly.com.br` está bloqueado pelo proxy de saída deste ambiente. Preciso de um print da página ou da lista de botões |
-| **Destaques** | A API do Instagram não expõe destaques. Preciso de um print da faixa |
-| **Feed fixado** | A API não marca quais posts estão fixados. Preciso de um print da grade |
+Confirmado com o time em 11/09. O perfil **não tem nenhum destaque**.
 
-Os três impactam a mesma taxa que a BIO. Com os prints eu fecho a auditoria e a proposta de reordenação em uma passada.
+Isso não é uma fraqueza de execução, é uma ausência estrutural. No método, os destaques são a landing page comprimida do perfil: são eles que atendem quem chega pelo conteúdo, ainda não conhece a marca e precisa decidir em segundos se vale seguir ou clicar. Sem eles, quem cai no perfil vindo de um Reels do podcast encontra apenas uma grade de mais clipes do mesmo podcast.
+
+Isso reordena o diagnóstico da seção 1. Eu havia atribuído a taxa de Visitas para Seguidores de 0,20% à BIO fraca. Com destaques zerados e sem feed fixado, a causa é maior: **o perfil não tinha camada de pré-clique nenhuma**. A BIO é parte do problema, não o problema inteiro.
+
+### Feed fixado: existia zero, foi fixado em 11/09
+
+O time fixou os posts hoje. Antes disso os três primeiros lugares da grade eram apenas os posts mais recentes, ou seja, clipe de podcast.
+
+### Link da bio: não auditável aqui
+
+`bio.convertfly.com.br` está bloqueado pelo proxy de saída deste ambiente. Preciso de um print da página ou da lista de botões com o texto exato de cada um.
+
+---
+
+## 2.1 · Proposta de destaques
+
+Seis destaques em ordem de funil, adaptados do padrão do método para serviço B2B em vez de loja. A lógica: prova gera confiança, evidência torna a prova concreta, método explica como, processo elimina a dúvida operacional, conteúdo mantém a relação, dúvidas removem a última objeção.
+
+| Ordem | Nome | Função no funil | Conteúdo interno | CTA do último card |
+|---|---|---|---|---|
+| 1 | **Resultados** | prova social | Números por cliente conforme os D+90 fecharem. Enquanto não fecham, entram os cases nomeados sem número inventado | "Quer esse diagnóstico na sua loja? Link na bio" |
+| 2 | **Antes · Depois** | evidência | Páginas de produto antes e depois, lado a lado. É o ativo mais forte de quem vende página | "Sua PDP está no antes ou no depois?" |
+| 3 | **O Método** | o que vendemos | Conversion Map™ em cinco pilares, um card por pilar | "Conhece o método completo, link na bio" |
+| 4 | **Como Funciona** | quebra a dúvida operacional | A cadência do cliente: onboarding, research, sessão, HTMLs, go live, D+90. Com prazo de cada etapa | "Quer começar? Fala com a gente" |
+| 5 | **Convert Talks** | relacionamento | Os episódios. É o único conteúdo que já existe em volume | "Episódio completo no link da bio" |
+| 6 | **Dúvidas** | remove a última objeção | Porte mínimo, prazo, plataforma, o que o cliente precisa entregar | "Ficou outra dúvida? Manda na DM" |
+
+**Capas:** uma palavra, sem frase, legível em miniatura, na paleta da marca. Eu gero as seis com o mesmo chassi do carrossel, o que garante que nasçam no design system em vez de no Canva.
+
+**Ordem importa mais que quantidade.** Resultados e Antes · Depois vêm primeiro porque a objeção número um de quem chega é se o método funciona. Convert Talks, que é o que a marca mais produz hoje, fica em quinto de propósito: ele retém quem já confia e não converte quem acabou de chegar.
 
 ---
 
@@ -180,13 +205,35 @@ As combinações 1, 4 e 6 carregam o tema PDP em três ângulos diferentes: diag
 
 | # | Ação | Onde impacta | Tempo | Por que agora |
 |---|---|---|---|---|
-| 1 | Trocar a BIO por uma das três versões | Visitas para Seguidores | 5 min | A BIO não nomeia o público nem carrega prova, e é a métrica mais sensível do funil |
-| 2 | Fixar no feed o post de 31/08 | Visitas para Seguidores | 2 min | É a única publicação de setembro que gerou follows (2) e teve 48 compartilhamentos |
-| 3 | Mandar os prints de destaques, feed fixado e link da bio | Visitas para Link | 5 min | Destrava a metade da auditoria de perfil que a API não entrega |
+| 1 | Trocar a BIO por uma das três versões | Visitas para Seguidores | 5 min | A BIO não nomeia o público nem carrega prova |
+| 2 | ~~Fixar posts no feed~~ | | | ✅ feito em 11/09 |
+| 3 | Subir os seis destaques | Visitas para Seguidores e para Link | meio dia | É a maior lacuna do perfil. Hoje não existe camada nenhuma de pré-clique |
+| 4 | Mandar o print do link da bio | Visitas para Link | 2 min | Fecha a última parte da auditoria |
+
+**Ordem de execução sugerida:** BIO hoje, porque é o de menor esforço e maior alcance. Destaques 3 e 5 (O Método e Convert Talks) nesta semana, porque o conteúdo já existe. Destaques 1 e 2 (Resultados e Antes · Depois) quando houver material aprovado por cliente. Destaques 4 e 6 são texto puro e saem rápido.
 
 ---
 
-## 8 · Pendências que travam ou condicionam
+## 8 · Registro de mudança estrutural
+
+O método manda declarar mudança de estrutura antes de comparar janelas, porque comparar antes e depois de uma mudança é comparar dois perfis diferentes.
+
+| Data | Mudança | Quem |
+|---|---|---|
+| 11/09/2026 | Posts fixados no feed pela primeira vez | time |
+| a definir | Troca da BIO | time |
+| a definir | Seis destaques no ar | time |
+| 06/10/2026 | Primeiro carrossel da história do perfil | esta esteira |
+
+**Consequência para a leitura de outubro.** O mês vai ter duas mudanças ao mesmo tempo: formato novo de conteúdo e perfil reestruturado. Se saves e seguidores subirem, o número sozinho não diz qual das duas causou.
+
+Isso é aceitável e a alternativa é pior. Segurar as correções de perfil por um mês para proteger a limpeza de um experimento custaria mais do que a ambiguidade. O que não é aceitável é o relatório de outubro atribuir o ganho ao carrossel sem ressalva.
+
+**Como separar as duas coisas mesmo assim.** O carrossel tem métrica própria por publicação: `media_saved`, `media_follows` e `media_profile_visits` medem o conteúdo, não o perfil. A reestruturação aparece na taxa da conta. Se os saves por publicação subirem, é o formato. Se as visitas ao perfil virarem seguidor numa proporção maior sem os saves mexerem, é o perfil.
+
+---
+
+## 9 · Pendências que travam ou condicionam
 
 | Pendência | Efeito |
 |---|---|
